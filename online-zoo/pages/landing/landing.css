@@ -9,8 +9,10 @@
 }
 
 :root {
-    --orange-color: #F58021;
     --black-color: #000000;
+    --white-color: #ffffff;
+    --orange-color: #F58021;
+    --dark-orange-color: #D26004;
     --green-color: #00A092;
 }
 
@@ -25,6 +27,7 @@ header {
     width: 100%;
     max-width: 1430px;
     margin: auto;
+    padding: 30px 15px;
 }
 
 .container.header {
@@ -32,7 +35,6 @@ header {
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 30px 15px;
 }
 
 .wrapper-zoo-logo {
@@ -68,6 +70,7 @@ header {
     transition: .3s;
 
 }
+
 .header ul li a:hover {
     color: var(--green-color);
 
@@ -104,4 +107,69 @@ header {
 
 .facebook {
     background-color: #3B5998;
+}
+
+/* --- favorite --- */
+
+#favorite {
+    width: 100%;
+    background: url("../../assets/images/Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+}
+
+.container.favorite {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-top: 125px;
+}
+
+h1 {
+    color: var(--green-color);
+    font-weight: 800;
+    font-size: 82px;
+    line-height: 100px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin-right: 40%;
+    margin-bottom: 35px;
+}
+
+.favorite p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--black-color);
+    margin-right: 70%;
+    margin-bottom: 40px;
+
+}
+
+.favorite button {
+    background-color: var(--orange-color);
+    text-transform: uppercase;
+    padding: 26px 34px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    border: none;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite button img{
+    width: 24px;
+    margin-left: 10px;
+}
+
+.favorite button:hover {
+    background-color: var(--dark-orange-color);
 }
