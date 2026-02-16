@@ -1,2 +1,1 @@
-# Online-ZOO
-Online ZOO task
+# [Online-ZOO](https://rsschool-online-zoo.netlify.app/)
