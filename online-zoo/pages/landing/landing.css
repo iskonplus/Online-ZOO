@@ -1,5 +1,107 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --orange-color: #F58021;
+    --black-color: #000000;
+    --green-color: #00A092;
+}
+
+
+/* --- header --- */
+
+header {
+    background-color: var(--orange-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1430px;
+    margin: auto;
+}
+
+.container.header {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.wrapper-zoo-logo {
+    margin-right: auto;
+}
+
+.zoo-logo {
+    width: 96px;
+    height: 50px;
+}
+
+.header ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.header ul li {
+    margin-right: 45px;
+}
+
+.header ul li a {
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: var(--black-color);
+    transition: .3s;
+
+}
+.header ul li a:hover {
+    color: var(--green-color);
+
+}
+
+.block-social-contacts {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.social-link:hover {
+    scale: 1.2;
+}
+
+.you-tube {
+    background-color: #FF0000;
+}
+
+.instagram {
+    background-color: #C13584;
+}
+
+.facebook {
+    background-color: #3B5998;
 }
