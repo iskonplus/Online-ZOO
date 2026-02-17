@@ -13,6 +13,7 @@
     --white-color: #ffffff;
     --orange-color: #F58021;
     --dark-orange-color: #D26004;
+    --dark-blue-color: #20113D;
     --green-color: #00A092;
 }
 
@@ -71,10 +72,9 @@ header {
 
 }
 
-.header ul li a:hover {
+/* .header ul li a:hover {
     color: var(--green-color);
-
-}
+} */
 
 .block-social-contacts {
     width: 180px;
@@ -93,9 +93,10 @@ header {
     transition: .3s;
 }
 
+/* 
 .social-link:hover {
     scale: 1.2;
-}
+} */
 
 .you-tube {
     background-color: #FF0000;
@@ -107,6 +108,46 @@ header {
 
 .facebook {
     background-color: #3B5998;
+}
+
+.burger {
+    display: none;
+    width: 30px;
+    height: 35px;
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+}
+
+.burger__line {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background: var(--black-color);
+    transform: translate(-50%, -50%);
+}
+
+.burger__line::before,
+.burger__line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: inherit;
+}
+
+.burger__line::before {
+    top: -12px;
+}
+
+.burger__line::after {
+    top: 12px;
 }
 
 /* --- favorite --- */
@@ -165,11 +206,90 @@ h1 {
     align-items: center;
 }
 
-.favorite button img{
+.favorite button img {
     width: 24px;
     margin-left: 10px;
 }
 
-.favorite button:hover {
+/* .favorite button:hover {
     background-color: var(--dark-orange-color);
+} */
+
+
+
+@media(max-width: 940px) {
+
+    .header ul {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        position: fixed;
+        background-color: var(--dark-blue-color);
+        padding: 120px 60px;
+        color: var(--white-color);
+        top: 0;
+        left: 0;
+        left: -160%;
+    }
+
+    .header ul li {
+        margin-bottom: 25px;
+
+    }
+
+    .header ul li a {
+        color: var(--white-color);
+        font-size: 18px;
+        text-align: center;
+        font-weight: 600;
+
+    }
+
+    .block-social-contacts {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+
+
+
+    @media(max-width: 600px) {
+
+        @media(max-width: 320px) {
+            .burger {
+                width: 22px;
+                height: 30px;
+            }
+
+            .burger__line {
+                width: 22px;
+            }
+
+            .burger__line::before,
+            .burger__line::after {
+                width: 22px;
+            }
+
+
+        }
+    }
+}
+
+@media (hover: hover) {
+    .header ul li a:hover {
+        color: var(--green-color);
+    }
+
+    .social-link:hover {
+        scale: 1.2;
+    }
+
+    .favorite button:hover {
+        background-color: var(--dark-orange-color);
+    }
 }
