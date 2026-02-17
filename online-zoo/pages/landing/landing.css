@@ -157,7 +157,7 @@ header {
     background: url("../../assets/images/Background.png");
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 100px;
+    background-position: center;
 }
 
 .container.favorite {
@@ -165,7 +165,7 @@ header {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    padding-top: 125px;
+    padding: 125px 20px;
 }
 
 h1 {
@@ -176,7 +176,7 @@ h1 {
     letter-spacing: 0.01em;
     text-transform: uppercase;
     margin-right: 40%;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
 
 .favorite p {
@@ -217,79 +217,151 @@ h1 {
 
 
 
-@media(max-width: 940px) {
+@media(max-width: 1200px) {
 
-    .header ul {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        position: fixed;
-        background-color: var(--dark-blue-color);
-        padding: 120px 60px;
-        color: var(--white-color);
-        top: 0;
-        left: 0;
-        left: -160%;
+    .container.header {
+        padding: 30px 100px;
     }
 
-    .header ul li {
-        margin-bottom: 25px;
-
+    #favorite {
+        background-size: contain;
+        background-position: bottom right;
     }
 
-    .header ul li a {
-        color: var(--white-color);
-        font-size: 18px;
-        text-align: center;
-        font-weight: 600;
-
+    .container.favorite {
+        padding: 100px 40px;
     }
 
-    .block-social-contacts {
-        display: none;
+    h1 {
+        margin-right: 10%;
+        margin-bottom: 30px;
     }
 
-    .burger {
-        display: block;
-    }
+    @media(max-width: 1100px) {
 
+        .header ul {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            position: fixed;
+            background-color: var(--dark-blue-color);
+            padding: 120px 60px;
+            color: var(--white-color);
+            top: 0;
+            left: 0;
+            left: -160%;
+        }
 
-
-
-    @media(max-width: 600px) {
-
-        @media(max-width: 320px) {
-            .burger {
-                width: 22px;
-                height: 30px;
-            }
-
-            .burger__line {
-                width: 22px;
-            }
-
-            .burger__line::before,
-            .burger__line::after {
-                width: 22px;
-            }
-
+        .header ul li {
+            margin-bottom: 25px;
 
         }
-    }
-}
 
-@media (hover: hover) {
-    .header ul li a:hover {
-        color: var(--green-color);
+        .header ul li a {
+            color: var(--white-color);
+            font-size: 18px;
+            text-align: center;
+            font-weight: 600;
+
+        }
+
+        .block-social-contacts {
+            display: none;
+        }
+
+        .burger {
+            display: block;
+        }
+
+
+
+
+        @media(max-width: 760px) {
+
+            .container.header {
+                padding: 30px 20px;
+            }
+
+            #favorite {
+                width: 100%;
+                background-size: contain;
+                background-position: bottom right;
+            }
+
+            .favorite p {
+                margin-right: 40%;
+                margin-bottom: 30px;
+            }
+
+            .container.favorite {
+                padding: 45px 20px;
+            }
+
+            h1 {
+                margin-right: auto;
+                font-size: 72px;
+                line-height: 88px;
+            }
+
+
+            @media(max-width: 460px) {
+
+                #favorite {
+                    width: 100%;
+                    background-size: 150%;
+                    background-position: bottom right;
+                }
+
+                .container.favorite {
+                    padding: 20px 10px 210px 10px;
+                }
+
+                h1 {
+                    font-size: 40px;
+                    line-height: 49px;
+                }
+
+                .favorite p {
+                    margin-right: auto;
+                }
+
+
+                .burger {
+                    width: 22px;
+                    height: 30px;
+                }
+
+                .burger__line {
+                    width: 22px;
+                }
+
+                .burger__line::before,
+                .burger__line::after {
+                    width: 22px;
+                }
+
+                .favorite button {
+                    padding: 12px 60px;
+                }
+
+
+            }
+        }
     }
 
-    .social-link:hover {
-        scale: 1.2;
-    }
+    @media (hover: hover) {
+        .header ul li a:hover {
+            color: var(--green-color);
+        }
 
-    .favorite button:hover {
-        background-color: var(--dark-orange-color);
+        .social-link:hover {
+            scale: 1.2;
+        }
+
+        .favorite button:hover {
+            background-color: var(--dark-orange-color);
+        }
     }
 }
