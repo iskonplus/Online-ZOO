@@ -334,6 +334,7 @@ h1 {
     justify-content: center;
     align-items: center;
     transition: .3s;
+    border-radius: 4px;
 }
 
 .block-welcome-footer button img {
@@ -357,13 +358,60 @@ h1 {
     }
 
     .container {
-        padding: 100px 40px;
+        padding: 100px 100px;
     }
 
     h1 {
         margin-right: 10%;
         margin-bottom: 30px;
     }
+
+    .block-welcome {
+        width: 60%;
+        flex-direction: column;
+    }
+
+    .block-welcome img {
+        max-width: 100%;
+    }
+
+    .welcome> :first-child {
+        flex-direction: column-reverse;
+    }
+
+    .welcome> :last-child {
+        align-items: end;
+        margin-left: auto;
+
+    }
+
+    .container.welcome {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .content-wrapper {
+        max-width: 80%;
+        margin-top: 30px;
+        margin-right: auto;
+    }
+
+    .content-wrapper h2 {
+        margin-bottom: 30px;
+    }
+
+    .welcome> :first-child {
+        margin-bottom: 50px;
+    }
+
+    .container.welcome-footer> :first-child {
+        width: 55%;
+    }
+
+    .block-welcome-footer p {
+        width: 100%;
+    }
+
 
     @media(max-width: 1100px) {
 
@@ -403,7 +451,30 @@ h1 {
             display: block;
         }
 
+        .block-welcome {
+            width: 100%;
+        }
 
+        .container.welcome-footer {
+            flex-direction: column;
+        }
+
+        .container.welcome-footer> :first-child {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container.welcome-footer> :last-child {
+            width: 100%;
+            padding-left: 0px;
+            align-items: center;
+        }
+
+        .block-welcome-footer h4 {
+            margin: auto;
+            margin-bottom: 10px;
+        }
 
 
         @media(max-width: 760px) {
@@ -432,6 +503,15 @@ h1 {
                 font-size: 72px;
                 line-height: 88px;
             }
+
+            .content-wrapper {
+                max-width: 100%;
+            }
+
+            .block-welcome-footer {
+                padding: 0px 12px;
+            }
+
 
 
             @media(max-width: 460px) {
@@ -473,6 +553,45 @@ h1 {
                 .favorite button {
                     padding: 12px 60px;
                 }
+
+                .container.welcome {
+                    padding: 50px 0px;
+                }
+
+                .content-wrapper {
+                    padding: 0px 10px;
+                }
+
+                .content-wrapper h2 {
+                    text-shadow: none;
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 32px;
+                }
+
+                .block-welcome-footer h3 {
+                    font-size: 26px;
+                    line-height: 32px;
+                }
+
+                .block-welcome-footer {
+                    padding-right: 0px;
+                }
+
+                .block-welcome-footer button {
+                    padding: 13px 80px 13px 18px;
+                    font-size: 16px;
+                }
+
+                .block-welcome-footer button span {
+                    width: 55px;
+                    height: 45px;
+                    margin-left: 0px;
+                }
+
+
+
+
 
 
             }
