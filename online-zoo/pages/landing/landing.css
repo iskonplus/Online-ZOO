@@ -224,6 +224,12 @@ h1 {
 .content-wrapper {
     max-width: 40%;
     margin-top: 70px;
+    padding-right: 15px;
+}
+
+.welcome> :last-child .content-wrapper {
+    padding-right: 0;
+    padding-left: 15px;
 }
 
 .content-wrapper h2 {
@@ -382,7 +388,6 @@ h1 {
     .welcome> :last-child {
         align-items: end;
         margin-left: auto;
-
     }
 
     .container.welcome {
@@ -391,9 +396,14 @@ h1 {
     }
 
     .content-wrapper {
-        max-width: 80%;
+        max-width: 88%;
         margin-top: 30px;
         margin-right: auto;
+        padding: 0;
+    }
+
+    .welcome> :last-child .content-wrapper {
+        padding: 0;
     }
 
     .content-wrapper h2 {
@@ -558,7 +568,7 @@ h1 {
                     padding: 50px 0px;
                 }
 
-                .content-wrapper {
+                #welcome .content-wrapper {
                     padding: 0px 10px;
                 }
 
@@ -585,7 +595,7 @@ h1 {
 
                 .block-welcome-footer button span {
                     width: 55px;
-                    height: 45px;
+                    height: 46px;
                     margin-left: 0px;
                 }
 
