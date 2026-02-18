@@ -199,7 +199,7 @@ h1 {
     align-items: center;
 }
 
-.orange-btn > img {
+.orange-btn>img {
     width: 24px;
     margin-left: 10px;
 }
@@ -396,7 +396,7 @@ h1 {
 .block-pay-feed>img {
     width: 50%;
     height: auto;
-    margin-left: -45px;
+    margin-left: -40px;
 }
 
 .content-wrapper-pay {
@@ -409,7 +409,7 @@ h1 {
 
 }
 
-.content-wrapper-pay > img {
+.content-wrapper-pay>img {
     width: auto;
     height: 80px;
     margin-bottom: 30px;
@@ -431,7 +431,8 @@ h1 {
     line-height: 150%;
     color: var(--white-color);
 }
-.content-wrapper-pay .orange-btn{
+
+.content-wrapper-pay .orange-btn {
     margin-top: 50px;
 }
 
@@ -450,6 +451,10 @@ h1 {
 
     .container {
         padding: 100px 100px;
+    }
+
+    .container.pay-feed {
+        padding: 100px 40px;
     }
 
     h1 {
@@ -505,6 +510,31 @@ h1 {
 
     .block-welcome-footer p {
         width: 100%;
+    }
+
+    .block-pay-feed {
+        align-items: center;
+        padding: 80px 0px 95px 0px;
+    }
+
+    .content-wrapper-pay {
+        padding: 0px 0px 0px 20px;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pay-feed-list> :last-child .block-pay-feed {
+        align-items: flex-start;
+    }
+
+    .content-wrapper-pay h3 {
+        margin-bottom: 30px;
+    }
+
+    .content-wrapper-pay .orange-btn {
+        margin-top: 100px;
+        margin-right: auto;
     }
 
 
@@ -571,6 +601,30 @@ h1 {
             margin-bottom: 10px;
         }
 
+        .block-pay-feed {
+            flex-direction: column;
+        }
+
+        .block-pay-feed>img {
+            width: 60%;
+            margin-left: 0px;
+            margin-bottom: 50px;
+        }
+
+        .content-wrapper-pay {
+            padding: 0px;
+            width: 100%;
+        }
+
+        .pay-feed-list> :last-child .block-pay-feed {
+            align-items: center;
+        }
+
+        .content-wrapper-pay .orange-btn {
+            margin: auto;
+            margin-top: 50px;
+        }
+
 
         @media(max-width: 760px) {
 
@@ -606,6 +660,35 @@ h1 {
             .block-welcome-footer {
                 padding: 0px 12px;
             }
+
+            .container.pay-feed {
+                padding: 80px 20px;
+            }
+
+            .block-pay-feed>img {
+                width: calc(100% + 80px);
+                margin-left: -40px;
+            }
+
+            .pay-feed h2 {
+                text-align: center;
+                margin: auto;
+                margin-bottom: 56px;
+            }
+
+            .content-wrapper-pay {
+                width: calc(100% + 40px);
+                margin-left: -40px;
+            }
+
+            .block-pay-feed {
+                padding: 66px 0px;
+            }
+
+            .pay-feed-list> :last-child .block-pay-feed {
+                padding-bottom: 0px;
+            }
+
 
 
 
@@ -682,6 +765,31 @@ h1 {
                     width: 55px;
                     height: 46px;
                     margin-left: 0px;
+                }
+
+                .container.pay-feed {
+                    padding: 20px 10px 50px 10px;
+                }
+
+                .pay-feed h2 {
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 32px;
+                }
+
+                .block-pay-feed {
+                    padding: 48px 0px;
+                }
+
+                .block-pay-feed>img {
+                    width: calc(100% + 60px);
+                    margin-left: -40px;
+                }
+
+                .content-wrapper-pay h3 {
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 130%;
                 }
 
 
