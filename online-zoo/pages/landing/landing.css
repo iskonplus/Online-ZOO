@@ -182,7 +182,7 @@ h1 {
 
 }
 
-.favorite button {
+.orange-btn {
     background-color: var(--orange-color);
     text-transform: uppercase;
     padding: 26px 34px;
@@ -199,7 +199,7 @@ h1 {
     align-items: center;
 }
 
-.favorite button img {
+.orange-btn > img {
     width: 24px;
     margin-left: 10px;
 }
@@ -347,8 +347,93 @@ h1 {
     width: 24px;
 }
 
+/* --- pay-feed --- */
 
+#pay-feed {
+    background-color: var(--dark-blue-color);
+}
 
+.pay-feed h2 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: var(--white-color);
+    margin-bottom: 115px;
+}
+
+.pay-feed-list {
+    list-style: none;
+    counter-reset: item;
+    padding: 0;
+    color: var(--white-color)
+}
+
+.pay-feed-list li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 40px;
+    display: flex;
+}
+
+.pay-feed-list li::before {
+    content: "0" counter(item);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.block-pay-feed {
+    width: 100%;
+    border-top: 1px solid var(--white-color);
+    display: flex;
+    margin-top: 10px;
+    padding-top: 100px;
+    padding-bottom: 115px;
+    align-items: flex-start;
+}
+
+.block-pay-feed>img {
+    width: 50%;
+    height: auto;
+    margin-left: -45px;
+}
+
+.content-wrapper-pay {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px 120px 0px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.content-wrapper-pay > img {
+    width: auto;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.content-wrapper-pay h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: var(--white-color);
+    margin-bottom: 50px;
+}
+
+.content-wrapper-pay p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--white-color);
+}
+.content-wrapper-pay .orange-btn{
+    margin-top: 50px;
+}
 
 
 
@@ -560,7 +645,7 @@ h1 {
                     width: 22px;
                 }
 
-                .favorite button {
+                .orange-btn {
                     padding: 12px 60px;
                 }
 
@@ -620,7 +705,7 @@ h1 {
         scale: 1.2;
     }
 
-    .favorite button:hover {
+    .orange-btn:hover {
         background-color: var(--dark-orange-color);
     }
 
