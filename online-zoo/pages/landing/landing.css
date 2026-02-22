@@ -481,10 +481,6 @@ h1 {
     font-style: normal;
 }
 
-.slider__slide:hover figure h3 {
-    color: #ffffff62;
-}
-
 .slider__slide h3 {
     font-style: normal;
     font-weight: 400;
@@ -525,20 +521,25 @@ h1 {
     background-color: var(--dark-blue-color);
 }
 
+.container.pay-feed {
+    padding: 95px 20px 90px 20px;
+
+}
+
 .pay-feed h2 {
     font-weight: 600;
     font-size: 54px;
     line-height: 66px;
     text-transform: uppercase;
     color: var(--white-color);
-    margin-bottom: 115px;
+    margin-bottom: 108px;
 }
 
 .pay-feed-list {
     list-style: none;
     counter-reset: item;
     padding: 0;
-    color: var(--white-color)
+    color: var(--white-color);
 }
 
 .pay-feed-list li {
@@ -553,6 +554,13 @@ h1 {
     position: absolute;
     left: 0;
     font-weight: bold;
+    font-size: 24px;
+    padding: 0;
+    color: var(--white-color);
+    font-style: normal;
+    font-size: 24px;
+    line-height: 54%;
+    font-weight: 400;
 }
 
 .block-pay-feed {
@@ -561,12 +569,17 @@ h1 {
     display: flex;
     margin-top: 10px;
     padding-top: 100px;
-    padding-bottom: 115px;
+    padding-bottom: 112px;
     align-items: flex-start;
 }
 
+.block-pay-feed.make-donation {
+    padding-top: 95px;
+    padding-bottom: 98px;
+}
+
 .block-pay-feed>img {
-    width: 50%;
+    width: 41%;
     height: auto;
     margin-left: -40px;
 }
@@ -574,8 +587,8 @@ h1 {
 .content-wrapper-pay {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    padding: 20px 120px 0px;
+    width: 59%;
+    padding: 20px 85px 0px 160px;
     justify-content: flex-start;
     align-items: flex-start;
 
@@ -598,7 +611,7 @@ h1 {
 
 .content-wrapper-pay p {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 18px;
     line-height: 150%;
     color: var(--white-color);
@@ -652,9 +665,14 @@ h1 {
         margin-left: auto;
     }
 
-    .container.welcome {
+    .container.welcome,
+    .container.meet {
         padding-top: 100px;
         padding-bottom: 100px;
+    }
+
+    .container.meet {
+        padding-bottom: 150px;
     }
 
     .content-wrapper {
@@ -668,7 +686,8 @@ h1 {
         padding: 0;
     }
 
-    .content-wrapper h2 {
+    .content-wrapper h2,
+    .container.meet h2 {
         margin-bottom: 30px;
     }
 
@@ -700,13 +719,36 @@ h1 {
         align-items: flex-start;
     }
 
-    .content-wrapper-pay h3 {
+    .content-wrapper-pay h3,
+    .wrapper-slider-arrows {
         margin-bottom: 30px;
     }
 
     .content-wrapper-pay .orange-btn {
         margin-top: 100px;
         margin-right: auto;
+    }
+
+    .meet p {
+        width: 86%;
+        margin-bottom: 100px;
+    }
+
+    .wrapper-slider {
+        margin-bottom: 50px;
+    }
+
+    .wrapper-slider p {
+        margin-bottom: 30px;
+    }
+
+    .slider__slide figure img {
+        margin-bottom: 14px;
+    }
+
+    .slider__slide {
+        padding-bottom: 35px;
+
     }
 
 
@@ -881,12 +923,37 @@ h1 {
             }
 
             .slider__slide {
-                flex: 0 0 100%;
-                width: 100% !important;
+                flex: 0 0 calc(50% - 10px);
+                width: auto !important;
                 scroll-snap-align: start;
             }
 
+            .container.meet {
+                padding-bottom: 100px;
+            }
 
+            .container.meet h2 {
+                text-align: center;
+                max-width: 80%;
+            }
+
+            .meet p {
+                width: 100%;
+                margin-bottom: 50px;
+            }
+
+            .wrapper-slider h3 {
+                padding: 0px 15px;
+            }
+
+            .wrapper-slider p {
+                padding: 0px 15px;
+                margin-bottom: 21px;
+            }
+
+            .slider__slide {
+                padding-bottom: 11px;
+            }
 
 
             @media(max-width: 460px) {
@@ -968,6 +1035,10 @@ h1 {
                     padding: 20px 10px 50px 10px;
                 }
 
+                .container.meet {
+                    padding: 50px 10px;
+                }
+
                 .pay-feed h2 {
                     font-weight: 500;
                     font-size: 26px;
@@ -988,6 +1059,43 @@ h1 {
                     font-size: 26px;
                     line-height: 130%;
                 }
+
+                .slider__slide {
+                    flex: 0 0 100%;
+                    width: 50% !important;
+                    scroll-snap-align: start;
+                }
+
+                .container.meet h2 {
+                    max-width: 100%;
+                    font-weight: 500;
+                    font-size: 25px;
+                    line-height: 32px;
+                }
+
+                .meet p {
+                    width: 100%;
+                    margin-bottom: 50px;
+                    font-size: 18px;
+                    margin-bottom: 30px;
+                }
+
+                .wrapper-slider{
+                    margin-bottom: 0px;
+                }
+                .wrapper-slider h3 {
+                    padding: 0px 15px;
+                    font-size: 26px;
+                    line-height: 130%;
+                }
+                .wrapper-slider p {
+                    margin: 5px 0px 21px;
+                }
+
+                .meet .glass-dark-btn{
+                    display: none;
+                }
+
 
             }
         }
@@ -1035,6 +1143,10 @@ h1 {
     .glass-dark-btn:hover {
         background-color: var(--dark-blue-color);
         color: var(--white-color);
+    }
+
+    .slider__slide:hover figure h3 {
+        color: #ffffff62;
     }
 
 }
