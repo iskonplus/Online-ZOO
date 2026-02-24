@@ -522,7 +522,7 @@ h1 {
 }
 
 .container.pay-feed {
-    padding: 95px 20px 90px 20px;
+    padding: 95px 20px 0px 20px;
 
 }
 
@@ -621,6 +621,117 @@ h1 {
     margin-top: 50px;
 }
 
+/* --- our-users --- */
+
+#our-users {
+    width: 100%;
+    background: url(/assets/images/image-97.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.wrapper-our-users {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.wrapper-our-users h2 {
+    width: 80%;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: var(--white-color);
+    margin-bottom: 50px;
+}
+
+.wrapper-our-users p {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: var(--white-color);
+}
+
+.block-our-users-content {
+    flex: 0 0 40%;
+    flex-shrink: 0;
+}
+
+.block-our-users-slider {
+ /* flex: 0 0 60%;
+  flex-shrink: 1;
+  min-width: 0; */
+  max-width: 50%;
+  overflow: hidden;
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+/* .block-our-users-slider>.slider-inner {
+    margin-right: calc(61% - 35vw);
+} */
+
+.slider-inner {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-columns: calc((100% - 30px) / 2); 
+  column-gap: 30px;
+  row-gap: 30px;
+  margin-bottom: 60px;
+}
+
+.our-users-card {
+    background-color: #ffffff;
+    border-radius: 5px;
+    flex: 0 0 calc(50% - 30px);
+    height: 400px;
+}
+
+/* .block-our-users-slider {
+  flex: 0 0 60%;
+  min-width: 0;
+  position: relative;
+}
+
+.block-our-users-slider.slider__viewport {
+  overflow: hidden;
+}
+
+.slider-inner {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-columns: calc((100% - 30px) / 2);
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+.our-users-card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  height: 400px;
+} */
+
+
+
+
+
+
+.our-users .orange-btn {
+    margin-top: 375px;
+}
+
+.block-our-users-slider .wrapper-slider-arrows {
+    margin: 0px;
+    filter: brightness(0) invert(1);
+}
 
 
 @media(max-width: 1200px) {
@@ -1080,19 +1191,21 @@ h1 {
                     margin-bottom: 30px;
                 }
 
-                .wrapper-slider{
+                .wrapper-slider {
                     margin-bottom: 0px;
                 }
+
                 .wrapper-slider h3 {
                     padding: 0px 15px;
                     font-size: 26px;
                     line-height: 130%;
                 }
+
                 .wrapper-slider p {
                     margin: 5px 0px 21px;
                 }
 
-                .meet .glass-dark-btn{
+                .meet .glass-dark-btn {
                     display: none;
                 }
 
