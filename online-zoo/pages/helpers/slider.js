@@ -93,3 +93,4 @@ export function initSlider(root) {
   window.addEventListener("resize", recalc);
   recalc();
 }
+
