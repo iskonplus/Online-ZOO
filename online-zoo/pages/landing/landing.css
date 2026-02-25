@@ -207,6 +207,7 @@ h1 {
 .orange-btn>img,
 .glass-light-btn>img,
 .glass-btn>img {
+    transition: .3s;
     width: 24px;
     margin-left: 10px;
 }
@@ -636,7 +637,8 @@ h1 {
 }
 
 .container.our-users {
-    padding-top: 90px;
+    padding-top: 110px;
+    padding-bottom: 142px;
 }
 
 .wrapper-our-users {
@@ -710,7 +712,7 @@ h1 {
     height: 30px;
 }
 
-.our-users-card h4 {
+.our-users-card h3 {
     font-weight: 500;
     font-size: 26px;
     color: var(--black-color);
@@ -734,7 +736,7 @@ h1 {
 }
 
 .our-users .glass-light-btn {
-    margin-top: 1136px;
+    margin-top: 1120px;
     margin-left: 0;
     background-color: inherit;
     border: 1px solid var(--white-color);
@@ -761,6 +763,99 @@ h1 {
     transition: .3s;
     filter: brightness(0) invert(1);
 }
+
+/* --- care-for --- */
+.care-for{
+    padding-top: 135px;
+}
+.care-for h2 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--green-color);
+    margin: auto;
+    width: 45%;
+    margin-bottom: 55px;
+}
+
+.care-for>p {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    text-align: center;
+    color: var(--black-color);
+    margin: auto;
+    margin-bottom: 98px;
+    width: 37%;
+}
+
+.block-care-for-slider {
+    margin-bottom: 105px;
+}
+
+.slider-inner-care-for {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.care-for-card.image {
+    grid-column: span 2;
+    padding-bottom: 0px;
+}
+
+.care-for-card {
+    width: 100%;
+    background-color: var(--dark-blue-color);
+    padding-bottom: 50px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.care-for-card> img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 30px;
+}
+
+.care-for-card.image> img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 0px;
+}
+
+.care-for-card p {
+    height: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--white-color);
+    padding: 0px 25px;
+    margin-bottom: 50px;
+}
+
+
+.touch-animal {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 0px;
+}
+
+.care-for> button{
+    margin-bottom: 150px;
+}
+
+
 
 
 @media(max-width: 1200px) {
@@ -1176,7 +1271,7 @@ h1 {
                 top: 20px;
             }
 
-            .our-users-card h4 {
+            .our-users-card h3 {
                 width: 55%;
                 margin: 0px auto 30px;
             }
@@ -1368,7 +1463,7 @@ h1 {
                     top: 25px;
                 }
 
-                .our-users-card h4 {
+                .our-users-card h3 {
                     width: 85%;
                     margin-bottom: 20px;
                 }
