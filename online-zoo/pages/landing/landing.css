@@ -765,9 +765,10 @@ h1 {
 }
 
 /* --- care-for --- */
-.care-for{
+.care-for {
     padding-top: 135px;
 }
+
 .care-for h2 {
     font-weight: 600;
     font-size: 54px;
@@ -815,7 +816,7 @@ h1 {
     flex-direction: column;
 }
 
-.care-for-card> img {
+.care-for-card>img {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -823,16 +824,23 @@ h1 {
     margin-bottom: 30px;
 }
 
-.care-for-card.image> img {
+.care-for-card.image>img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     margin-bottom: 0px;
 }
 
-.care-for-card p {
+.wrapper-care-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     height: 100%;
+}
+
+.care-for-card p {
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
@@ -840,6 +848,10 @@ h1 {
     color: var(--white-color);
     padding: 0px 25px;
     margin-bottom: 50px;
+}
+
+.wrapper-care-card-content button {
+    margin-bottom: 0px;
 }
 
 
@@ -851,11 +863,13 @@ h1 {
     margin-bottom: 0px;
 }
 
-.care-for> button{
+.care-for>button {
     margin-bottom: 150px;
 }
 
-
+.slider-dots {
+    display: none;
+}
 
 
 @media(max-width: 1200px) {
@@ -1026,6 +1040,60 @@ h1 {
         margin-bottom: 50px;
     }
 
+    .care-for {
+        padding: 150px 135px;
+    }
+
+    .block-care-for-slider {
+        margin-bottom: 100px;
+    }
+
+    .care-for h2 {
+        width: 65%;
+        margin-bottom: 30px;
+    }
+
+    .care-for>p {
+        margin-bottom: 50px;
+        width: 55%;
+    }
+
+    .block-care-for-slider .slider-inner-care-for {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+
+        grid-template-areas:
+            "img img"
+            "c3  c2"
+            "c1  c4";
+    }
+
+    .block-care-for-slider .care-for-card.image+.care-for-card {
+        grid-area: c1;
+    }
+
+    .block-care-for-slider .care-for-card.image+.care-for-card+.care-for-card {
+        grid-area: c2;
+    }
+
+    .block-care-for-slider .care-for-card.image+.care-for-card+.care-for-card+.care-for-card {
+        grid-area: c3;
+    }
+
+    .block-care-for-slider .care-for-card.image+.care-for-card+.care-for-card+.care-for-card+.care-for-card {
+        grid-area: c4;
+    }
+
+
+    .block-care-for-slider .care-for-card.image {
+        grid-area: img;
+    }
+
+    .touch-animal {
+        width: calc(100% + 270px);
+        margin-left: -135px;
+    }
+
 
 
     @media(max-width: 1100px) {
@@ -1126,6 +1194,20 @@ h1 {
 
         .block-our-users-slider .wrapper-slider-arrows {
             margin-right: 0px;
+        }
+
+        .care-for h2,
+        .care-for>p {
+            width: 90%;
+        }
+
+        .care-for {
+            padding: 80px 20px;
+        }
+
+        .touch-animal {
+            width: calc(100% + 40px);
+            margin-left: -20px;
         }
 
 
@@ -1285,6 +1367,84 @@ h1 {
                 margin-bottom: 750px;
             }
 
+            .care-for h2,
+            .care-for>p {
+                width: 100%;
+            }
+
+            .care-for>p {
+                margin-bottom: 70px;
+            }
+
+            .care-for-card.image {
+                display: none;
+            }
+
+            .care-for-card {
+                flex: 0 0 100%;
+                flex-direction: row;
+                padding-bottom: 0px;
+                overflow: hidden;
+            }
+
+            .care-for-card>img {
+                margin-bottom: 0px;
+            }
+
+            .care-for-card img,
+            .wrapper-care-card-content {
+                width: 50%;
+            }
+
+            .wrapper-care-card-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 66px 20px 10px;
+            }
+
+            .care-for-card p {
+                height: auto;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .slider__viewport::-webkit-scrollbar {
+                display: none;
+            }
+
+            .slider-dots {
+                margin: auto;
+                display: block;
+                position: relative;
+                top: -50px;
+            }
+
+            .slider-dots ol {
+                display: flex;
+                gap: 20px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                justify-content: center;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                border: 1px solid var(--dark-blue-color);
+                background: transparent;
+            }
+
+            .dot.is-active {
+                background: var(--dark-blue-color);
+            }
+
+            .care-for>button {
+                margin-bottom: 100px;
+            }
 
 
             @media(max-width: 460px) {
@@ -1472,6 +1632,81 @@ h1 {
                     margin: 30px auto 450px auto;
                     padding: 12px 44px;
                 }
+
+                .care-for {
+                    padding: 50px 10px 80px;
+                }
+
+                .care-for h2 {
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 32px;
+                    padding: 0px 10px;
+                }
+
+                .care-for>p {
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 150%;
+                    padding: 0px 15px;
+                    margin-bottom: 30px;
+                }
+
+                .care-for-card {
+                    flex: 0 0 100%;
+                    flex-direction: column;
+                    padding-bottom: 0px;
+                    overflow: hidden;
+                    height: auto;
+                    position: relative;
+                }
+
+                .wrapper-care-card-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 15px 27px 77px;
+                    height: auto;
+                }
+                
+                .care-for-card button{
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                .care-for-card img,
+                .wrapper-care-card-content {
+                    width: 100%;
+                }
+
+                .care-for-card>img {
+                    height: 350px;
+                }
+
+                .slider-dots {
+                    top: -40px;
+                }
+
+                .block-care-for-slider {
+                    margin-bottom: 70px;
+                }
+
+                .care-for>button {
+                    margin-bottom: 80px;
+                    padding: 10px 27px;
+                    text-transform: capitalize;
+                }
+
+                .touch-animal {
+                    width: calc(100% + 20px);
+                    height: 189px;
+                    margin-left: -10px;
+                }
+
+
+
+
+
 
             }
         }
