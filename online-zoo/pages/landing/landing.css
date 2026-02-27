@@ -139,6 +139,7 @@ footer ul li a {
     height: 2px;
     background: var(--black-color);
     transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
 }
 
 .burger__line::before,
@@ -1280,7 +1281,6 @@ footer .block-social-contacts {
         }
 
         .burger.active .burger__line {
-            background-color: var(--white-color);
             background-color: transparent;
         }
 
