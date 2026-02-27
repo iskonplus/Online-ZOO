@@ -1,0 +1,149 @@
+.container.contact {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding-top: 0px;
+    padding-bottom: 150px;
+}
+
+.contact>img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 70px;
+}
+
+.wrapper-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+}
+
+.block-in-touch,
+.block-form {
+    width: 50%;
+    height: auto;
+}
+
+.block-in-touch h2 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: var(--green-color);
+    margin-bottom: 50px;
+}
+
+.block-in-touch p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--black-color);
+    padding-right: 100px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--black-color);
+    margin-bottom: 10px;
+}
+
+.form-group span {
+    color: var(--green-color);
+    margin-right: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    border: 1px solid var(--black-color);
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: none;
+}
+
+.block-form button {
+    background-color: var(--green-color);
+    padding: 26px 80px;
+}
+
+
+
+@media(max-width: 1200px) {
+    .wrapper-contact {
+        flex-wrap: wrap;
+    }
+
+    .block-in-touch,
+    .block-form {
+        width: 100%;
+    }
+
+    .block-in-touch {
+        text-align: center;
+    }
+
+
+    .block-in-touch p {
+        padding-right: 0px;
+    }
+
+    @media(max-width: 1100px) {
+
+
+        @media(max-width: 760px) {
+
+
+            @media(max-width: 460px) {
+
+                .wrapper-contact {
+                    gap: 50px;
+                }
+
+                .block-in-touch h2 {
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 32px;
+                    margin-bottom: 30px;
+                }
+
+                .block-in-touch p {
+                    font-size: 18px;
+                    line-height: 150%;
+                }
+
+                .block-form button {
+                    padding: 14px 58px;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media (hover: hover) {
+    .block-form button:hover {
+        background-color: var(--dark-green-color);
+    }
+}

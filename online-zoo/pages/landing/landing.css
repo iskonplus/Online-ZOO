@@ -15,6 +15,7 @@
     --dark-orange-color: #D26004;
     --dark-blue-color: #20113D;
     --green-color: #00A092;
+    --dark-green-color: #05786E;
 }
 
 html {
@@ -22,10 +23,9 @@ html {
 }
 
 body {
-    padding-top: 115px;
+    padding-top: 110px;
     position: relative;
 }
-
 
 /* --- header --- */
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online ZOO</title>
     <link rel="stylesheet" href="/pages/landing/landing.css">
+    <link rel="stylesheet" href="/pages/contact/contact.css">
     <link rel="icon" href="/assets/icons/Favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +32,7 @@
                     <li><a href="../landing/index.html#favorite">about</a></li>
                     <li><a href="../map/map.html">map</a></li>
                     <li><a href="../animal/animal.html">zoos</a></li>
-                    <li><a  class="active"  href="contact.html">contact us</a></li>
+                    <li><a class="active" href="contact.html">contact us</a></li>
                     <li><a href="https://www.figma.com/design/fVU1MLRYsTITqFphUZNGh8/Online-ZOO-Project--Copy-?node-id=44-9749&t=0XzLqjTAbUnRUz7Q-0"
                             target="_blank">design</a></li>
                 </ul>
@@ -65,7 +66,52 @@
         </div>
     </header>
 
-    <h1>Contacts</h1>
+    <main class="container contact">
+        <img src="/assets/images/Touch-animal.png" alt="animal">
+
+        <section class="wrapper-contact">
+            <div class="block-in-touch">
+                <h2>Get in touch</h2>
+                <p>Whether you have a question, or would like to say hello, we're happy to hear from you. Please use the
+                    form to send us a message and we'll get back to you as soon as we can. Whether you have a question,
+                    or would like to say hello, we're happy to hear from you. Please use the form to send us a message
+                    and we'll get back to you as soon as we can.</p>
+            </div>
+
+            <div class="block-form">
+                <form>
+
+                    <div class="form-group">
+                        <label for="name"><span>&#42;</span>Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="First and last name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><span>&#42;</span>Your Email Address </label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject"><span>&#42;</span>Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><span>&#42;</span>Message</label>
+                        <textarea id="message" name="message" placeholder="Enter your message" required rows="5"
+                            cols="30"></textarea>
+                    </div>
+
+                    <button class="orange-btn">send message<img src="/assets/icons/arrow-right.png" alt="arrow icon"
+                            class="arrow">
+                    </button>
+
+
+
+                </form>
+            </div>
+
+
+        </section>
+
+    </main>
 
     <footer>
         <div class="container footer">
