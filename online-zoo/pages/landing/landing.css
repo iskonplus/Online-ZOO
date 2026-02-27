@@ -1554,6 +1554,10 @@ footer .block-social-contacts {
                 justify-content: center;
             }
 
+            .slider-dots.our-users{
+                display: none;
+            }
+
             .dot {
                 width: 8px;
                 height: 8px;
@@ -1707,6 +1711,20 @@ footer .block-social-contacts {
                     width: 50% !important;
                     scroll-snap-align: start;
                 }
+                
+                .slider-dots.our-users {
+                    display: block;
+                    top: -20px;
+                }
+
+                .dot.our-users{
+                    border-color: var(--white-color);
+                }
+
+                .dot.our-users.is-active{
+                    background-color: var(--white-color);
+                }
+
 
                 .container.meet h2 {
                     max-width: 100%;
