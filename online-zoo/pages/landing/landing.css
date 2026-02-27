@@ -17,11 +17,24 @@
     --green-color: #00A092;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 115px;
+    position: relative;
+}
+
 
 /* --- header --- */
 
 header {
+    width: 100vw;
     background-color: var(--orange-color);
+    position: fixed;
+    z-index: 5;
+    top: 0;
 }
 
 .container {
@@ -37,7 +50,7 @@ header {
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 30px 15px;
+    padding: 28px 15px;
 }
 
 .wrapper-zoo-logo {
@@ -146,6 +159,12 @@ footer ul li a {
     top: 12px;
 }
 
+.burger__line,
+.burger__line::before,
+.burger__line::after {
+    transition: all 0.3s ease;
+}
+
 /* --- favorite --- */
 
 #favorite {
@@ -154,6 +173,7 @@ footer ul li a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    scroll-margin-top: 115px;
 }
 
 .container {
@@ -1206,7 +1226,6 @@ footer .block-social-contacts {
     }
 
 
-
     @media(max-width: 1100px) {
 
         .header ul {
@@ -1219,13 +1238,19 @@ footer .block-social-contacts {
             background-color: var(--dark-blue-color);
             padding: 120px 60px;
             color: var(--white-color);
+            margin-right: 0px;
             top: 0;
-            left: 0;
-            left: -160%;
+            right: 0;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .header ul.active {
+            transform: translateX(0);
         }
 
         .header ul li {
-            margin-bottom: 25px;
+            margin: 0px auto 40px;
 
         }
 
@@ -1243,6 +1268,31 @@ footer .block-social-contacts {
 
         .burger {
             display: block;
+            z-index: 10;
+        }
+
+
+        .burger.active {
+            position: absolute;
+            margin-right: 0px;
+            top: 30px;
+            right: 60px;
+        }
+
+        .burger.active .burger__line {
+            background-color: transparent;
+        }
+
+        .burger.active .burger__line::before {
+            top: 0;
+            transform: rotate(45deg);
+            background-color: var(--white-color);
+        }
+
+        .burger.active .burger__line::after {
+            top: 0;
+            transform: rotate(-45deg);
+            background-color: var(--white-color);
         }
 
         .block-welcome {
@@ -1554,7 +1604,7 @@ footer .block-social-contacts {
                 justify-content: center;
             }
 
-            .slider-dots.our-users{
+            .slider-dots.our-users {
                 display: none;
             }
 
@@ -1711,17 +1761,17 @@ footer .block-social-contacts {
                     width: 50% !important;
                     scroll-snap-align: start;
                 }
-                
+
                 .slider-dots.our-users {
                     display: block;
                     top: -20px;
                 }
 
-                .dot.our-users{
+                .dot.our-users {
                     border-color: var(--white-color);
                 }
 
-                .dot.our-users.is-active{
+                .dot.our-users.is-active {
                     background-color: var(--white-color);
                 }
 
