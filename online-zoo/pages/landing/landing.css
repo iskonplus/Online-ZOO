@@ -49,7 +49,9 @@ header {
     height: 50px;
 }
 
-.header ul {
+
+.header ul,
+footer ul {
     display: flex;
     list-style: none;
     justify-content: space-between;
@@ -57,11 +59,13 @@ header {
     margin-right: 30px;
 }
 
-.header ul li {
+.header ul li,
+footer ul li {
     margin-right: 45px;
 }
 
-.header ul li a {
+.header ul li a,
+footer ul li a {
     text-decoration: none;
     font-family: 'Montserrat';
     font-style: normal;
@@ -71,7 +75,6 @@ header {
     text-transform: uppercase;
     color: var(--black-color);
     transition: .3s;
-
 }
 
 .block-social-contacts {
@@ -743,7 +746,8 @@ h1 {
     padding: 26px 74px;
 }
 
-.our-users .glass-light-btn>img {
+.our-users .glass-light-btn>img,
+footer .glass-light-btn.glass-light-btn>img {
     margin-left: 15px;
     filter: brightness(0) invert(1);
     transition: .3s;
@@ -870,6 +874,78 @@ h1 {
 .slider-dots {
     display: none;
 }
+
+/* ----footer---- */
+
+footer {
+    background-color: var(--dark-blue-color);
+}
+.container.footer{
+    padding: 70px 20px 36px;
+}
+
+.wrapper-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper-footer> :first-child {
+    border-bottom:1px solid var(--white-color);
+    padding-bottom: 70px;
+}
+.wrapper-footer> :Last-child {
+    padding-top: 38px;
+}
+
+.block-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.block-logo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 65px;
+}
+
+footer ul,
+footer ul li {
+    margin-right: 0px;
+}
+
+footer ul {
+    gap: 46px;
+}
+
+footer ul li a {
+    color: var(--white-color);
+}
+
+.footer-logo {
+    height: 50px;
+}
+
+footer .glass-light-btn {
+    margin-top: 0px;
+    margin-left: 0;
+    background-color: inherit;
+    border: 1px solid var(--white-color);
+    padding: 26px 33px;
+}
+
+.outside-links ul{
+gap:50px;
+}
+
+.outside-links ul li a {
+font-weight: 400;
+font-size: 18px;
+line-height: 150%;
+}
+
 
 
 @media(max-width: 1200px) {
@@ -1668,8 +1744,8 @@ h1 {
                     padding: 15px 27px 77px;
                     height: auto;
                 }
-                
-                .care-for-card button{
+
+                .care-for-card button {
                     position: absolute;
                     bottom: 0;
                 }
@@ -1760,6 +1836,7 @@ h1 {
         color: #ffffff62;
     }
 
+    footer .glass-light-btn:hover,
     .our-users .glass-light-btn:hover,
     .block-our-users-slider .wrapper-slider-arrows button:hover {
 
@@ -1768,8 +1845,15 @@ h1 {
     }
 
     .block-our-users-slider .wrapper-slider-arrows button:hover img,
+    footer .glass-light-btn:hover img,
     .our-users .glass-light-btn:hover img {
         filter: none;
+    }
+
+    footer ul li:hover,
+    .wrapper-footer-logo:hover {
+        transition: .3s;
+        scale: 1.1;
     }
 
 }
