@@ -1280,6 +1280,7 @@ footer .block-social-contacts {
         }
 
         .burger.active .burger__line {
+            background-color: var(--white-color);
             background-color: transparent;
         }
 
