@@ -90,6 +90,10 @@ footer ul li a {
     transition: .3s;
 }
 
+    .header ul li a.active {
+        color: var(--green-color);
+    }
+
 .block-social-contacts {
     width: 180px;
     display: flex;
