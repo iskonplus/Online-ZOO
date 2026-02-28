@@ -11,11 +11,11 @@
 :root {
     --black-color: #000000;
     --white-color: #ffffff;
-    --orange-color: #F58021;
-    --dark-orange-color: #D26004;
-    --dark-blue-color: #20113D;
-    --green-color: #00A092;
-    --dark-green-color: #05786E;
+    --orange-color: #f58021;
+    --dark-orange-color: #d26004;
+    --dark-blue-color: #20113d;
+    --green-color: #00a092;
+    --dark-green-color: #05786e;
 }
 
 html {
@@ -62,7 +62,6 @@ header {
     height: 50px;
 }
 
-
 .header ul,
 footer ul {
     display: flex;
@@ -80,14 +79,14 @@ footer ul li {
 .header ul li a,
 footer ul li a {
     text-decoration: none;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 150%;
     text-transform: uppercase;
     color: var(--black-color);
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .header ul li a.active {
@@ -108,19 +107,19 @@ footer ul li a {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .you-tube {
-    background-color: #FF0000;
+    background-color: #ff0000;
 }
 
 .instagram {
-    background-color: #C13584;
+    background-color: #c13584;
 }
 
 .facebook {
-    background-color: #3B5998;
+    background-color: #3b5998;
 }
 
 .burger {
@@ -207,7 +206,6 @@ h1 {
     color: var(--black-color);
     margin-right: 70%;
     margin-bottom: 40px;
-
 }
 
 .orange-btn,
@@ -225,18 +223,18 @@ h1 {
     font-size: 18px;
     line-height: 22px;
     border: none;
-    transition: .3s;
+    transition: 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .glass-dark-btn img,
 .orange-btn>img,
 .glass-light-btn>img,
 .glass-btn>img {
-    transition: .3s;
+    transition: 0.3s;
     width: 24px;
     margin-left: 10px;
 }
@@ -280,7 +278,8 @@ h1 {
     line-height: 66px;
     text-transform: uppercase;
     color: var(--green-color);
-    text-shadow: 0px 0px 1px var(--black-color),
+    text-shadow:
+        0px 0px 1px var(--black-color),
         0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 50px;
 }
@@ -304,7 +303,7 @@ h1 {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    color: #F58021;
+    color: #f58021;
     padding-top: 50px;
     padding-bottom: 50px;
     justify-content: space-between;
@@ -364,24 +363,23 @@ h1 {
     align-items: center;
     position: relative;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
     padding-right: 90px;
     overflow: hidden;
 }
-
 
 .block-welcome-footer button span {
     width: 75px;
     height: 75px;
     margin-left: 10px;
-    background-color: #F58021;
+    background-color: #f58021;
     position: absolute;
     top: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .3s;
+    transition: 0.3s;
     border-radius: 4px;
 }
 
@@ -443,7 +441,7 @@ h1 {
     border: 2px solid var(--dark-blue-color);
     border-radius: 5px;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
     background-color: inherit;
 }
 
@@ -468,10 +466,9 @@ h1 {
     list-style: none;
     padding: 0;
     margin: 0;
-    transition: transform .35s ease;
+    transition: transform 0.35s ease;
     will-change: transform;
 }
-
 
 .slider__slide {
     width: 440px;
@@ -509,7 +506,7 @@ h1 {
     color: var(--white-color);
     padding: 13px 16px;
     background-color: var(--dark-blue-color);
-    transition: .3s;
+    transition: 0.3s;
     border-radius: 5px 0px;
     font-style: normal;
 }
@@ -556,7 +553,6 @@ h1 {
 
 .container.pay-feed {
     padding: 95px 20px 0px 20px;
-
 }
 
 .pay-feed h2 {
@@ -624,7 +620,6 @@ h1 {
     padding: 20px 85px 0px 160px;
     justify-content: flex-start;
     align-items: flex-start;
-
 }
 
 .content-wrapper-pay>img {
@@ -730,7 +725,7 @@ h1 {
 }
 
 .our-users-card .note {
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 150px;
@@ -776,7 +771,7 @@ h1 {
 footer .glass-light-btn.glass-light-btn>img {
     margin-left: 15px;
     filter: brightness(0) invert(1);
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .block-our-users-slider .wrapper-slider-arrows {
@@ -785,12 +780,12 @@ footer .glass-light-btn.glass-light-btn>img {
 
 .block-our-users-slider .wrapper-slider-arrows button {
     margin: 0px;
-    transition: .3s;
+    transition: 0.3s;
     border-color: var(--white-color);
 }
 
 .block-our-users-slider .wrapper-slider-arrows button img {
-    transition: .3s;
+    transition: 0.3s;
     filter: brightness(0) invert(1);
 }
 
@@ -885,7 +880,6 @@ footer .glass-light-btn.glass-light-btn>img {
     margin-bottom: 0px;
 }
 
-
 .touch-animal {
     width: 100%;
     height: auto;
@@ -923,7 +917,7 @@ footer {
     padding-bottom: 70px;
 }
 
-.wrapper-footer> :Last-child {
+.wrapper-footer> :last-child {
     padding-top: 38px;
 }
 
@@ -985,12 +979,10 @@ footer .block-social-contacts {
 
 /* ----pop-up-container---- */
 
-
-
 .pop-up-container {
     width: 100vw;
     height: auto;
-    background-color: color-mix(in srgb, var(--black-color) 30%, transparent);
+    background-color: color-mix(in srgb, var(--black-color) 50%, transparent);
     position: fixed;
     inset: 0;
     z-index: 6;
@@ -1003,19 +995,20 @@ footer .block-social-contacts {
     visibility: hidden;
     pointer-events: none;
 
-    transition: opacity 250ms ease, visibility 250ms ease;
-    padding: 20px;
-
+    transition:
+        opacity 250ms ease,
+        visibility 250ms ease;
+    padding: 40px;
 }
 
 .wrapper-pop-up {
-     width: 100%;
+    width: 100%;
     max-width: 1160px;
     height: auto;
     background-color: var(--white-color);
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0px 0px 15px color-mix(in srgb, var(--black-color)30%, transparent);
+    box-shadow: 0px 0px 15px color-mix(in srgb, var(--black-color) 30%, transparent);
     position: relative;
 }
 
@@ -1035,9 +1028,8 @@ footer .block-social-contacts {
     border: none;
     cursor: pointer;
     z-index: 7;
-    transition: .3s;
+    transition: 0.3s;
 }
-
 
 .modal__close::before,
 .modal__close::after {
@@ -1045,11 +1037,12 @@ footer .block-social-contacts {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 22px;
+    width: 30px;
     height: 2px;
     background: var(--white-color);
     transform-origin: center;
     transition: 0.3s;
+    border-radius: 2px;
 }
 
 .modal__close::before {
@@ -1113,11 +1106,19 @@ html.no-scroll {
     padding: 21px 40px;
 }
 
+.text-full,
+.text-short {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
 
+.text-short {
+    display: none;
+}
 
-
-@media(max-width: 1200px) {
-
+@media (max-width: 1200px) {
     .wrapper.header {
         padding: 30px 100px;
     }
@@ -1328,7 +1329,6 @@ html.no-scroll {
         grid-area: c4;
     }
 
-
     .block-care-for-slider .care-for-card.image {
         grid-area: img;
     }
@@ -1362,9 +1362,24 @@ html.no-scroll {
         margin-right: -20px;
     }
 
+    .wrapper-pop-up img {
+        margin-bottom: 30px;
+    }
 
-    @media(max-width: 1100px) {
+    .wrapper-pop-up h2 {
+        margin-bottom: 20px;
+    }
 
+    .wrapper-pop-up p {
+        margin-bottom: 30px;
+    }
+
+    .block-amount {
+        margin-bottom: 30px;
+        padding: 0px 15px;
+    }
+
+    @media (max-width: 1100px) {
         .header ul {
             height: 100vh;
             display: flex;
@@ -1388,7 +1403,6 @@ html.no-scroll {
 
         .header ul li {
             margin: 0px auto 40px;
-
         }
 
         .header ul li a {
@@ -1396,7 +1410,6 @@ html.no-scroll {
             font-size: 18px;
             text-align: center;
             font-weight: 600;
-
         }
 
         .block-social-contacts {
@@ -1407,7 +1420,6 @@ html.no-scroll {
             display: block;
             z-index: 10;
         }
-
 
         .burger.active {
             position: absolute;
@@ -1514,16 +1526,21 @@ html.no-scroll {
 
         .wrapper-footer> :last-child {
             flex-wrap: wrap-reverse;
-
         }
 
         .block-footer .block-social-contacts {
             display: flex;
         }
 
+        .wrapper-pop-up h2 {
+            padding: 0px 100px;
+        }
 
-        @media(max-width: 760px) {
+        .wrapper-pop-up p {
+            padding: 0px 100px;
+        }
 
+        @media (max-width: 760px) {
             .wrapper.header {
                 padding: 30px 20px;
             }
@@ -1787,9 +1804,65 @@ html.no-scroll {
                 margin-top: 0px;
             }
 
+            .pop-up-container {
+                padding: 0px 20px;
+            }
 
-            @media(max-width: 460px) {
+            .wrapper-pop-up img {
+                margin-bottom: 20px;
+            }
 
+            .wrapper-pop-up h2 {
+                padding: 0px 10px;
+                font-weight: 500;
+                font-size: 42px;
+                line-height: 51px;
+            }
+
+            .wrapper-pop-up p {
+                padding: 0px 62px;
+                margin-bottom: 20px;
+            }
+
+            .block-amount {
+                display: grid;
+                grid-template-columns: repeat(3, 135px);
+                gap: 20px;
+                justify-content: center;
+                align-items: stretch;
+                margin-bottom: 40px;
+            }
+
+            .text-full {
+                display: none;
+            }
+
+            .text-short {
+                display: block;
+            }
+
+        }
+
+
+
+        @media (max-width: 515px) {
+            .block-amount {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                margin-bottom: 35px;
+            }
+
+            .wrapper-pop-up h2 {
+                font-size: 38px;
+            }
+
+            .wrapper-pop-up p {
+                padding: 0px 10px;
+                margin-bottom: 20px;
+            }
+
+
+            @media (max-width: 460px) {
                 #favorite {
                     width: 100%;
                     background-size: 150%;
@@ -1808,7 +1881,6 @@ html.no-scroll {
                 .favorite p {
                     margin-right: auto;
                 }
-
 
                 .burger {
                     width: 22px;
@@ -1911,7 +1983,6 @@ html.no-scroll {
                 .dot.our-users.is-active {
                     background-color: var(--white-color);
                 }
-
 
                 .container.meet h2 {
                     max-width: 100%;
@@ -2058,7 +2129,6 @@ html.no-scroll {
                     margin-left: -10px;
                 }
 
-
                 .container.footer {
                     padding: 50px 10px;
                 }
@@ -2078,7 +2148,7 @@ html.no-scroll {
                     font-size: 16px;
                     line-height: 20px;
                     text-transform: uppercase;
-                    transition: .3s;
+                    transition: 0.3s;
                 }
 
                 footer .glass-light-btn {
@@ -2118,12 +2188,26 @@ html.no-scroll {
                     justify-content: space-around;
                 }
 
+                .block-amount {
+                    gap: 10px;
+                    margin-bottom: 30px;
+                }
+
+                .block-amount .green-btn {
+                    padding: 10px 20px;
+                }
+
+                            .wrapper-pop-up h2 {
+                font-size: 26px;
+            }
+
+
+
             }
         }
     }
-
-
 }
+
 
 @media (hover: hover) {
     .header ul li a:hover {
@@ -2157,7 +2241,7 @@ html.no-scroll {
 
     .glass-btn:hover img,
     .glass-dark-btn:hover img {
-        transition: .3s;
+        transition: 0.3s;
         filter: brightness(0) invert(1);
     }
 
@@ -2173,9 +2257,8 @@ html.no-scroll {
     footer .glass-light-btn:hover,
     .our-users .glass-light-btn:hover,
     .block-our-users-slider .wrapper-slider-arrows button:hover {
-
         background-color: var(--white-color);
-        color: var(--dark-blue-color)
+        color: var(--dark-blue-color);
     }
 
     .block-our-users-slider .wrapper-slider-arrows button:hover img,
@@ -2186,7 +2269,7 @@ html.no-scroll {
 
     footer ul li:hover,
     .wrapper-footer-logo:hover {
-        transition: .3s;
+        transition: 0.3s;
         scale: 1.1;
     }
 
@@ -2195,8 +2278,7 @@ html.no-scroll {
         scale: 1.3;
     }
 
-    .block-amount .green-btn:hover{
-    background-color: var(--dark-green-color);
-}
-
+    .block-amount .green-btn:hover {
+        background-color: var(--dark-green-color);
+    }
 }
