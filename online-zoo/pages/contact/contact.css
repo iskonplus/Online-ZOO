@@ -2,8 +2,7 @@
     width: 100%;
     max-width: 1400px;
     margin: auto;
-    padding-top: 0px;
-    padding-bottom: 150px;
+    padding: 0px 0px 150px 0px;
 }
 
 .contact>img {
@@ -11,7 +10,7 @@
     height: auto;
     object-fit: cover;
     object-position: center;
-    margin-bottom: 70px;
+    margin-bottom: 150px;
 }
 
 .wrapper-contact {
@@ -47,7 +46,8 @@
 .form-group {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 29px;
+    position: relative;
 }
 
 .form-group label {
@@ -72,24 +72,61 @@
     font-size: 18px;
     line-height: 150%;
     border: 1px solid var(--black-color);
+    transition: .3s;
 }
 
-textarea {
+.form-group textarea {
     width: 100%;
     min-height: 120px;
+    padding: 18px 20px;
     resize: none;
 }
 
 .block-form button {
     background-color: var(--green-color);
-    padding: 26px 80px;
+    padding: 26px 84px;
+    margin-top: 68px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    box-shadow: 0px 4px 30px color-mix(in srgb, var(--green-color) 30%, transparent);
+    border: 1px solid var(--green-color);
+    border-radius: 5px;
+}
+
+.error {
+    display: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #F58021;
+    position: absolute;
+    bottom: -30px
+}
+
+.form-group input.touched:invalid~.error,
+.form-group textarea.touched:invalid~.error {
+    display: block;
+}
+
+.form-group input.touched:invalid,
+.form-group textarea.touched:invalid {
+    background: rgba(245, 128, 33, 0.2);
+    border: 1px solid #F58021;
 }
 
 
-
 @media(max-width: 1200px) {
+
+    .contact>img {
+        margin-bottom: 50px;
+    }
+
     .wrapper-contact {
         flex-wrap: wrap;
+        gap: 50px;
     }
 
     .block-in-touch,
@@ -102,17 +139,58 @@ textarea {
     }
 
 
+    .block-in-touch h2 {
+        margin-bottom: 30px;
+    }
+
     .block-in-touch p {
-        padding-right: 0px;
+        padding: 0px 180px;
+    }
+
+    form {
+        padding: 0px 180px;
+    }
+
+    .block-form button {
+        margin-top: 50px;
     }
 
     @media(max-width: 1100px) {
+        .block-in-touch p {
+            padding: 0px 100px;
+        }
+
+        form {
+            padding: 0px 100px;
+        }
 
 
         @media(max-width: 760px) {
+            .container.contact {
+                padding-bottom: 100px;
+            }
+
+            .block-in-touch p {
+                padding: 0px 20px;
+            }
+
+            form {
+                padding: 0px 20px;
+            }
+
+            .block-form button {
+                margin: 50px auto 0px;
+            }
 
 
             @media(max-width: 460px) {
+                .container.contact {
+                    padding-bottom: 80px;
+                }
+
+                .contact>img {
+                    margin-bottom: 30px;
+                }
 
                 .wrapper-contact {
                     gap: 50px;
@@ -128,12 +206,17 @@ textarea {
                 .block-in-touch p {
                     font-size: 18px;
                     line-height: 150%;
+                    padding: 0px 10px;
                 }
 
                 .block-form button {
                     padding: 14px 58px;
                     font-size: 18px;
                     line-height: 22px;
+                }
+
+                form {
+                    padding: 0px 10px;
                 }
             }
         }
