@@ -26,6 +26,7 @@ body {
     padding-top: 110px;
     position: relative;
 }
+
 /* img */
 /* --- header --- */
 
@@ -185,7 +186,7 @@ footer ul li a {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    padding: 125px 20px;
+    padding: 125px 20px 130px;
 }
 
 h1 {
@@ -481,11 +482,19 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: .3s;
 }
 
 .slider__slide figure {
     position: relative;
 }
+
+.slider-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
 
 .slider__slide figure img {
     width: 100%;
@@ -804,7 +813,7 @@ footer .glass-light-btn.glass-light-btn>img {
     color: var(--green-color);
     margin: auto;
     width: 45%;
-    margin-bottom: 55px;
+    margin-bottom: 50px;
 }
 
 .care-for>p {
@@ -840,15 +849,12 @@ footer .glass-light-btn.glass-light-btn>img {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    transition: .3s;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
-.care-for-card>img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    margin-bottom: 30px;
-}
+
 
 .care-for-card.image>img {
     width: 100%;
@@ -858,12 +864,20 @@ footer .glass-light-btn.glass-light-btn>img {
     margin-bottom: 0px;
 }
 
+.care-for-card .care-for-card-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    /* margin-bottom: 30px; */
+}
+
 .wrapper-care-card-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    /* height: auto; */
 }
 
 .care-for-card p {
@@ -872,8 +886,8 @@ footer .glass-light-btn.glass-light-btn>img {
     line-height: 150%;
     text-align: center;
     color: var(--white-color);
-    padding: 0px 25px;
-    margin-bottom: 50px;
+    padding: 22px 25px;
+    margin-bottom: 35px;
 }
 
 .wrapper-care-card-content button {
@@ -1715,7 +1729,7 @@ html.no-scroll {
                 overflow: hidden;
             }
 
-            .care-for-card>img {
+            .care-for-card .care-for-card-image {
                 margin-bottom: 0px;
             }
 
@@ -2105,7 +2119,7 @@ html.no-scroll {
                     width: 100%;
                 }
 
-                .care-for-card>img {
+                .care-for-card .care-for-card-image {
                     height: 350px;
                 }
 
@@ -2197,9 +2211,9 @@ html.no-scroll {
                     padding: 10px 20px;
                 }
 
-                            .wrapper-pop-up h2 {
-                font-size: 26px;
-            }
+                .wrapper-pop-up h2 {
+                    font-size: 26px;
+                }
 
 
 
@@ -2252,6 +2266,11 @@ html.no-scroll {
 
     .slider__slide:hover figure h3 {
         color: #ffffff62;
+    }
+
+    .care-for-card:not(:first-child):hover,
+    .slider__slide:hover {
+        scale: 1.03;
     }
 
     footer .glass-light-btn:hover,
