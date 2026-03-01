@@ -867,7 +867,7 @@ footer .glass-light-btn.glass-light-btn>img {
 .care-for-card .care-for-card-image {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     /* margin-bottom: 30px; */
 }
@@ -1722,7 +1722,7 @@ html.no-scroll {
                 display: none;
             }
 
-            .care-for-card {
+            .care-for-card  {
                 flex: 0 0 100%;
                 flex-direction: row;
                 padding-bottom: 0px;
@@ -1731,9 +1731,10 @@ html.no-scroll {
 
             .care-for-card .care-for-card-image {
                 margin-bottom: 0px;
+                
             }
 
-            .care-for-card img,
+            .care-for-card .care-for-card-image,
             .wrapper-care-card-content {
                 width: 50%;
             }
@@ -2114,7 +2115,7 @@ html.no-scroll {
                     bottom: 0;
                 }
 
-                .care-for-card img,
+                .care-for-card .care-for-card-image,
                 .wrapper-care-card-content {
                     width: 100%;
                 }
