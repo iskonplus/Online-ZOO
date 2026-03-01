@@ -4,6 +4,7 @@ export function initSlider(root) {
   const track = root.querySelector(".slider__track");
   const viewport = root.querySelector(".slider__viewport");
   const arrows = root.querySelector(".wrapper-slider-arrows");
+ 
   if (!track || !viewport || !arrows) return;
 
   const SLIDE_MS = 350;
@@ -18,6 +19,7 @@ export function initSlider(root) {
   let timer = null;
   let isBouncing = false;
 
+
   const px = (v) => (v && v !== "normal" ? parseFloat(v) : 0);
 
   function gapPx() {
@@ -26,6 +28,7 @@ export function initSlider(root) {
   }
 
   function calcStep() {
+    console.log(track);
     const first = track.children[0];
     if (!first) return 0;
     return Math.round(first.getBoundingClientRect().width + gapPx());

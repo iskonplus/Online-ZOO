@@ -2,6 +2,8 @@ import { initSlider } from "/pages/helpers/slider.js";
 
 initSlider(document.querySelector(".meet"));
 initSlider(document.querySelector(".our-users"));
+initSlider(document.querySelector(".zoos"));
+
 
 const burgerBtn = document.querySelector(".burger");
 const menu = document.querySelector(".header ul");
@@ -60,6 +62,10 @@ function handlerPopUp() {
 
 const leaveFeedBackBtn = document.querySelector(".our-users .glass-light-btn");
 
-leaveFeedBackBtn.addEventListener("click", () =>
+if (leaveFeedBackBtn) {
+  leaveFeedBackBtn.addEventListener("click", () =>
   window.location.assign("/pages/contact/contact.html#contact-form"),
 );
+}
+
+
