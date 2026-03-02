@@ -23,18 +23,20 @@ html {
 }
 
 body {
-    padding-top: 110px;
+    /* padding-top: 110px; */
     position: relative;
 }
 
+.tittle-hidden{
+    display: none;
+}
 /* img */
 /* --- header --- */
 
 header {
     width: 100vw;
     background-color: var(--orange-color);
-    position: fixed;
-    z-index: 5;
+    /* position: fixed; */
     top: 0;
 }
 
@@ -63,7 +65,9 @@ header {
     width: 96px;
     height: 50px;
 }
-
+.header ul{
+    z-index: 6;
+}
 .header ul,
 footer ul {
     display: flex;
@@ -190,7 +194,9 @@ footer ul li a {
     padding: 125px 20px 130px;
 }
 
-h1 {
+
+/* .main-title */
+.main-title {
     color: var(--green-color);
     font-weight: 800;
     font-size: 82px;
@@ -1362,7 +1368,7 @@ input[type="checkbox"] {
         padding: 100px 40px;
     }
 
-    h1 {
+    .main-title {
         margin-right: 10%;
         margin-bottom: 30px;
     }
@@ -1828,7 +1834,7 @@ input[type="checkbox"] {
                 padding: 45px 20px;
             }
 
-            h1 {
+            .main-title {
                 margin-right: auto;
                 font-size: 72px;
                 line-height: 88px;
@@ -2191,7 +2197,7 @@ input[type="checkbox"] {
                         padding: 20px 10px 210px 10px;
                     }
 
-                    h1 {
+                    .main-title {
                         font-size: 40px;
                         line-height: 49px;
                     }
