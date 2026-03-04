@@ -179,7 +179,7 @@ footer ul li a {
 
 #favorite {
     width: 100%;
-    background: url("../../assets/images/Background.png");
+    background: url("/assets/images/Background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -679,7 +679,7 @@ footer ul li a {
 
 #our-users {
     width: 100%;
-    background: url(/assets/images/image-97.png);
+    background: url("/assets/images/image-97.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
