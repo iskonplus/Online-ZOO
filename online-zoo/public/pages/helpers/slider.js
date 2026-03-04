@@ -28,7 +28,6 @@ export function initSlider(root) {
   }
 
   function calcStep() {
-    console.log(track);
     const first = track.children[0];
     if (!first) return 0;
     return Math.round(first.getBoundingClientRect().width + gapPx());
