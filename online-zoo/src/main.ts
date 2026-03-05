@@ -1,4 +1,7 @@
-import { getPets } from "./pages/landing/pet";;
-const pets = getPets();
+import { getPets } from "../pages/landing/pet";
 
-console.log( pets );
+document.addEventListener("DOMContentLoaded", (): void => {
+  const pets = getPets();
+
+  console.log(pets);
+});
