@@ -22,50 +22,50 @@ let popUpBtn;
 let popUp;
 let isLoaded = false;
 
-const makeDonateBtns = document.querySelectorAll(
-  ".footer .glass-light-btn, .block-welcome-footer button, .content-wrapper-pay .orange-btn"
-);
+// const makeDonateBtns = document.querySelectorAll(
+//   ".footer .glass-light-btn, .block-welcome-footer button, .content-wrapper-pay .orange-btn"
+// );
 
-const html = document.documentElement;
-let isPopUpHidden = true;
+// const html = document.documentElement;
+// let isPopUpHidden = true;
 
-const response = await fetch("../popup/popup.html");
-const htmlPopup = await response.text();
+// const response = await fetch("../popup/popup.html");
+// const htmlPopup = await response.text();
 
-makeDonateBtns.forEach((btn) => {
-  btn.addEventListener("click", () => handlerPopUp());
-});
+// makeDonateBtns.forEach((btn) => {
+//   btn.addEventListener("click", () => handlerPopUp());
+// });
 
-function handlerPopUp() {
-  if (!isLoaded) {
-    document.body.insertAdjacentHTML("beforeend", htmlPopup);
+// function handlerPopUp() {
+//   if (!isLoaded) {
+//     document.body.insertAdjacentHTML("beforeend", htmlPopup);
 
-    popUp = document.querySelector(".pop-up-container");
-    popUpBtn = document.querySelector(".modal__close");
+//     popUp = document.querySelector(".pop-up-container");
+//     popUpBtn = document.querySelector(".modal__close");
 
-    popUpBtn.addEventListener("click", handlerPopUp);
+//     popUpBtn.addEventListener("click", handlerPopUp);
 
-    isLoaded = true;
-  }
+//     isLoaded = true;
+//   }
 
-  if (isPopUpHidden) {
-    popUp.classList.add("open");
-    html.classList.add("no-scroll");
-    isPopUpHidden = false;
-  } else {
-    popUp.classList.remove("open");
-    html.classList.remove("no-scroll");
-    isPopUpHidden = true;
-  }
-}
+//   if (isPopUpHidden) {
+//     popUp.classList.add("open");
+//     html.classList.add("no-scroll");
+//     isPopUpHidden = false;
+//   } else {
+//     popUp.classList.remove("open");
+//     html.classList.remove("no-scroll");
+//     isPopUpHidden = true;
+//   }
+// }
 
 
-const leaveFeedBackBtn = document.querySelector(".our-users .glass-light-btn");
+// const leaveFeedBackBtn = document.querySelector(".our-users .glass-light-btn");
 
-if (leaveFeedBackBtn) {
-  leaveFeedBackBtn.addEventListener("click", () =>
-  window.location.assign("/pages/contact/contact.html#contact-form"),
-);
-}
+// if (leaveFeedBackBtn) {
+//   leaveFeedBackBtn.addEventListener("click", () =>
+//   window.location.assign("/pages/contact/contact.html#contact-form"),
+// );
+// }
 
 
