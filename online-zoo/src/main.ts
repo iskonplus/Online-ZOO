@@ -1,5 +1,4 @@
-const message: string = "BusinessFunctionality build works!";
-console.log(message);
-const test: number = 5
+import { getPets } from "./pages/landing/pet";;
+const pets = getPets();
 
-console.log(test);
+console.log( pets );
