@@ -7,7 +7,7 @@ export default defineConfig({
         home: "index.html",
         landing: "pages/landing/index.html",
         animal: "pages/animal/animal.html",
-        map: "pages/animal/animal.html",
+        map: "pages/map/map.html",
         contact: "pages/contact/contact.html",
       },
     },
