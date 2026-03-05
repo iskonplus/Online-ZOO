@@ -6,8 +6,9 @@ export default defineConfig({
       input: {
         home: "index.html",
         landing: "pages/landing/index.html",
-        zoos: "pages/zoos/index.html",
+        zoos: "pages/zoos/zoos.html",
         map: "pages/animal/animal.html",
+        contact: "pages/contact/contact.html",
       },
     },
   },
