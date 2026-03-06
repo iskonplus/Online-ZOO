@@ -1061,7 +1061,7 @@ footer .block-social-contacts {
     cursor: pointer;
     z-index: 7;
     transition: 0.3s;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
 }
 
 .modal__close::before,
