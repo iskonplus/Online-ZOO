@@ -10,7 +10,7 @@ let popUpContent: HTMLElement | null;
 let htmlPopup: string;
 
 async function loadPopup(): Promise<void> {
-  const response: Response = await fetch("../popup/popup.html");
+  const response: Response = await fetch("/popup/popup.html");
   htmlPopup = await response.text();
 }
 
