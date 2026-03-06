@@ -1,8 +1,8 @@
-import { initSlider } from "/pages/helpers/slider.js";
+// import { initSlider } from "/pages/helpers/slider.js";
 
-initSlider(document.querySelector(".meet"));
-initSlider(document.querySelector(".our-users"));
-initSlider(document.querySelector(".zoos"));
+// initSlider(document.querySelector(".meet"));
+// initSlider(document.querySelector(".our-users"));
+// initSlider(document.querySelector(".zoos"));
 
 
 const burgerBtn = document.querySelector(".burger");

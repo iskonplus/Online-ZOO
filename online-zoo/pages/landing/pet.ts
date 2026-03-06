@@ -2,6 +2,9 @@ import type { PetCard } from "../../src/types/pets";
 import type { PetsResponseDTO } from "../../src/types/pets";
 import { getAll } from "../../src/api/http";
 import { handlerPopUp } from "../../src/utils/popup";
+import { initSlider } from "../../src/utils/slider";
+
+const metSection = document.querySelector<HTMLElement>(".meet");
 
 export async function initPetsSlider() {
   const loader = document.querySelector<HTMLElement>(".loader");
@@ -12,6 +15,7 @@ export async function initPetsSlider() {
   try {
     const petsInfo = await getAll<PetsResponseDTO>("pets");
     await renderCards(petsInfo.data);
+    initSlider(metSection);
   } catch (error) {
     if (error instanceof Error) console.error(error.message);
     handlerPopUp("error");
