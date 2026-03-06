@@ -5,6 +5,7 @@ const errorMsg = "Something went wrong. Please, refresh the page.";
 
 export async function getAll<T>(path: string): Promise<T> {
   const res = await fetch(`${baseUrl}/${path}`);
+//   const res = await fetch("error" + path);
   if (!res.ok) throw new Error(errorMsg);
   return await res.json();
 }

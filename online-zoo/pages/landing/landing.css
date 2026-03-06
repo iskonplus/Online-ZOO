@@ -1061,6 +1061,7 @@ footer .block-social-contacts {
     cursor: pointer;
     z-index: 7;
     transition: 0.3s;
+    mix-blend-mode: difference;
 }
 
 .modal__close::before,
@@ -1385,6 +1386,28 @@ input[type="checkbox"] {
 @keyframes pulse {
   0% , 60% , 100%{ transform:  scale(1) }
   80% { transform:  scale(1.2)}
+}
+
+.wrapper-content-pop-up.error{
+display: none;
+justify-content: space-between;
+align-items: center;
+padding: 100px;
+}
+
+.wrapper-content-pop-up.error.active{
+    display: flex;
+}
+
+.wrapper-content-pop-up.error p{
+    width: 100%;
+display: block;
+color: var(--dark-orange-color);
+margin-bottom: 0px;
+border: 1px solid var(--dark-orange-color);
+border-radius: 5px;
+padding: 50px;
+
 }
 
 

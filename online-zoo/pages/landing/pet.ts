@@ -1,6 +1,7 @@
 import type { PetCard } from "../../src/types/pets";
 import type { PetsResponseDTO } from "../../src/types/pets";
 import { getAll } from "../../src/api/http";
+import { handlerPopUp } from "../../src/utils/popup";
 
 export async function initPetsSlider() {
   const loader = document.querySelector<HTMLElement>(".loader");
@@ -12,7 +13,8 @@ export async function initPetsSlider() {
     const petsInfo = await getAll<PetsResponseDTO>("pets");
     await renderCards(petsInfo.data);
   } catch (error) {
-    if (error instanceof Error) console.log("My error: ", error.message);
+    if (error instanceof Error) console.error(error.message);
+    handlerPopUp("error");
   } finally {
     loader.classList.remove("active");
   }
