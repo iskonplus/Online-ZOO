@@ -1,5 +1,6 @@
-import { initPetsSlider } from "../pages/landing/pet";
+import { initPetImagesStorage, initPetsSlider } from "../pages/landing/pet";
 
 document.addEventListener("DOMContentLoaded", (): void => {
-   initPetsSlider()
+   initPetImagesStorage();
+   initPetsSlider();
 });
