@@ -1,87 +1,104 @@
+let track: HTMLElement;
+let arrows: HTMLElement;
+
+let isAnimating = false;
+const slideMs = 350;
+
 export function initSlider(root: HTMLElement | null): void {
   if (!root) return;
 
   const trackElement = root.querySelector<HTMLElement>(".slider__track");
-  const viewportElement = root.querySelector<HTMLElement>(".slider__viewport");
-  const arrowsElement = root.querySelector<HTMLElement>(".wrapper-slider-arrows");
+  const arrowsElement = root.querySelector<HTMLElement>(
+    ".wrapper-slider-arrows",
+  );
 
-  if (!trackElement || !viewportElement || !arrowsElement) return;
+  if (!trackElement || !arrowsElement) return;
 
-  const track = trackElement;
-  const viewport = viewportElement;
-  const arrows = arrowsElement;
-
-  const slideMs = 350;
-
-  let step = 0;
-  let position = 0;
-  let maxTranslate = 0;
-
-  function parsePx(value: string | null): number {
-    if (!value || value === "normal") return 0;
-    return parseFloat(value);
-  }
-
-  function getGapSize(): number {
-    const computedStyles = getComputedStyle(track);
-    return (
-      parsePx(computedStyles.columnGap) ||
-      parsePx(computedStyles.gap) ||
-      0
-    );
-  }
-
-  function calculateStep(): number {
-    const firstSlide = track.children[0] as HTMLElement | undefined;
-    if (!firstSlide) return 0;
-
-    const slideWidth = firstSlide.getBoundingClientRect().width;
-
-    return Math.round(slideWidth + getGapSize());
-  }
-
-  function applyTransform(translateValue: number, durationMs: number): void {
-    track.style.transition = durationMs
-      ? `transform ${durationMs}ms ease`
-      : "none";
-
-    track.style.transform = `translateX(${-translateValue}px)`;
-  }
-
-  function render(nextPosition: number, durationMs = slideMs): void {
-    position = nextPosition;
-    applyTransform(position, durationMs);
-  }
-
-  function recalc(): void {
-    step = calculateStep();
-    if (!step) return;
-
-    maxTranslate = Math.max(0, track.scrollWidth - viewport.clientWidth);
-
-    position = Math.min(position, maxTranslate);
-    applyTransform(position, 0);
-  }
-
-  function move(direction: number): void {
-    if (!step) return;
-
-    let nextPosition = position + direction * step;
-
-    if (nextPosition > maxTranslate) nextPosition = 0;
-    if (nextPosition < 0) nextPosition = maxTranslate;
-
-    render(nextPosition);
-  }
+  track = trackElement;
+  arrows = arrowsElement;
 
   arrows.addEventListener("click", (event: MouseEvent) => {
     const target = event.target as HTMLElement;
-
-    if (target.closest(".left")) move(-1);
-    if (target.closest(".right")) move(1);
+    if (target.closest(".left")) handleSlide("left");
+    if (target.closest(".right")) handleSlide("right");
   });
+}
 
-  window.addEventListener("resize", recalc);
+function setTrackPosition(position: number, durationMs: number): void {
+  track.style.transition = durationMs
+    ? `transform ${durationMs}ms ease`
+    : "none";
+  track.style.transform = `translateX(${position}px)`;
+}
 
-  recalc();
+function animateSlides(direction: "left" | "right"): void {
+  const step = getStep();
+  if (!step) return;
+
+  if (direction === "left") {
+    setTrackPosition(-step, 0);
+    void track.offsetHeight;
+    setTrackPosition(0, slideMs);
+  }
+
+  if (direction === "right") {
+    setTrackPosition(-step, slideMs);
+  }
+
+  window.setTimeout(() => {
+    if (direction === "right") setTrackPosition(0, 0);
+    isAnimating = false;
+  }, slideMs);
+}
+
+function getRowsCount(): number {
+  const styles = getComputedStyle(track);
+  const rows = styles.gridTemplateRows;
+
+  if (!rows || rows === "none") return 1;
+
+  return rows.split(" ").length;
+}
+
+function moveSlides(direction: "left" | "right"): void {
+  const rowsCount = getRowsCount();
+
+  for (let index = 0; index < rowsCount; index += 1) {
+    if (direction === "right") {
+      const firstSlide = track.firstElementChild;
+      if (firstSlide) track.append(firstSlide);
+    } else {
+      const lastSlide = track.lastElementChild;
+      if (lastSlide) track.prepend(lastSlide);
+    }
+  }
+}
+
+function handleSlide(direction: "left" | "right"): void {
+  if (isAnimating) return;
+
+  isAnimating = true;
+
+  if (direction === "left") {
+    moveSlides("left");
+    animateSlides("left");
+  }
+
+  if (direction === "right") {
+    animateSlides("right");
+    window.setTimeout(() => moveSlides("right"), slideMs);
+  }
+}
+
+function getGapSize(): number {
+  const styles = getComputedStyle(track);
+  const gap = styles.columnGap || styles.gap;
+  return gap && gap !== "normal" ? parseFloat(gap) : 0;
+}
+
+function getStep(): number {
+  const firstSlide = track.firstElementChild as HTMLElement | null;
+  if (!firstSlide) return 0;
+
+  return firstSlide.getBoundingClientRect().width + getGapSize();
 }
