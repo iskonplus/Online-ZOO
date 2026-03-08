@@ -1469,27 +1469,28 @@ input[type="checkbox"] {
 
 @keyframes darkenLoop {
   0% {
-    background-color: var(--orange-color);
+    background-color: #d13232;
   }
   100% {
-    background-color: var(--dark-orange-color);
+    background-color: #e82424;
   }
 }
 
 .wrapper-issue {
-    width: 100%;
+    width: 95%;
     max-width: 600px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
-    border: 2px solid var(--dark-orange-color);
+    border: 2px solid #e82424;
     border-radius: 5px;
     padding: 20px 10px;
-    box-shadow: 0px 0px 15px var(--dark-blue-color);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.619);
     margin: auto;
-    animation: darkenLoop 1s ease infinite alternate;
+    animation: darkenLoop .7s ease infinite alternate;
+    border-left: 5px solid var(--dark-blue-color);
 }
 
 #issue {

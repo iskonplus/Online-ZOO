@@ -1,6 +1,5 @@
 const html: HTMLElement = document.documentElement;
 
-let isPopUpHidden = true;
 let isLoaded = false;
 
 let popUp: HTMLElement | null = null;
@@ -9,7 +8,7 @@ let popUpBtnClose: HTMLElement | null = null;
 let htmlPopup = "";
 
 async function loadPopup(): Promise<void> {
-  const response = await fetch("/popup/popup.html");
+  const response: Response = await fetch("/popup/popup.html");
   htmlPopup = await response.text();
 }
 
@@ -25,10 +24,10 @@ function clearActivePopupContent(): void {
 
 function closePopup(): void {
   if (!popUp) return;
+
   popUp.classList.remove("open");
   html.classList.remove("no-scroll");
   clearActivePopupContent();
-  isPopUpHidden = true;
 }
 
 export async function handlerPopUp(selector: string): Promise<void> {
@@ -38,10 +37,13 @@ export async function handlerPopUp(selector: string): Promise<void> {
     }
 
     document.body.insertAdjacentHTML("beforeend", htmlPopup);
+
     popUp = document.querySelector<HTMLElement>(".pop-up-container");
     popUpBtnClose = document.querySelector<HTMLElement>(".modal__close");
 
-    if (popUpBtnClose) popUpBtnClose.addEventListener("click", closePopup);
+    if (popUpBtnClose) {
+      popUpBtnClose.addEventListener("click", closePopup);
+    }
 
     isLoaded = true;
   }
@@ -54,12 +56,7 @@ export async function handlerPopUp(selector: string): Promise<void> {
 
   clearActivePopupContent();
 
-  if (isPopUpHidden) {
-    popUp.classList.add("open");
-    html.classList.add("no-scroll");
-    popUpContent.classList.add("active");
-    isPopUpHidden = false;
-  } else {
-    closePopup();
-  }
+  popUp.classList.add("open");
+  html.classList.add("no-scroll");
+  popUpContent.classList.add("active");
 }
