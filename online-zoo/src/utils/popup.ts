@@ -1,17 +1,34 @@
 const html: HTMLElement = document.documentElement;
 
-let isPopUpHidden: boolean = true;
-let isLoaded: boolean = false;
+let isPopUpHidden = true;
+let isLoaded = false;
 
-let popUp: HTMLElement | null;
-let popUpBtnClose: HTMLElement | null;
-let popUpContent: HTMLElement | null;
+let popUp: HTMLElement | null = null;
+let popUpBtnClose: HTMLElement | null = null;
 
-let htmlPopup: string;
+let htmlPopup = "";
 
 async function loadPopup(): Promise<void> {
-  const response: Response = await fetch("/popup/popup.html");
+  const response = await fetch("/popup/popup.html");
   htmlPopup = await response.text();
+}
+
+function clearActivePopupContent(): void {
+  const popupContents = document.querySelectorAll<HTMLElement>(
+    ".wrapper-content-pop-up",
+  );
+
+  popupContents.forEach((content) => {
+    content.classList.remove("active");
+  });
+}
+
+function closePopup(): void {
+  if (!popUp) return;
+  popUp.classList.remove("open");
+  html.classList.remove("no-scroll");
+  clearActivePopupContent();
+  isPopUpHidden = true;
 }
 
 export async function handlerPopUp(selector: string): Promise<void> {
@@ -21,35 +38,28 @@ export async function handlerPopUp(selector: string): Promise<void> {
     }
 
     document.body.insertAdjacentHTML("beforeend", htmlPopup);
-
     popUp = document.querySelector<HTMLElement>(".pop-up-container");
     popUpBtnClose = document.querySelector<HTMLElement>(".modal__close");
 
-    if (popUpBtnClose) {
-      popUpBtnClose.addEventListener(
-        "click",
-        () => void handlerPopUp(selector),
-      );
-    }
+    if (popUpBtnClose) popUpBtnClose.addEventListener("click", closePopup);
 
     isLoaded = true;
   }
 
-  popUpContent = document.querySelector<HTMLElement>(
+  const popUpContent = document.querySelector<HTMLElement>(
     `.wrapper-content-pop-up.${selector}`,
   );
 
-  if (!popUp) return;
+  if (!popUp || !popUpContent) return;
+
+  clearActivePopupContent();
 
   if (isPopUpHidden) {
     popUp.classList.add("open");
     html.classList.add("no-scroll");
-    popUpContent?.classList.add("active");
+    popUpContent.classList.add("active");
     isPopUpHidden = false;
   } else {
-    popUp.classList.remove("open");
-    html.classList.remove("no-scroll");
-    popUpContent?.classList.remove("active");
-    isPopUpHidden = true;
+    closePopup();
   }
 }
