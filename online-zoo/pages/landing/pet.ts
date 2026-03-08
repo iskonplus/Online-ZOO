@@ -5,7 +5,8 @@ import { handlerPopUp } from "../../src/utils/popup";
 import { initSlider } from "../../src/utils/slider";
 import { petImages } from "../../src/data/petImages";
 
-const donateVolunteersBtn = document.querySelector<HTMLElement>(".footer .glass-light-btn")
+const donateVolunteersBtn = document.querySelector<HTMLElement>(".footer .glass-light-btn");
+const donateBtns = document.querySelectorAll<HTMLElement>("#donate-btn");
 const metSection = document.querySelector<HTMLElement>(".meet");
 const storKey = "pet-images";
 
@@ -72,9 +73,9 @@ export function getPetImageById(id: number): string {
   return images[id] ?? "";
 }
 
-donateVolunteersBtn?.addEventListener("click", (): void => {
-  handlerPopUp("donate");
-  console.log("clicked");
-      // if (target.closest(".left")) handleSlide("left")
+donateVolunteersBtn?.addEventListener("click", (): void =>{ handlerPopUp("donate")});
+donateBtns?.forEach(btn => {
+  btn.addEventListener("click", (): void => { handlerPopUp("first") });
 })
+
 
