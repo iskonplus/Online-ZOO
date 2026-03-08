@@ -24,9 +24,6 @@ export async function handlerPopUp(selector: string): Promise<void> {
 
     popUp = document.querySelector<HTMLElement>(".pop-up-container");
     popUpBtnClose = document.querySelector<HTMLElement>(".modal__close");
-    popUpContent = document.querySelector<HTMLElement>(
-      `.wrapper-content-pop-up.${selector}`,
-    );
 
     if (popUpBtnClose) {
       popUpBtnClose.addEventListener(
@@ -37,6 +34,10 @@ export async function handlerPopUp(selector: string): Promise<void> {
 
     isLoaded = true;
   }
+
+  popUpContent = document.querySelector<HTMLElement>(
+    `.wrapper-content-pop-up.${selector}`,
+  );
 
   if (!popUp) return;
 

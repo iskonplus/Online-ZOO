@@ -1065,6 +1065,9 @@ footer .block-social-contacts {
     cursor: pointer;
     z-index: 7;
     transition: 0.3s;
+}
+
+.wrapper-pop-up:has(.wrapper-content-pop-up.error.active) .modal__close {
     mix-blend-mode: difference;
 }
 
@@ -1434,6 +1437,14 @@ input[type="checkbox"] {
     cursor: pointer;
     text-decoration: none ;
     transition: .3s;
+}
+
+.wrapper-content-pop-up.donate{
+    display: none;
+}
+
+.wrapper-content-pop-up.donate.active{
+    display: block;
 }
 
 
