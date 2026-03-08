@@ -1,5 +1,4 @@
-import type { PetCard } from "../../src/types/pets";
-import type { PetsResponseDTO } from "../../src/types/pets";
+import type { PetCard, PetsResponseDTO } from "../../src/types/pets";
 import { getAll } from "../../src/api/http";
 import { handlerPopUp } from "../../src/utils/popup";
 import { initSlider } from "../../src/utils/slider";
@@ -9,6 +8,11 @@ const donateVolunteersBtn = document.querySelector<HTMLElement>(".footer .glass-
 const donateBtns = document.querySelectorAll<HTMLElement>("#donate-btn");
 const metSection = document.querySelector<HTMLElement>(".meet");
 const storKey = "pet-images";
+const contextIssue = `<div class="wrapper-issue">
+                        <p id="issue">Something went wrong. Please,
+                        <a href="" id="refresh-page-link">refresh</a>
+                        the page.</p>
+                      </div>`;
 
 export function initPetImagesStorage(): void {
   const existing = localStorage.getItem(storKey);
@@ -16,7 +20,7 @@ export function initPetImagesStorage(): void {
 }
 
 export async function initPetsSlider() {
-  const loader = document.querySelector<HTMLElement>(".loader");
+  const loader = document.querySelector<HTMLElement>(".loader.meet");
 
   if (!loader) return;
   loader.classList.add("active");
@@ -28,6 +32,9 @@ export async function initPetsSlider() {
   } catch (error) {
     if (error instanceof Error) console.error(error.message);
     handlerPopUp("error");
+        if (metSection) {
+      metSection.insertAdjacentHTML("afterbegin", contextIssue);
+    }
   } finally {
     loader.classList.remove("active");
   }

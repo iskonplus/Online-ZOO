@@ -8,6 +8,8 @@
     font-style: normal;
 }
 
+/* meet */
+
 :root {
     --black-color: #000000;
     --white-color: #ffffff;
@@ -403,6 +405,7 @@ footer ul li a {
 
 #meet {
     overflow: hidden;
+    position: relative;
 }
 
 .container.meet {
@@ -731,6 +734,10 @@ footer ul li a {
     position: absolute;
     top: 90px;
     right: 0;
+}
+
+.block-our-users-slider.slider__viewport {
+    overflow: hidden;
 }
 
 .slider-inner {
@@ -1367,6 +1374,17 @@ input[type="checkbox"] {
     margin: auto;
 }
 
+.loader.our-users {
+    margin: 5px auto;
+    position: absolute;
+    left: 48%;
+}
+
+.loader.our-users,
+.loader.our-users:after {
+    border-color: var(--white-color);
+}
+
 .loader:after {
     content: '';
     position: absolute;
@@ -1435,18 +1453,57 @@ input[type="checkbox"] {
     font-weight: 600;
     color: var(--dark-orange-color);
     cursor: pointer;
-    text-decoration: none ;
+    text-decoration: none;
     transition: .3s;
 }
 
 .wrapper-content-pop-up.donate,
-.wrapper-content-pop-up.first{
+.wrapper-content-pop-up.first {
     display: none;
 }
 
 .wrapper-content-pop-up.donate.active,
-.wrapper-content-pop-up.first.active{
+.wrapper-content-pop-up.first.active {
     display: block;
+}
+
+@keyframes darkenLoop {
+  0% {
+    background-color: var(--orange-color);
+  }
+  100% {
+    background-color: var(--dark-orange-color);
+  }
+}
+
+.wrapper-issue {
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    border: 2px solid var(--dark-orange-color);
+    border-radius: 5px;
+    padding: 20px 10px;
+    box-shadow: 0px 0px 15px var(--dark-blue-color);
+    margin: auto;
+    animation: darkenLoop 1s ease infinite alternate;
+}
+
+#issue {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin: 0px auto;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--dark-blue-color);
+}
+
+#issue a {
+    color: var(--white-color);
 }
 
 
@@ -2008,6 +2065,10 @@ input[type="checkbox"] {
                 flex: 0 0 calc(80% - 10px);
             }
 
+            .block-our-users-slider.slider__viewport {
+                overflow: auto;
+            }
+
             .container.meet {
                 padding-bottom: 100px;
             }
@@ -2215,6 +2276,11 @@ input[type="checkbox"] {
 
             .text-short {
                 display: block;
+            }
+
+            .loader.our-users {
+                position: static;
+                left: 0;
             }
 
         }
