@@ -1,10 +1,10 @@
 import { initPetImagesStorage, initPetsSlider } from "../pages/landing/pet";
 import { initFeedBackSlider } from "../pages/landing/feedBack";
-import { initHandlerDonate } from "./utils/handlerDonate";
+import { initHandlerBtns } from "./utils/handlerBtns";
 
 document.addEventListener("DOMContentLoaded", (): void => {
    initPetImagesStorage();
    initPetsSlider();
    initFeedBackSlider();
-   initHandlerDonate();
+   initHandlerBtns();
 });

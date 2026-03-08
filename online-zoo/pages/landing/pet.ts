@@ -28,13 +28,12 @@ export async function initPetsSlider() {
     await renderCards(petsInfo.data);
     initSlider(metSection);
   } catch (error) {
+    loader.classList.remove("active");
     if (error instanceof Error) console.error(error.message);
     handlerPopUp("error");
-        if (metSection) {
+    if (metSection) {
       metSection.insertAdjacentHTML("afterbegin", contextIssue);
     }
-  } finally {
-    loader.classList.remove("active");
   }
 }
 
@@ -77,6 +76,3 @@ export function getPetImageById(id: number): string {
 
   return images[id] ?? "";
 }
-
-
-

@@ -21,13 +21,12 @@ export async function initFeedBackSlider() {
     await renderCards(feedBackData.data);
     initSlider(ourSection);
   } catch (error) {
+    loader.classList.remove("active");
     if (error instanceof Error) console.error(error.message);
     handlerPopUp("error");
     if (ourSection) {
       ourSection.insertAdjacentHTML("afterbegin", contextIssue);
     }
-  } finally {
-    loader.classList.remove("active");
   }
 }
 
