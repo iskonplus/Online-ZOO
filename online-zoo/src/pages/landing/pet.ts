@@ -1,8 +1,8 @@
-import type { PetCard, PetsResponseDTO } from "../../src/types/pets";
-import { getAll } from "../../src/api/http";
-import { handlerPopUp } from "../../src/utils/popup";
-import { initSlider } from "../../src/utils/slider";
-import { petImages } from "../../src/data/petImages";
+import type { PetCard, PetsResponseDTO } from "../../types/pets";
+import { getAll } from "../../api/http";
+import { handlerPopUp } from "../../utils/popup";
+import { initSlider } from "../../utils/slider";
+import { petImages } from "../../data/petImages";
 
 const metSection = document.querySelector<HTMLElement>(".meet");
 const storKey = "pet-images";

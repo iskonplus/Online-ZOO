@@ -1,7 +1,7 @@
-import type { FeedBack, FeedBackResponseDTO } from "../../src/types/feedback";
-import { getAll } from "../../src/api/http";
-import { handlerPopUp } from "../../src/utils/popup";
-import { initSlider } from "../../src/utils/slider";
+import type { FeedBack, FeedBackResponseDTO } from "../../types/feedback";
+import { getAll } from "../../api/http";
+import { handlerPopUp } from "../../utils/popup";
+import { initSlider } from "../../utils/slider";
 
 const ourSection = document.querySelector<HTMLElement>(".our-users");
 const contextIssue = `<div class="wrapper-issue">
