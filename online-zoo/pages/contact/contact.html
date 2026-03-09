@@ -33,7 +33,7 @@
                     <li><a href="/pages/landing/index.html">about</a></li>
                     <li><a href="/pages/map/map.html">map</a></li>
                     <li><a href="/pages/animal/animal.html">zoos</a></li>
-                    <li><a  class="active" href="/pages/contact/contact.html">contact us</a></li>
+                    <li><a class="active" href="/pages/contact/contact.html">contact us</a></li>
                     <li><a href="https://www.figma.com/design/fVU1MLRYsTITqFphUZNGh8/Online-ZOO-Project--Copy-?node-id=44-9749&t=0XzLqjTAbUnRUz7Q-0"
                             target="_blank">design</a></li>
                 </ul>
@@ -59,11 +59,14 @@
                 </figure>
             </div>
 
-            <button class="loginIcon">
-                <span class="social-link">
-                    <img src="/assets/icons/userLog.png" alt="auth icon">
-                </span>
-            </button>
+            <div class="wrapper-auth">
+                <button class="loginIcon">
+                    <span class="social-link">
+                        <img src="/assets/icons/userLog.png" alt="auth icon">
+                    </span>
+                </button>
+                <small class="user-auth-name">Unknown user</small>
+            </div>
 
             <button class="burger" type="button" aria-label="Open menu">
                 <span class="burger__line"></span>
@@ -106,7 +109,7 @@
                         <label for="message"><span>&#42;</span>Message</label>
                         <textarea id="message" name="message" placeholder="Enter your message" required rows="6"
                             cols="30"></textarea>
-                            <small class="error">Required field</small>
+                        <small class="error">Required field</small>
                     </div>
 
                     <button class="orange-btn">send message<img src="/assets/icons/arrow-right.png" alt="arrow icon"
@@ -206,7 +209,7 @@
 
 
     <!-- <script type="module" src="/pages/landing/landing.js"></script> -->
-     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
     <script type="module" src="/pages/contact/contact.js"></script>
 </body>
 

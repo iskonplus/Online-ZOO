@@ -32,7 +32,7 @@
                 <ul>
                     <li><a href="/pages/landing/index.html">about</a></li>
                     <li><a href="/pages/map/map.html">map</a></li>
-                    <li><a  class="active" href="/pages/animal/animal.html">zoos</a></li>
+                    <li><a class="active" href="/pages/animal/animal.html">zoos</a></li>
                     <li><a href="/pages/contact/contact.html">contact us</a></li>
                     <li><a href="https://www.figma.com/design/fVU1MLRYsTITqFphUZNGh8/Online-ZOO-Project--Copy-?node-id=44-9749&t=0XzLqjTAbUnRUz7Q-0"
                             target="_blank">design</a></li>
@@ -59,11 +59,14 @@
                 </figure>
             </div>
 
-            <button class="loginIcon">
-                <span class="social-link">
-                    <img src="/assets/icons/userLog.png" alt="auth icon">
-                </span>
-            </button>
+            <div class="wrapper-auth">
+                <button class="loginIcon">
+                    <span class="social-link">
+                        <img src="/assets/icons/userLog.png" alt="auth icon">
+                    </span>
+                </button>
+                <small class="user-auth-name">Unknown user</small>
+            </div>
 
             <button class="burger" type="button" aria-label="Open menu">
                 <span class="burger__line"></span>
@@ -80,8 +83,8 @@
                     <h2 class="title-animal">live panda cams</h2>
                     <img src="/assets/images/Youtube-player.png" alt="animal video">
 
-                    <button class="orange-btn" id="donate-btn">donate now<img src="/assets/icons/arrow-right.png" alt="arrow icon"
-                            class="arrow">
+                    <button class="orange-btn" id="donate-btn">donate now<img src="/assets/icons/arrow-right.png"
+                            alt="arrow icon" class="arrow">
                     </button>
                 </div>
 
@@ -174,7 +177,7 @@
                         before them. They may appear sedentary, but they are skilled tree-climbers and efficient
                         swimmers.</p>
                 </div>
-                
+
                 <div class="wrapper-description-animal">
 
                     <div class="block-description animal">
@@ -204,14 +207,22 @@
                         </div>
 
                     </div>
-                     <div class="block-description photo">
+                    <div class="block-description photo">
                         <img src="/assets/images/image-163.png" alt="photo animal">
-                     </div>
+                    </div>
 
                 </div>
-                <p class="animal-article">Giant pandas are very unusual animals that eat almost exclusively bamboo, which is very low in nutrients. Because of this, they have many unique adaptations for their low-energy lifestyle. Giant pandas are solitary. They have a highly developed sense of smell that males use to avoid each other and to find females for mating in the spring. After a five-month pregnancy, females give birth to a cub or two, though they cannot care for both twins. The blind infants weigh only 5 ounces at birth and cannot crawl until they reach three months of age. They are born white, and develop their much loved coloring later. Habitat loss is the primary threat to this species. Its popularity around the world has helped the giant panda become the focus of successful conservation programs.</p>
+                <p class="animal-article">Giant pandas are very unusual animals that eat almost exclusively bamboo,
+                    which is very low in nutrients. Because of this, they have many unique adaptations for their
+                    low-energy lifestyle. Giant pandas are solitary. They have a highly developed sense of smell that
+                    males use to avoid each other and to find females for mating in the spring. After a five-month
+                    pregnancy, females give birth to a cub or two, though they cannot care for both twins. The blind
+                    infants weigh only 5 ounces at birth and cannot crawl until they reach three months of age. They are
+                    born white, and develop their much loved coloring later. Habitat loss is the primary threat to this
+                    species. Its popularity around the world has helped the giant panda become the focus of successful
+                    conservation programs.</p>
 
-                
+
 
             </div>
         </section>
@@ -302,7 +313,7 @@
     </footer>
 
 
-     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
     <script type="module" src="/pages/animal/animal.js"></script>
 </body>
 
