@@ -47,7 +47,7 @@ async function renderCards(petsData: PetCard[]) {
   const slides = petsData
     .map((petInfo) => {
       return `
-        <li class="slider__slide">
+        <li class="slider__slide" data-petId="${petInfo.id}">
           <a href="/pages/animal/animal.html" class="slider-link">
             <figure>
               <img src=${getPetImageById(petInfo.id)}>
