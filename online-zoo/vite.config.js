@@ -9,6 +9,8 @@ export default defineConfig({
         animal: "pages/animal/animal.html",
         map: "pages/map/map.html",
         contact: "pages/contact/contact.html",
+        registration: "pages/auth/registration.html",
+        signIn: "pages/auth/sign-in.html",
       },
     },
   },
