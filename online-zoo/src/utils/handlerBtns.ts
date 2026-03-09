@@ -8,6 +8,7 @@ const donateBtns = document.querySelectorAll<HTMLElement>("#donate-btn");
 const burgerBtn = document.querySelector<HTMLElement>(".burger");
 const menu = document.querySelector<HTMLElement>(".header ul");
 const menuLink = document.querySelector<HTMLElement>(".header ul li");
+const authBtn = document.querySelector<HTMLElement>(".loginIcon");
 
 export function initHandlerBtns() {
   donateVolunteersBtn?.addEventListener("click", (): void => {
@@ -27,4 +28,8 @@ export function initHandlerBtns() {
     burgerBtn?.classList.toggle("active");
     menu?.classList.toggle("active");
   }
+
+  authBtn?.addEventListener("click", (): void => {
+    handlerPopUp("auth");
+  });
 }
