@@ -10,7 +10,7 @@ export default defineConfig({
         map: "pages/map/map.html",
         contact: "pages/contact/contact.html",
         registration: "pages/auth/registration.html",
-        // signIn: "pages/auth/sign-in.html",
+        signIn: "pages/auth/sign-in.html",
       },
     },
   },

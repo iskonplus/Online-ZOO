@@ -168,36 +168,38 @@ h2 {
             }
 
 
-            @media(max-width: 460px) {
-                .container {
-                    padding-bottom: 80px;
+            @media(max-width: 640px) {
+               .wrapper-form-group {
+                        gap: inherit;
+                        flex-direction: column;
+                    }
+
+                    .wrapper-form-group .form-group {
+                        width: 100%;
+                    }
+
+                @media(max-width: 460px) {
+                    .container {
+                        padding-bottom: 80px;
+                    }
+
+                    .block-form button {
+                        padding: 14px 58px;
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+
+                    form {
+                        padding: 0p;
+                    }
+
+                    .block-form button {
+                        margin-top: 25px;
+                    }
+
+
+
                 }
-
-                .block-form button {
-                    padding: 14px 58px;
-                    font-size: 18px;
-                    line-height: 22px;
-                }
-
-                form {
-                    padding: 0px;
-                }
-
-                .wrapper-form-group {
-                    gap: inherit;
-                    flex-direction: column;
-                }
-
-                .wrapper-form-group .form-group {
-                    width: 100%;
-                }
-
-                .block-form button {
-                    margin-top: 25px;
-                }
-
-
-
             }
         }
 
