@@ -85,12 +85,15 @@ footer ul {
 }
 
 .auth-menu {
+    width: 90%;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding: 130px 0px;
+    padding: 50px 0px 60px 0px;
     text-align: center;
-    margin: 0px;
+    margin: 0px auto;
+    border-bottom: 2px solid var(--dark-green-color);
+    margin-bottom: 30px;
 }
 
 
@@ -1089,8 +1092,7 @@ footer .block-social-contacts {
     transition: 0.3s;
 }
 
-.wrapper-pop-up:has(.wrapper-content-pop-up.error.active) .modal__close,
-.wrapper-pop-up:has(.wrapper-content-pop-up.auth.active) .modal__close {
+.wrapper-pop-up:has(.wrapper-content-pop-up.error.active) .modal__close {
     mix-blend-mode: difference;
 }
 
@@ -1445,6 +1447,12 @@ input[type="checkbox"] {
     }
 }
 
+.wrapper-content-pop-up.auth,
+.wrapper-content-pop-up.donate,
+.wrapper-content-pop-up.first {
+    display: none;
+}
+
 .wrapper-content-pop-up.error {
     display: none;
     justify-content: space-between;
@@ -1452,11 +1460,7 @@ input[type="checkbox"] {
     padding: 100px;
 }
 
-.wrapper-content-pop-up.auth {
-    display: none;
-}
-
-.wrapper-content-pop-up.auth.active {
+.wrapper-content-pop-up.error.active {
     display: flex;
 }
 
@@ -1476,11 +1480,6 @@ input[type="checkbox"] {
     cursor: pointer;
     text-decoration: none;
     transition: .3s;
-}
-
-.wrapper-content-pop-up.donate,
-.wrapper-content-pop-up.first {
-    display: none;
 }
 
 .wrapper-content-pop-up.auth.active,
@@ -2883,6 +2882,5 @@ input[type="checkbox"] {
 
     .auth-menu li a:hover {
         color: var(--dark-green-color);
-
     }
 }
