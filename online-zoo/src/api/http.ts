@@ -9,3 +9,17 @@ export async function getAll<T>(path: string): Promise<T> {
   if (!res.ok) throw new Error(errorMsg);
   return await res.json();
 }
+
+export async function post<T, B>(path: string, body: B): Promise<T> {
+  const res = await fetch(`${baseUrl}/${path}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) throw new Error(errorMsg);
+
+  return await res.json();
+}
