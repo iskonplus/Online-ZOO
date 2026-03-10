@@ -4,13 +4,13 @@ export const validateLogin: Validator = (value) => {
   if (value === "") return "Required field";
   if (value.length < 3) return "Login must be at least 3 characters";
   if (!/^[A-Za-z]/.test(value)) return "Login must start with a letter";
-  if (!/^[A-Za-z]+$/.test(value)) return "Only English letters allowed";
+  if (!/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(value)) return "Only English letters allowed";
   return "";
 };
 export const validateName: Validator = (value) => {
   if (value === "") return "Required field";
   if (value.length < 3) return "Name must be at least 3 characters";
-  if (!/^[A-Za-z]+$/.test(value)) return "Only English letters allowed";
+  if (!/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(value)) return "Only English letters allowed";
   return "";
 };
 
