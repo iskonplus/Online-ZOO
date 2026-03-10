@@ -1,5 +1,8 @@
+import type { PublicUser } from "../types/user";
+
 const tokenKey = "access_token";
 const userKey = "user";
+
 
 export function isLoggedIn(): boolean {
   return Boolean(localStorage.getItem(tokenKey));
@@ -9,7 +12,7 @@ export function getToken(): string | null {
   return localStorage.getItem(tokenKey);
 }
 
-export function getUser(): { login: string; name: string; email: string } | null {
+export function getUser(): PublicUser | null {
   const user = localStorage.getItem(userKey);
   return user ? JSON.parse(user) : null;
 }
