@@ -100,7 +100,7 @@
     border-radius: 5px;
 }
 
-.error {
+.incorrect-data {
     display: none;
     font-weight: 400;
     font-size: 18px;
@@ -110,8 +110,8 @@
     bottom: -30px
 }
 
-.form-group input.touched:invalid~.error,
-.form-group textarea.touched:invalid~.error {
+.form-group input.touched:invalid~.incorrect-data,
+.form-group textarea.touched:invalid~.incorrect-data {
     display: block;
 }
 

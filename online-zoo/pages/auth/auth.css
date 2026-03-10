@@ -106,7 +106,7 @@ h2 {
     border-radius: 5px;
 }
 
-.error {
+.incorrect-data {
     display: none;
     font-weight: 400;
     font-size: 12px;
@@ -116,18 +116,8 @@ h2 {
     top: 100px;
     line-height: 14px;
 }
-
-
-/* .form-group input.invalid:invalid~.error {
-    display: block;
-} */
-
-/* .form-group input.invalid:invalid {
-    background: rgba(245, 128, 33, 0.2);
-    border: 1px solid #F58021;
-}*/
  
-.form-group input.invalid~.error {
+.form-group input.invalid~.incorrect-data {
     display: block;
 }
 

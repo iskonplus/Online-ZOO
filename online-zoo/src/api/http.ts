@@ -11,7 +11,8 @@ export async function getAll<T>(path: string): Promise<T> {
 }
 
 export async function post<T, B>(path: string, body: B): Promise<T> {
-  const res = await fetch(`${baseUrl}/${path}`, {
+  // const res = await fetch("error" + path, {
+    const res = await fetch(`${baseUrl}/${path}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
