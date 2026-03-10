@@ -1,15 +1,17 @@
 import type { FieldConfig } from "../types/validator";
 import { initFormValidation } from "../utils/initFormValidation";
 import {
-  validateLogin,
-  validatePassword,
-  validateName,
-  validateEmail,
-  validateConfirmPassword
+    validateLogin,
+    validatePassword,
+    validateName,
+    validateEmail,
+    validateConfirmPassword
 } from "../utils/formValidations";
 
+const submitBtn = document.querySelector<HTMLButtonElement>("#btnSubmit");
 
-export function initPageField(): void {
+
+export function initPageRegistrationField(): void {
 
   const fields: FieldConfig[] = [
     {
@@ -39,5 +41,17 @@ export function initPageField(): void {
     },
   ];
 
-  initFormValidation(fields);
+    initFormValidation(fields);
 }
+
+export function updateButtonState(fields: FieldConfig[]): void {
+    const isValid = fields.every(({ input, validator }) => {
+        return validator(input.value.trim()) === "";
+    });
+
+    if (submitBtn) submitBtn.disabled = !isValid;
+}
+
+
+
+

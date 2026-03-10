@@ -1,4 +1,5 @@
 import type { FieldConfig } from "../types/validator";
+import { updateButtonState } from "./initPageField";
 
 export function initFormValidation(fields: FieldConfig[]): void {
   fields.forEach(({ input, error, validator }): void => {
@@ -6,12 +7,13 @@ export function initFormValidation(fields: FieldConfig[]): void {
     input.addEventListener("input", validate);
 
     function validate(): void {
-      const message = validator(input.value.trim());
-      input.classList.add("invalid");
+      const errorMessage = validator(input.value.trim());
 
-      if (!message) input.classList.remove("invalid");
-      error.textContent = message;
+      if (errorMessage) input.classList.add("invalid");
+      if (!errorMessage) input.classList.remove("invalid");
+
+        error.textContent = errorMessage;
+        updateButtonState(fields);
     }
-      
   });
 }
