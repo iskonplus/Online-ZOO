@@ -109,22 +109,36 @@ h2 {
 .error {
     display: none;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 150%;
     color: #F58021;
     position: absolute;
-    bottom: -30px
+    top: 100px;
+    line-height: 14px;
 }
 
-.form-group input.touched:invalid~.error,
-.form-group textarea.touched:invalid~.error {
+
+/* .form-group input.invalid:invalid~.error {
+    display: block;
+} */
+
+/* .form-group input.invalid:invalid {
+    background: rgba(245, 128, 33, 0.2);
+    border: 1px solid #F58021;
+}*/
+ 
+.form-group input.invalid~.error {
     display: block;
 }
 
-.form-group input.touched:invalid,
-.form-group textarea.touched:invalid {
+.form-group input.invalid {
     background: rgba(245, 128, 33, 0.2);
     border: 1px solid #F58021;
+}
+
+button:disabled{
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 
