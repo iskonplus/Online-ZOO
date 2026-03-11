@@ -1,5 +1,5 @@
 const html: HTMLElement = document.documentElement;
-import {logout} from "./authStorage";
+import { logout } from "./authStorage";
 import { initRegisteredUser } from "./initUser";
 
 let isLoaded = false;
@@ -35,6 +35,7 @@ function closePopup(): void {
 
 function logOut(): void {
   logout();
+  closePopup();
   initRegisteredUser();
 }
 

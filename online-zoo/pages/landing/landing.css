@@ -41,7 +41,7 @@ header {
     background-color: var(--orange-color);
     position: fixed;
     top: 0;
-    z-index: 5;
+    z-index: 6;
 }
 
 .container {
@@ -1610,6 +1610,7 @@ input[type="checkbox"] {
 
 
 .wrapper-auth small {
+    max-width: 150px;
     color: var(--dark-orange-color);
     transition: .3s;
     font-weight: 600;
@@ -2867,10 +2868,7 @@ input[type="checkbox"] {
 
                         .wrapper-auth {
                             right: 70px;
-                        }
-
-                        .wrapper-auth small {
-                            display: none;
+                            margin-left: 0px;
                         }
 
 
