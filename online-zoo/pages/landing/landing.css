@@ -1454,6 +1454,7 @@ input[type="checkbox"] {
     }
 }
 
+.wrapper-content-pop-up.user-profile,
 .wrapper-content-pop-up.auth,
 .wrapper-content-pop-up.donate,
 .wrapper-content-pop-up.first {
@@ -1489,10 +1490,68 @@ input[type="checkbox"] {
     transition: .3s;
 }
 
+.wrapper-content-pop-up.user-profile.active,
 .wrapper-content-pop-up.auth.active,
 .wrapper-content-pop-up.donate.active,
 .wrapper-content-pop-up.first.active {
     display: block;
+}
+
+.wrapper-content-pop-up.user-profile {
+    padding: 0px 15px 50px 15px;
+}
+
+.wrapper-content-pop-up.user-profile .green-btn {
+    padding: 15px 60px;
+    margin: auto;
+}
+
+.wrapper-user-headline {
+    width: calc(100% + 30px);
+    background-color: var(--dark-green-color);
+    padding: 15px 0px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.wrapper-user-headline h2 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    margin: auto;
+    color: var(--orange-color);
+}
+
+.block-user {
+    display: flex;
+    max-width: 600px;
+    padding: 60px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: auto;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--dark-green-color);
+    margin-bottom: 30px;
+}
+
+.wrapper-user-content {
+    max-width: calc(50% -30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.wrapper-user-content small {
+    color: var(--dark-green-color);
+}
+
+.wrapper-pop-up .wrapper-user-content p {
+    padding: 0px;
+    margin: 0px;
+    color: var(--dark-blue-color);
 }
 
 @keyframes darkenLoop {
@@ -1848,7 +1907,7 @@ input[type="checkbox"] {
         margin-right: 19px;
     }
 
-    .block-social-contacts{
+    .block-social-contacts {
         width: auto;
         gap: 15px;
     }
@@ -2424,6 +2483,15 @@ input[type="checkbox"] {
 
                     .wrapper-pop-up-footer {
                         justify-content: space-between;
+                    }
+
+                    .wrapper-user-headline {
+                        padding: 20px 0px;
+                    }
+
+                    .wrapper-pop-up .wrapper-user-headline h2 {
+                        display: inline;
+                        margin: 0px auto 0px 10px
                     }
 
 

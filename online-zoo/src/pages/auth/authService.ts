@@ -7,7 +7,7 @@ import { post } from "../../api/http";
 import { handlerPopUp } from "../../utils/popup";
 import { saveAuth } from "../../utils/authStorage";
 
-export async function registerUser(): void {
+export function registerUser(): void {
   const submitBtn = document.querySelector<HTMLButtonElement>("#btnSubmit");
   submitBtn?.addEventListener("click", (e) => {
     submitBtn.disabled = true;

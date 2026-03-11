@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", (): void => {
   initPageRegistrationField();
   registerUser();
   initRegisteredUser();
-
 });
 
 

@@ -1,3 +1,4 @@
+import { getUser } from "./authStorage";
 import { handlerPopUp } from "./popup";
 
 const donateVolunteersBtn = document.querySelector<HTMLElement>(
@@ -30,6 +31,9 @@ export function initHandlerBtns() {
   }
 
   authBtn?.addEventListener("click", (): void => {
-    handlerPopUp("auth");
+
+    const user = getUser();
+      if (!user) handlerPopUp("auth");
+      if (user) handlerPopUp("user-profile");
   });
 }
