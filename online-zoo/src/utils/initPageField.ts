@@ -1,18 +1,14 @@
 import type { FieldConfig } from "../types/validator";
 import { initFormValidation } from "../utils/initFormValidation";
 import {
-    validateLogin,
-    validatePassword,
-    validateName,
-    validateEmail,
-    validateConfirmPassword
+  validateLogin,
+  validatePassword,
+  validateName,
+  validateEmail,
+  validateConfirmPassword,
 } from "../utils/formValidations";
 
-const submitBtn = document.querySelector<HTMLButtonElement>("#btnSubmit");
-
-
 export function initPageRegistrationField(): void {
-
   const fields: FieldConfig[] = [
     {
       input: document.querySelector<HTMLInputElement>("#login")!,
@@ -31,27 +27,47 @@ export function initPageRegistrationField(): void {
     },
     {
       input: document.querySelector<HTMLInputElement>("#password")!,
-      error: document.querySelector<HTMLElement>("#password + .incorrect-data")!,
+      error: document.querySelector<HTMLElement>(
+        "#password + .incorrect-data",
+      )!,
       validator: validatePassword,
     },
     {
       input: document.querySelector<HTMLInputElement>("#confirmPassword")!,
-      error: document.querySelector<HTMLElement>("#confirmPassword + .incorrect-data")!,
+      error: document.querySelector<HTMLElement>(
+        "#confirmPassword + .incorrect-data",
+      )!,
       validator: validateConfirmPassword,
     },
   ];
 
-    initFormValidation(fields);
+  initFormValidation(fields);
+}
+
+export function initPageSignInField(): void {
+  const fields: FieldConfig[] = [
+    {
+      input: document.querySelector<HTMLInputElement>("#login")!,
+      error: document.querySelector<HTMLElement>("#login + .incorrect-data")!,
+      validator: validateLogin,
+    },
+    {
+      input: document.querySelector<HTMLInputElement>("#password")!,
+      error: document.querySelector<HTMLElement>(
+        "#password + .incorrect-data",
+      )!,
+      validator: validatePassword,
+    },
+  ];
+
+  initFormValidation(fields);
 }
 
 export function updateButtonState(fields: FieldConfig[]): void {
-    const isValid = fields.every(({ input, validator }) => {
-        return validator(input.value.trim()) === "";
-    });
+  const submitBtn = document.querySelector<HTMLButtonElement>("#btnSubmit");
+  const isValid = fields.every(({ input, validator }) => {
+    return validator(input.value.trim()) === "";
+  });
 
-    if (submitBtn) submitBtn.disabled = !isValid;
+  if (submitBtn) submitBtn.disabled = !isValid;
 }
-
-
-
-

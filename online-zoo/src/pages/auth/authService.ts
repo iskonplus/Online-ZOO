@@ -1,6 +1,8 @@
 import type {
   RegistrationRequestDTO,
   RegistrationResponseDTO,
+  SignInRequestDTO,
+  SignInResponseDTO
 } from "../../types/auth";
 
 import { post } from "../../api/http";
@@ -25,17 +27,38 @@ export function registerUser(): void {
       email: String(formData.get("email")),
     };
 
-    postUser(data, submitBtn);
+    postUser<RegistrationRequestDTO, RegistrationResponseDTO>(data, submitBtn, "register");
   });
 }
 
-async function postUser(
-  data: RegistrationRequestDTO,
+export function signInUser(): void {
+  const submitBtn = document.querySelector<HTMLButtonElement>("#btnSubmit");
+  submitBtn?.addEventListener("click", (e) => {
+    submitBtn.disabled = true;
+    e.preventDefault();
+    const form = document.querySelector<HTMLFormElement>("form");
+
+    if (!form) return;
+
+    const formData = new FormData(form);
+
+    const data: SignInRequestDTO = {
+      login: String(formData.get("login")),
+      password: String(formData.get("password")),
+    };
+
+    postUser<SignInRequestDTO, SignInResponseDTO>(data, submitBtn, "login");
+  });
+}
+
+async function postUser<T, B extends RegistrationResponseDTO & SignInResponseDTO>(
+  data: T,
   submitBtn: HTMLButtonElement,
+  path: string,
 ): Promise<void> {
   try {
-    const res = await post<RegistrationResponseDTO, RegistrationRequestDTO>(
-      "auth/register",
+    const res = await post<B, T>(
+      `auth/${path}`,
       data,
     );
 
