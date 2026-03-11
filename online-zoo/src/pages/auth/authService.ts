@@ -34,12 +34,16 @@ async function postUser(data: RegistrationRequestDTO): Promise<void> {
       "auth/register",
       data,
     );
-      
-      saveAuth(res.data.access_token, res.data.user);
-      window.location.href = "/pages/landing/index.html";
-      
+
+    saveAuth(res.data.access_token, res.data.user);
+    window.location.href = "/pages/landing/index.html";
   } catch (error) {
-    if (error instanceof Error) console.error(error.message);
-    handlerPopUp("error");
+    if (error instanceof Error) {
+      console.error(error.message);
+      await handlerPopUp("error");
+      const errorElement =
+        document.querySelector<HTMLElement>(".error-message");
+      if (errorElement) errorElement.textContent = error.message;
+    }
   }
 }

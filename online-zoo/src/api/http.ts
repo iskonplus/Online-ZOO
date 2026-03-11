@@ -20,7 +20,15 @@ export async function post<T, B>(path: string, body: B): Promise<T> {
     body: JSON.stringify(body),
   });
 
-  if (!res.ok) throw new Error(errorMsg);
+ if (!res.ok) {
+    if (res.status >= 500) {
+      throw new Error(errorMsg);
+    }
+
+    const data = await res.json();
+    throw new Error(data.error || "Request failed");
+  }
+
 
   return await res.json();
 }
