@@ -1,9 +1,12 @@
 const html: HTMLElement = document.documentElement;
+import {logout} from "./authStorage";
+import { initRegisteredUser } from "./initUser";
 
 let isLoaded = false;
 
 let popUp: HTMLElement | null = null;
 let popUpBtnClose: HTMLElement | null = null;
+let logOutBtn: HTMLElement | null = null;
 
 let htmlPopup = "";
 
@@ -30,6 +33,11 @@ function closePopup(): void {
   clearActivePopupContent();
 }
 
+function logOut(): void {
+  logout();
+  initRegisteredUser();
+}
+
 export async function handlerPopUp(selector: string): Promise<void> {
   if (!isLoaded) {
     if (!htmlPopup) {
@@ -40,9 +48,14 @@ export async function handlerPopUp(selector: string): Promise<void> {
 
     popUp = document.querySelector<HTMLElement>(".pop-up-container");
     popUpBtnClose = document.querySelector<HTMLElement>(".modal__close");
+    logOutBtn = document.querySelector<HTMLElement>(".logOutBtn");
 
     if (popUpBtnClose) {
       popUpBtnClose.addEventListener("click", closePopup);
+    }
+
+    if (logOutBtn) {
+      logOutBtn.addEventListener("click", logOut);
     }
 
     isLoaded = true;

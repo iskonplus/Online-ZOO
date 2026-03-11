@@ -5,7 +5,5 @@ export function initRegisteredUser(): void {
 
   if (!userNameElement) return;
   const user = getUser();
-  if (!user) return;
-
-  userNameElement.textContent = user.name;
+  userNameElement.textContent = user ? user.name : "guest";
 }

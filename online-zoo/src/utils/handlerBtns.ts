@@ -31,9 +31,11 @@ export function initHandlerBtns() {
   }
 
   authBtn?.addEventListener("click", (): void => {
-
     const user = getUser();
       if (!user) handlerPopUp("auth");
       if (user) handlerPopUp("user-profile");
   });
+
+
+  
 }
