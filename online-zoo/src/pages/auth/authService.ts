@@ -7,9 +7,10 @@ import { post } from "../../api/http";
 import { handlerPopUp } from "../../utils/popup";
 import { saveAuth } from "../../utils/authStorage";
 
-export function registerUser(): void {
+export async function registerUser(): void {
   const submitBtn = document.querySelector<HTMLButtonElement>("#btnSubmit");
   submitBtn?.addEventListener("click", (e) => {
+    submitBtn.disabled = true;
     e.preventDefault();
     const form = document.querySelector<HTMLFormElement>("form");
 
@@ -24,11 +25,14 @@ export function registerUser(): void {
       email: String(formData.get("email")),
     };
 
-    postUser(data);
+    postUser(data, submitBtn);
   });
 }
 
-async function postUser(data: RegistrationRequestDTO): Promise<void> {
+async function postUser(
+  data: RegistrationRequestDTO,
+  submitBtn: HTMLButtonElement,
+): Promise<void> {
   try {
     const res = await post<RegistrationResponseDTO, RegistrationRequestDTO>(
       "auth/register",
@@ -45,5 +49,7 @@ async function postUser(data: RegistrationRequestDTO): Promise<void> {
         document.querySelector<HTMLElement>(".error-message");
       if (errorElement) errorElement.textContent = error.message;
     }
+  } finally {
+    submitBtn.disabled = false;
   }
 }
