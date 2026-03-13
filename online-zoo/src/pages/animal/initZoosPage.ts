@@ -234,24 +234,18 @@ function renderSection(animalData: PetInfo) {
 }
 
 export function renderSelectedPet(event: Event) {
+  const activeCard = document.querySelector<HTMLElement>(".side-bar-slide.active");
   const element = (event.target as HTMLElement).closest(".side-bar-slide");
+  
   if (!(element instanceof HTMLElement)) return;
+
   const petId = element.dataset.petId;
   if (!petId) return;
+
   generateSection(petId);
 
-
+  if (!activeCard) return;
+  activeCard.classList.remove("active");
+  element.classList.add("active");
 
 }
-    
-                            // <div class="side-bar-slide" data-pet-id="${petInfo.petId}">
-                            //     <div class="side-bar-icon-container ${petInfo.petId === 1 ? "active" : ""}">
-                            //         <span class="wrapper-icon ${petInfo.petId === 1 ? "active" : ""}">
-                            //             <img src=${getPetIconById(petInfo.petId)} alt="animal icon">
-                            //         </span>
-                            //     </div>
-
-                            //     <div class="side-bar-content">
-                            //         <p>"${petInfo.text}"</p>
-                            //     </div>
-                            // </div>
