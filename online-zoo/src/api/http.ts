@@ -10,6 +10,15 @@ export async function getAll<T>(path: string): Promise<T> {
   return await res.json();
 }
 
+
+export async function getById<T>(path: string, id: string): Promise<T> {
+  const res = await fetch(`${baseUrl}/${path}/${id}`);
+  // const res = await fetch("error" + path);
+  if (!res.ok) throw new Error(errorMsg);
+
+  return await res.json();
+}
+
 export async function post<T, B>(path: string, body: B): Promise<T> {
   // const res = await fetch("error" + path, {
     const res = await fetch(`${baseUrl}/${path}`, {

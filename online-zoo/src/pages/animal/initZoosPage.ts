@@ -1,6 +1,11 @@
-import { getAll } from '../../api/http';
+import { petIcons } from '../../data/petIcons';
+import { getAll, getById } from '../../api/http';
 import { handlerPopUp } from '../../utils/popup';
-import type { CameraCardResponseDTO, CameraCard } from './../../types/pets';
+import type { CameraCardResponseDTO, CameraCard, PetInfoResponseDTO, PetInfo } from '../../types/pets';
+import { getPetImageById } from '../landing/pet';
+
+
+const storKey = "pet-icons";
 export function initSideBarSlider(root: HTMLElement | null): void {
   if (!root) return;
 
@@ -125,16 +130,16 @@ export async function initSadeBar() {
 
 function renderSliderCards(data: CameraCard[]) {
     const root = document.querySelector<HTMLElement>(".wrapper-side-bar");
-     const track = document.querySelector<HTMLElement>(".track-side-bar");
+    const track = document.querySelector<HTMLElement>(".track-side-bar");
     
       if (!track) return;
     
     const slides = data.map((petInfo) => {
           return `
-                            <div class="side-bar-slide">
-                                <div class="side-bar-icon-container">
-                                    <span class="wrapper-icon">
-                                        <img src="/assets/icons/Panda.png" alt="animal icon">
+                            <div class="side-bar-slide" data-pet-id="${petInfo.petId}">
+                                <div class="side-bar-icon-container ${petInfo.petId === 1 ? "active":""}">
+                                    <span class="wrapper-icon ${petInfo.petId === 1 ? "active":""}">
+                                        <img src=${getPetIconById(petInfo.petId)} alt="animal icon">
                                     </span>
                                 </div>
 
@@ -147,5 +152,99 @@ function renderSliderCards(data: CameraCard[]) {
         .join("");
     track.innerHTML = slides;
     initSideBarSlider(root);
+    generateDescription("1");
+}
+
+
+async function generateDescription(id: string): Promise<void> {
+    const titleAnimal = document.querySelector<HTMLElement>(".title-animal");
+    if (!titleAnimal) return;
+
+    try {
+        const animalData = await getById<PetInfoResponseDTO>("pets", `${id}`);
+      titleAnimal.textContent = animalData ? `live ${animalData.data.commonName} cams`: "live cams";
+      renderSection(animalData.data);
+    
+    }
+    catch (error) {
+        console.log(error);
+    }
+
+    
+}
+
+function renderSection(animalData: PetInfo) {
+  const section = document.querySelector<HTMLElement>("#did-you-now");
+  if (!section) return;
+
+  section.innerHTML = `
+  <div class="container did-you-now">
+                <div class="block-did-you-now">
+                    <h3>did you know?</h3>
+                    <p>${animalData.description}</p>
+                </div>
+
+                <div class="wrapper-description-animal">
+
+                    <div class="block-description animal">
+                        <div class="wrap-description">
+                            <h3>Common name:</h3><small>${animalData.commonName}</small>
+                        </div>
+                        <div class="wrap-description">
+                            <h3>Scientific name:</h3><small>${animalData.scientificName}</small>
+                        </div>
+                        <div class="wrap-description">
+                            <h3>Type:</h3><small>${animalData.type}</small>
+                        </div>
+                        <div class="wrap-description">
+                            <h3>Size:</h3><small>${animalData.size}</small>
+                        </div>
+                        <div class="wrap-description">
+                            <h3>Diet:</h3><small>${animalData.diet}</small>
+                        </div>
+                        <div class="wrap-description">
+                            <h3>Habitat:</h3><small>${animalData.habitat}</small>
+                        </div>
+                        <div class="wrap-description">
+
+                            <h3>Range:</h3><small>${animalData.range}</small> <button class="glass-btn">VIEW map
+                                <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="block-description photo">
+                        <img src="${getPetImageById(animalData.id)}" alt="photo animal">
+                    </div>
+
+                </div>
+                <p class="animal-article">${animalData.detailedDescription}</p>
+            </div>
+  
+  `
+}
+
+
+
+
+
+
+
+
+
+
+export function initPetImagesStorage(): void {
+  const existing = localStorage.getItem(storKey);
+  if (!existing) localStorage.setItem(storKey, JSON.stringify(petIcons));
 }
       
+
+export function getPetIconById(id: number): string {
+  const stored = localStorage.getItem(storKey);
+
+  if (!stored) return "";
+
+  const images: Record<number, string> = JSON.parse(stored);
+
+  return images[id] ?? "";
+}

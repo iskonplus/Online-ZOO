@@ -15,3 +15,21 @@ export interface CameraCard {
 export interface CameraCardResponseDTO {
   data: CameraCard[];
 }
+
+export interface PetInfo{
+    id: number;
+    commonName: string;
+    scientificName: string;
+    type: string;
+    size: string;
+    diet: string;
+    habitat: string;
+    range: string;
+    latitude: string;
+    longitude: string;
+    description: string;
+    detailedDescription: string;
+}
+export interface PetInfoResponseDTO{
+  data: PetInfo;
+}
