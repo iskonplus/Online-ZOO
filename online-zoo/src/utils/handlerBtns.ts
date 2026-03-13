@@ -32,16 +32,18 @@ export function initHandlerBtns() {
 
   authBtn?.addEventListener("click", async (): Promise<void> => {
     const user = getUser();
-      if (!user) handlerPopUp("auth");
     if (user) {
       await handlerPopUp("user-profile");
-      const userNameElement = document.querySelector<HTMLElement>(".user-profile .user-content-name");
-      const userEmailElement = document.querySelector<HTMLElement>(".user-profile .user-content-email");
+      const userNameElement = document.querySelector<HTMLElement>(
+        ".user-profile .user-content-name",
+      );
+      const userEmailElement = document.querySelector<HTMLElement>(
+        ".user-profile .user-content-email",
+      );
       if (userNameElement) userNameElement.textContent = user.name;
       if (userEmailElement) userEmailElement.textContent = user.email;
     }
+    if (!user) handlerPopUp("auth");
+    
   });
-
-
-  
 }

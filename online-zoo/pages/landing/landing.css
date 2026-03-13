@@ -8,7 +8,7 @@
     font-style: normal;
 }
 
-/* img */
+/* user-auth-name */
 
 :root {
     --black-color: #000000;
@@ -52,8 +52,8 @@ header {
 
 .wrapper.header {
     max-width: 1440px;
-    margin: auto;
     width: 100%;
+    margin: auto;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -1607,7 +1607,6 @@ input[type="checkbox"] {
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.208);
     transition: .3s;
 }
-
 
 .wrapper-auth small {
     max-width: 150px;
