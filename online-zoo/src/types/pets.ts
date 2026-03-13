@@ -7,3 +7,11 @@ export interface PetCard {
 export interface PetsResponseDTO {
   data: PetCard[];
 }
+export interface CameraCard {
+  id: number;
+  petId: number;
+  text: string;
+}
+export interface CameraCardResponseDTO {
+  data: CameraCard[];
+}
