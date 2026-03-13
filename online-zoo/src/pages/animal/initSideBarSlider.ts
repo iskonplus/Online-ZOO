@@ -21,7 +21,9 @@ export function initSideBarSlider(root: HTMLElement | null): void {
   const visibleSlidesCount = 4;
 
   function getSlides(): HTMLElement[] {
-    return Array.from(safeTrack.querySelectorAll<HTMLElement>(".side-bar-slide"));
+    return Array.from(
+      safeTrack.querySelectorAll<HTMLElement>(".side-bar-slide"),
+    );
   }
 
   function getSlideHeight(): number {
@@ -33,10 +35,10 @@ export function initSideBarSlider(root: HTMLElement | null): void {
     const slideHeight = getSlideHeight();
     if (!slideHeight) return;
 
-    safeViewport.style.height = `${(slideHeight * visibleSlidesCount)-1}px`;
+    safeViewport.style.height = `${slideHeight * visibleSlidesCount - 1}px`;
   }
 
-    function moveNext(): void {
+  function moveNext(): void {
     if (isAnimating) return;
 
     const slides = getSlides();
@@ -60,8 +62,14 @@ export function initSideBarSlider(root: HTMLElement | null): void {
     }, slideDuration);
   }
 
-    safeNextBtn.addEventListener("click", moveNext);
-    openMenuBtn.addEventListener("click", () =>root.classList.toggle("open-side-bar"))
+  safeNextBtn.addEventListener("click", moveNext);
+  openMenuBtn.addEventListener("click", () => {
+    root.classList.toggle("open-side-bar");
+
+    requestAnimationFrame(() => {
+      updateViewportHeight();
+    });
+  });
 
   window.addEventListener("resize", updateViewportHeight);
   updateViewportHeight();
