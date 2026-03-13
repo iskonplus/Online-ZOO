@@ -141,9 +141,9 @@ function renderSidebarCards(data: CameraCard[]) {
   const slides = data
     .map((petInfo) => {
       return `
-                            <div class="side-bar-slide" data-pet-id="${petInfo.petId}">
-                                <div class="side-bar-icon-container ${petInfo.petId === 1 ? "active" : ""}">
-                                    <span class="wrapper-icon ${petInfo.petId === 1 ? "active" : ""}">
+                            <div class="side-bar-slide ${petInfo.petId === 1 ? "active" : ""}" data-pet-id="${petInfo.petId}">
+                                <div class="side-bar-icon-container">
+                                    <span class="wrapper-icon">
                                         <img src=${getPetIconById(petInfo.petId)} alt="animal icon">
                                     </span>
                                 </div>
@@ -159,7 +159,7 @@ function renderSidebarCards(data: CameraCard[]) {
   initSidebarSlider(root);
 }
 
-async function generateSection(id: string): Promise<void> {
+export async function generateSection(id: string): Promise<void> {
   const titleAnimal = document.querySelector<HTMLElement>(".title-animal");
   const loader = document.querySelector<HTMLElement>(".loader.did-you-now");
   if (!titleAnimal || !loader) return;
@@ -167,14 +167,13 @@ async function generateSection(id: string): Promise<void> {
 
   try {
     const animalData = await getById<PetInfoResponseDTO>("pets", `${id}`);
-    titleAnimal.textContent = animalData
-      ? `live ${animalData.data.commonName} cams`
-      : "live cams";
+    titleAnimal.textContent = `live ${animalData.data.commonName} cams`;
     renderSection(animalData.data);
-
   } catch (error) {
     if (error instanceof Error) {
-      const section = document.querySelector<HTMLElement>(".wrapper-did-you-now");
+      const section = document.querySelector<HTMLElement>(
+        ".wrapper-did-you-now",
+      );
       if (!section) return;
       section.innerHTML = `
                 <div class="wrapper-error"><p lang="en">${error.message}</p></div>`;
@@ -233,3 +232,26 @@ function renderSection(animalData: PetInfo) {
             </div>
   `;
 }
+
+export function renderSelectedPet(event: Event) {
+  const element = (event.target as HTMLElement).closest(".side-bar-slide");
+  if (!(element instanceof HTMLElement)) return;
+  const petId = element.dataset.petId;
+  if (!petId) return;
+  generateSection(petId);
+
+
+
+}
+    
+                            // <div class="side-bar-slide" data-pet-id="${petInfo.petId}">
+                            //     <div class="side-bar-icon-container ${petInfo.petId === 1 ? "active" : ""}">
+                            //         <span class="wrapper-icon ${petInfo.petId === 1 ? "active" : ""}">
+                            //             <img src=${getPetIconById(petInfo.petId)} alt="animal icon">
+                            //         </span>
+                            //     </div>
+
+                            //     <div class="side-bar-content">
+                            //         <p>"${petInfo.text}"</p>
+                            //     </div>
+                            // </div>
