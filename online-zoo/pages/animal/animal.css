@@ -366,6 +366,7 @@
     line-height: 22px;
     text-transform: uppercase;
     padding: 5px 20px;
+    border: none;
 }
 
 .side-bar-slide {
@@ -664,7 +665,12 @@
         }
 
         .header-side-bar .wrapper-cam {
-            display: none;
+            transition: .3s;
+            margin-left: -100px;
+        }
+        
+        .open-side-bar .header-side-bar .wrapper-cam {
+            margin-left: 0px;
         }
 
         .side-bar-icon-container {
@@ -694,6 +700,10 @@
             padding-left: 0px;
             text-align: center;
             transform: rotate(180deg);
+        }
+
+        .open-side-bar .header-side-bar .site-bar-btn .btn-content {
+            text-align: end;
         }
 
         .site-bar-btn {

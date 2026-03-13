@@ -66,9 +66,17 @@ export function initSideBarSlider(root: HTMLElement | null): void {
   openMenuBtn.addEventListener("click", () => {
     root.classList.toggle("open-side-bar");
 
-    requestAnimationFrame(() => {
+    const sidebar = root.querySelector<HTMLElement>(".wrapper-side-bar");
+  if (!sidebar) return;
+
+  sidebar.addEventListener(
+    "transitionend",
+    (event: TransitionEvent) => {
+      if (event.propertyName !== "width") return;
       updateViewportHeight();
-    });
+    },
+    { once: true },
+  );
   });
 
   window.addEventListener("resize", updateViewportHeight);
