@@ -13,9 +13,8 @@ export async function getAll<T>(path: string): Promise<T> {
 
 export async function getById<T>(path: string, id: string): Promise<T> {
   const res = await fetch(`${baseUrl}/${path}/${id}`);
-  // const res = await fetch("error" + path);
+  // const res = await fetch("error" + path + id);
   if (!res.ok) throw new Error(errorMsg);
-
   return await res.json();
 }
 

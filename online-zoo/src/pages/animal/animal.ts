@@ -1,14 +1,15 @@
 import { initHandlerBtns } from "../../utils/handlerBtns";
+import { initPetIconStorage } from "../../utils/imageStorage";
 import { initRegisteredUser } from "../../utils/initUser";
 import { initSlider } from "../../utils/slider";
-import { initPetImagesStorage, initSadeBar } from "./initZoosPage";
+import { generateSidebar } from "./initZoosPage";
 
 const zoosSection = document.querySelector<HTMLElement>(".zoos");
 
 document.addEventListener("DOMContentLoaded", (): void => {
   initRegisteredUser();
-  initSadeBar();
-  initHandlerBtns();
-  initPetImagesStorage();
+  generateSidebar();
   initSlider(zoosSection);
+  initHandlerBtns();
+  initPetIconStorage();
 });

@@ -2,20 +2,16 @@ import type { PetCard, PetsResponseDTO } from "../../types/pets";
 import { getAll } from "../../api/http";
 import { handlerPopUp } from "../../utils/popup";
 import { initSlider } from "../../utils/slider";
-import { petImages } from "../../data/petImages";
+import { getPetImageById } from "../../utils/imageStorage";
 
 const metSection = document.querySelector<HTMLElement>(".meet");
-const storKey = "pet-images";
 const contextIssue = `<div class="wrapper-issue">
                         <p id="issue">Something went wrong. Please,
                         <a href="" id="refresh-page-link">refresh</a>
                         the page.</p>
                       </div>`;
 
-export function initPetImagesStorage(): void {
-  const existing = localStorage.getItem(storKey);
-  if (!existing) localStorage.setItem(storKey, JSON.stringify(petImages));
-}
+
 
 export async function initPetsSlider() {
   const loader = document.querySelector<HTMLElement>(".loader.meet");
@@ -67,12 +63,4 @@ async function renderCards(petsData: PetCard[]) {
   track.innerHTML = slides;
 }
 
-export function getPetImageById(id: number): string {
-  const stored = localStorage.getItem(storKey);
 
-  if (!stored) return "";
-
-  const images: Record<number, string> = JSON.parse(stored);
-
-  return images[id] ?? "";
-}

@@ -1,12 +1,14 @@
-import { petIcons } from '../../data/petIcons';
-import { getAll, getById } from '../../api/http';
-import { handlerPopUp } from '../../utils/popup';
-import type { CameraCardResponseDTO, CameraCard, PetInfoResponseDTO, PetInfo } from '../../types/pets';
-import { getPetImageById } from '../landing/pet';
+import { getAll, getById } from "../../api/http";
+import { handlerPopUp } from "../../utils/popup";
+import type {
+  CameraCardResponseDTO,
+  CameraCard,
+  PetInfoResponseDTO,
+  PetInfo,
+} from "../../types/pets";
+import { getPetIconById, getPetImageById } from "../../utils/imageStorage";
 
-
-const storKey = "pet-icons";
-export function initSideBarSlider(root: HTMLElement | null): void {
+export function initSidebarSlider(root: HTMLElement | null): void {
   if (!root) return;
 
   const viewport = root.querySelector<HTMLElement>(".side-bar-viewport");
@@ -86,11 +88,11 @@ export function initSideBarSlider(root: HTMLElement | null): void {
   updateViewportHeight();
 }
 
-export async function initSadeBar() {
-    const sideBarWrapper = document.querySelector<HTMLElement>(".out-slider");
+export async function generateSidebar() {
+  const sideBarWrapper = document.querySelector<HTMLElement>(".out-slider");
 
-    if (!sideBarWrapper) return;
-    sideBarWrapper.innerHTML = `
+  if (!sideBarWrapper) return;
+  sideBarWrapper.innerHTML = `
     <div class="wrapper-side-bar">
                     <div class="header-side-bar">
                         <div class="wrapper-cam">
@@ -114,31 +116,34 @@ export async function initSadeBar() {
     </div>
     `;
 
-    try {
-        const sliderData = await getAll<CameraCardResponseDTO>("cameras");
-        renderSliderCards(sliderData.data);
-    } catch (error) {
-        if (error instanceof Error) {
-            await handlerPopUp("error");
-            const track = document.querySelector<HTMLElement>(".track-side-bar");
-            if (track) track.innerHTML = `
-                <div class="wrapper-error"><p lang="en">${error.message}</p></div>`
-        }
+  try {
+    const sliderData = await getAll<CameraCardResponseDTO>("cameras");
+    renderSidebarCards(sliderData.data);
+  } catch (error) {
+    if (error instanceof Error) {
+      await handlerPopUp("error");
+      const track = document.querySelector<HTMLElement>(".track-side-bar");
+      if (track)
+        track.innerHTML = `
+                <div class="wrapper-error"><p lang="en">${error.message}</p></div>`;
     }
+  }
+
+  generateSection("1");
 }
 
+function renderSidebarCards(data: CameraCard[]) {
+  const root = document.querySelector<HTMLElement>(".wrapper-side-bar");
+  const track = document.querySelector<HTMLElement>(".track-side-bar");
 
-function renderSliderCards(data: CameraCard[]) {
-    const root = document.querySelector<HTMLElement>(".wrapper-side-bar");
-    const track = document.querySelector<HTMLElement>(".track-side-bar");
-    
-      if (!track) return;
-    
-    const slides = data.map((petInfo) => {
-          return `
+  if (!track) return;
+
+  const slides = data
+    .map((petInfo) => {
+      return `
                             <div class="side-bar-slide" data-pet-id="${petInfo.petId}">
-                                <div class="side-bar-icon-container ${petInfo.petId === 1 ? "active":""}">
-                                    <span class="wrapper-icon ${petInfo.petId === 1 ? "active":""}">
+                                <div class="side-bar-icon-container ${petInfo.petId === 1 ? "active" : ""}">
+                                    <span class="wrapper-icon ${petInfo.petId === 1 ? "active" : ""}">
                                         <img src=${getPetIconById(petInfo.petId)} alt="animal icon">
                                     </span>
                                 </div>
@@ -148,33 +153,39 @@ function renderSliderCards(data: CameraCard[]) {
                                 </div>
                             </div>
           `;
-        })
-        .join("");
-    track.innerHTML = slides;
-    initSideBarSlider(root);
-    generateDescription("1");
+    })
+    .join("");
+  track.innerHTML = slides;
+  initSidebarSlider(root);
 }
 
+async function generateSection(id: string): Promise<void> {
+  const titleAnimal = document.querySelector<HTMLElement>(".title-animal");
+  const loader = document.querySelector<HTMLElement>(".loader.did-you-now");
+  if (!titleAnimal || !loader) return;
+  loader.classList.add("active");
 
-async function generateDescription(id: string): Promise<void> {
-    const titleAnimal = document.querySelector<HTMLElement>(".title-animal");
-    if (!titleAnimal) return;
+  try {
+    const animalData = await getById<PetInfoResponseDTO>("pets", `${id}`);
+    titleAnimal.textContent = animalData
+      ? `live ${animalData.data.commonName} cams`
+      : "live cams";
+    renderSection(animalData.data);
 
-    try {
-        const animalData = await getById<PetInfoResponseDTO>("pets", `${id}`);
-      titleAnimal.textContent = animalData ? `live ${animalData.data.commonName} cams`: "live cams";
-      renderSection(animalData.data);
-    
+  } catch (error) {
+    if (error instanceof Error) {
+      const section = document.querySelector<HTMLElement>(".wrapper-did-you-now");
+      if (!section) return;
+      section.innerHTML = `
+                <div class="wrapper-error"><p lang="en">${error.message}</p></div>`;
     }
-    catch (error) {
-        console.log(error);
-    }
-
-    
+  } finally {
+    loader.classList.remove("active");
+  }
 }
 
 function renderSection(animalData: PetInfo) {
-  const section = document.querySelector<HTMLElement>("#did-you-now");
+  const section = document.querySelector<HTMLElement>(".wrapper-did-you-now");
   if (!section) return;
 
   section.innerHTML = `
@@ -220,31 +231,5 @@ function renderSection(animalData: PetInfo) {
                 </div>
                 <p class="animal-article">${animalData.detailedDescription}</p>
             </div>
-  
-  `
-}
-
-
-
-
-
-
-
-
-
-
-export function initPetImagesStorage(): void {
-  const existing = localStorage.getItem(storKey);
-  if (!existing) localStorage.setItem(storKey, JSON.stringify(petIcons));
-}
-      
-
-export function getPetIconById(id: number): string {
-  const stored = localStorage.getItem(storKey);
-
-  if (!stored) return "";
-
-  const images: Record<number, string> = JSON.parse(stored);
-
-  return images[id] ?? "";
+  `;
 }
