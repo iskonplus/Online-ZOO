@@ -268,6 +268,7 @@
 }
 
 .block-description>img {
+    max-width: 440px;
     width: 100%;
     border-radius: 5px;
     height: auto;
@@ -811,6 +812,8 @@
 
             .block-description.photo>img {
                 width: 100%;
+                display: block;
+                margin: auto;
             }
 
             .block-description.animal> :last-child {
@@ -975,7 +978,7 @@
                     flex-direction: column;
                     justify-content: flex-start;
                     align-items: start;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                     gap: 5px;
 
                 }

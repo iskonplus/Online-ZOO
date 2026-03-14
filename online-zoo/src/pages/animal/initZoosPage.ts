@@ -78,9 +78,9 @@ export function initSidebarSlider(root: HTMLElement | null): void {
     const sidebar = root.querySelector<HTMLElement>(".wrapper-side-bar");
     if (!sidebar) return;
 
-    sidebar.addEventListener("transitionend", () => updateViewportHeight(), {
-      once: true,
-    });
+    // sidebar.addEventListener("transitionend", () => updateViewportHeight(), {
+    //   once: true,
+    // });
     requestAnimationFrame(() => updateViewportHeight());
   });
 
