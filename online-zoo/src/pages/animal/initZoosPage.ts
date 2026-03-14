@@ -120,18 +120,24 @@ export async function generateSidebar() {
   try {
     const sliderData = await getAll<CameraCardResponseDTO>("cameras");
     renderSidebarCards(sliderData.data);
+    generateSection("1");
+    generateVideo(1);
   } catch (error) {
     if (error instanceof Error) {
       await handlerPopUp("error");
       const track = document.querySelector<HTMLElement>(".track-side-bar");
-      if (track)
-        track.innerHTML = `
-                <div class="wrapper-error"><p lang="en">${error.message}</p></div>`;
+      const root = document.querySelector<HTMLElement>(".zoos");
+
+      const errorHTML = `
+    <div class="wrapper-error">
+      <p lang="en">${error.message}</p>
+    </div>
+  `;
+
+      if (track) track.innerHTML = errorHTML;
+      if (root) root.innerHTML = errorHTML;
     }
   }
-
-  generateSection("1");
-  generateVideo(1);
 }
 
 function renderSidebarCards(data: CameraCard[]) {

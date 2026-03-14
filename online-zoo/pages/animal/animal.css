@@ -8,7 +8,6 @@
     grid-column: 1 / -1;
 }
 
-/*         .zoos .orange-btn */
 .zoos {
     padding-top: 55px;
     padding-bottom: 46px;
@@ -180,9 +179,10 @@
 
 }
 
-/* #zoos .welcome-footer { */
-/* margin-bottom: 25px; */
-/* } */
+.zoos .wrapper-error{
+    display: block;
+    margin: auto;
+}
 
 #zoos .container.welcome-footer {
     align-items: start;
@@ -612,7 +612,6 @@
         padding: 0px;
     }
 
-
     #zoos .container.welcome-footer {
         padding: 30px 40px;
         flex-wrap: wrap;
@@ -650,7 +649,6 @@
     }
 
 
-
     @media(max-width: 1150px) {
 
         .title-animal {
@@ -663,11 +661,11 @@
             align-items: center;
             justify-content: center;
         }
-     
-    .zoos .wrapper-slider-arrows {
-        max-width: 100px;
-        top: 111%;
-    }
+
+        .zoos .wrapper-slider-arrows {
+            max-width: 100px;
+            top: 111%;
+        }
 
         .wrapper-description-animal {
             flex-wrap: wrap-reverse;
@@ -824,7 +822,7 @@
                 margin-bottom: 26px;
             }
 
-             #zoos .slider__viewport {
+            #zoos .slider__viewport {
                 overflow-x: auto;
                 overflow-y: hidden;
                 -webkit-overflow-scrolling: touch;
@@ -869,8 +867,6 @@
             .container.did-you-now {
                 padding-bottom: 100px;
             }
-
-
 
             .out-slider,
             .wrapper-side-bar {
@@ -953,14 +949,6 @@
                     margin: auto;
                 }
 
-                /* .zoos .slider__track {
-                    display: grid;
-                    grid-auto-flow: column;
-                    grid-auto-columns: calc((100% - 20px) / 2);
-                    gap: 20px;
-                    grid-template-rows: 1fr;
-                } */
-
                 #zoos .slider__slide,
                 .our-users-card {
                     width: 100% !important;
@@ -970,7 +958,7 @@
 
                 .zoos .orange-btn {
                     width: 100%;
-                   top:250%
+                    top: 250%
                 }
 
                 #zoos .container.welcome-footer {
