@@ -8,6 +8,7 @@
     grid-column: 1 / -1;
 }
 
+/*         .zoos .orange-btn */
 .zoos {
     padding-top: 55px;
     padding-bottom: 46px;
@@ -22,6 +23,7 @@
 }
 
 .title-animal {
+    max-width: 78%;
     font-weight: 600;
     font-size: 54px;
     line-height: 66px;
@@ -64,15 +66,17 @@
 
 .zoos .slider__viewport {
     width: 100%;
-    max-width: 1040px;
+    max-width: 940px;
     overflow: hidden;
 }
 
 .zoos .slider__track {
+    width: 100%;
+    /* max-width: 900px; */
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100% - 80px) / 3);
-    gap: 40px;
+    grid-auto-columns: calc((100% - 60px) / 3);
+    gap: 30px;
     grid-template-rows: 1fr;
     row-gap: 0;
     /* overflow: hidden; */
@@ -94,9 +98,10 @@
     transition: .3s;
     border: 2px solid #ffffff00
 }
-    .zoos .slider__slide.active {
-        border: 2px solid var(--orange-color);
-    }
+
+.zoos .slider__slide.active {
+    border: 2px solid var(--orange-color);
+}
 
 .zoos>img {
     width: 100%;
@@ -112,7 +117,6 @@
 .zoos .slider__slide figure>img {
     margin-bottom: 0px;
     height: 100%;
-
 }
 
 .wrapper-cam {
@@ -158,13 +162,12 @@
 }
 
 .zoos .wrapper-slider-arrows {
-    width: 100%;
-    max-width: 1204px;
+    width: 102.5%;
     position: absolute;
     top: 62.2%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 0;
 }
 
 .zoos .wrapper-slider-arrows button {
@@ -285,12 +288,13 @@
 }
 
 /* ___video */
-.main-video{
-        max-width: 100%;
+.main-video {
+    max-width: 100%;
     aspect-ratio: 4 / 2;
-    border:none;
+    border: none;
     border-radius: 5px;
 }
+
 /* ---bar--- */
 .out-slider {
     width: 220px;
@@ -503,7 +507,7 @@
     border-color: var(--white-color);
 }
 
-.wrapper-loader{
+.wrapper-loader {
     width: 100%;
     display: flex;
     align-items: center;
@@ -539,9 +543,8 @@
 
 @media(max-width: 1280px) {
 
-    .zoos {
-        padding-top: 30px;
-        padding-bottom: 46px;
+    #zoos .container.zoos {
+        padding: 30px 20px 46px;
     }
 
     .wrapper-zoos-section {
@@ -549,6 +552,7 @@
     }
 
     .title-animal {
+        max-width: 70%;
         text-align: start;
         margin-bottom: 30px;
     }
@@ -572,9 +576,15 @@
         margin-left: 0px;
     }
 
+    .zoos .slider__viewport {
+        width: 100%;
+        max-width: 800px;
+        overflow: hidden;
+    }
+
     .zoos .slider__track {
-        justify-content: center;
-        grid-auto-columns: calc((80% - 40px) / 3);
+        justify-content: start;
+        grid-auto-columns: calc((100% - 40px) / 3);
         gap: 20px;
     }
 
@@ -644,6 +654,7 @@
     @media(max-width: 1150px) {
 
         .title-animal {
+            max-width: 100%;
             margin-left: 0px;
         }
 
@@ -652,6 +663,11 @@
             align-items: center;
             justify-content: center;
         }
+     
+    .zoos .wrapper-slider-arrows {
+        max-width: 100px;
+        top: 111%;
+    }
 
         .wrapper-description-animal {
             flex-wrap: wrap-reverse;
@@ -808,10 +824,20 @@
                 margin-bottom: 26px;
             }
 
+             #zoos .slider__viewport {
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+            }
+
             .zoos .slider__track {
-                justify-content: end;
-                grid-auto-columns: calc((100% - 40px) / 3);
+                display: flex;
+                flex-direction: row;
                 gap: 20px;
+                transition: none;
+                transform: none !important;
             }
 
             .block-description,
@@ -892,9 +918,9 @@
 
             @media(max-width: 460px) {
 
-                .zoos {
+                #zoos .container.zoos {
                     padding-top: 20px;
-                    padding-bottom: 145px;
+                    padding-bottom: 105px;
                 }
 
                 .title-animal {
@@ -927,23 +953,24 @@
                     margin: auto;
                 }
 
-                .zoos .slider__track {
+                /* .zoos .slider__track {
                     display: grid;
                     grid-auto-flow: column;
                     grid-auto-columns: calc((100% - 20px) / 2);
                     gap: 20px;
                     grid-template-rows: 1fr;
-                }
+                } */
 
                 #zoos .slider__slide,
                 .our-users-card {
                     width: 100% !important;
+                    max-width: 100% !important;
                     scroll-snap-align: start;
                 }
 
                 .zoos .orange-btn {
                     width: 100%;
-                    top: 193%;
+                   top:250%
                 }
 
                 #zoos .container.welcome-footer {

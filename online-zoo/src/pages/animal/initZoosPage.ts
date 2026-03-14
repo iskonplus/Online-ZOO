@@ -260,20 +260,21 @@ export function generateVideo(petId: number): void {
 
   if (!iframe || !slides.length) return;
   slides.forEach((slide, index) => {
+    slides[index]?.classList.remove("active");
     const videoId = animalVideosId[petId]?.[index];
     if (!videoId) return;
 
-    const previewImage = slide.querySelector<HTMLImageElement>(".video-preview");
+    const previewImage =
+      slide.querySelector<HTMLImageElement>(".video-preview");
     if (!previewImage) return;
 
-      if (index === 0) {
-        iframe.src = `https://www.youtube.com/embed/${videoId}`;
-        slides[index]?.classList.add("active");
-    } 
-    
+    if (index === 0) {
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      slides[index]?.classList.add("active");
+    }
+
     previewImage.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
     slide.dataset.videoId = videoId;
-
   });
 }
 
@@ -284,7 +285,9 @@ export function initVideoSlider(): void {
   if (!track || !iframe) return;
 
   track.addEventListener("click", (event) => {
-    const slide = (event.target as HTMLElement).closest<HTMLElement>(".slider__slide");
+    const slide = (event.target as HTMLElement).closest<HTMLElement>(
+      ".slider__slide",
+    );
     if (!slide) return;
 
     const videoId = slide.dataset.videoId;
