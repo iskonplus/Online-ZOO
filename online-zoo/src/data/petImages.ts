@@ -26,7 +26,7 @@ export const petImages: Record<number, string> = {
   25: "/assets/images/images2.jpeg",
   26: "/assets/images/free.jpeg",
   27: "/assets/images/3604.jpg",
-  28: "/assets/images/cheetah-ima.jpg"
+  28: "/assets/images/cheetah-ima.jpg",
 };
 
 export const petIcons: Record<number, string> = {
@@ -57,29 +57,36 @@ export const petIcons: Record<number, string> = {
   25: "/assets/icons/scarlet-macaw-icon-3386372-512.png",
   26: "/assets/icons/3386470-200.png",
   27: "/assets/icons/656-200.png",
-  28: "/assets/icons/cheetah-icon-5768468-512.png"
+  28: "/assets/icons/cheetah-icon-5768468-512.png",
 };
 
 export const animalVideosId: Record<number, string[]> = {
-  1: [ // Giant Panda
-    "C3MMFjlMJUw",
-    "DeznJthKCFY",
-    "I-ovzUNno7g",
-    "OevbuYwXDw4"
-  ],
-
-  2: [ // Lemur
-    "t-LTWFnGmeg",
-    "Jp3rN8vW1jA",
-    "9XbN3bV7Fv0",
-    "Q6K8yX5p2qA"
-  ],
-
-  3: [ // Gorilla
-    "5a3cB2j9s4Q",
-    "7cN1H9s9TqU",
-    "L7Wm8G1k2aM",
-    "E2jZ2WkQ8fA"
-  ]
+  1: ["C3MMFjlMJUw", "Xt9xzgDL62Y", "I-ovzUNno7g", "OevbuYwXDw4"],
+  2: ["vGEkHFX68vI", "kQ3A2z_hiPE", "8ijuS_f0CnM", "We5EHfpl7gk"],
+  3: ["hEsmFfTliqI", "D9fZPBCRZzY", "os1kwb2a4wk", "9Hu0GWLTVo4"],
+  4: ["AbafKuxcHpQ", "_3M003131RQ", "XkW7-KpOQLA", "ycAnNy5cbKo"],
+  5: ["yPABjg84ScU", "RDVhXgzOzI8", "_Vja5g4XRfw", "eO9qydUtK7k"],
+  6: ["oI3ADcDH0Uc", "jQH50vKSv2o", "BhDKBmwOExw", "U8ICLwDDPOI"],
+  7: ["OMkEVX23BdM", "uFcZhH_wFbs", "cOikZwPlowI", "dH2usCKbWMM"],
+  8: ["B8BQpqxRJB8", "PEjYnNsv62g", "o7C2AvM-D8k", "FqYNwHuJ9FU"],
+  9: ["LeBUOT1RHDg", "DA0xBTxqxdM", "mgdFs2KyKwo", "Y28ml82Un2Y"],
+  10: ["hEsmFfTliqI", "D9fZPBCRZzY", "os1kwb2a4wk", "9Hu0GWLTVo4"],
+  11: ["Aw6GkiCvcWs", "-umeFNGIYms", "SArfG92dgV4", "dP5SBDkQIn4"],
+  12: ["Wj-DKgyk1eg", "FukcZF9ARy8", "_pFzgHTjuGQ", "8h_ifQndFCo"],
+  13: ["B8BQpqxRJB8", "PEjYnNsv62g", "o7C2AvM-D8k", "FqYNwHuJ9FU"],
+  14: ["YXMo5w9aMNs", "5IaYm3NjJnM", "Gwfke3f3f0M", "Z15haPw_U4I"],
+  15: ["S9atRW1DgbQ", "9-PaIwxjnr8", "BMXdicPN1VE", "HCsklFdWGAI"],
+  16: ["_HNpc1874fE", "L3ZYUhuqhxQ", "HeEyJo838PA", "K-Tfq6dARGk"],
+  17: ["CF3VzOw6hFs", "msx3BAhIeQg", "wpuFEMUscAk", "g7PaWeHCPHg"],
+  18: ["Uj0EVT-Ekog", "2i4ruVTyMU4", "JTlveCrymV8", "yQm4CnHMwxc"],
+  19: ["1zRGzlWqce4", "64ZaC04ppLQ", "Vi-33aj12xw", "ie6I0YF2_SE"],
+  20: ["fQ8ug4QJw74", "N7e_lDDojas", "DfskHraT2g0", "tx6r7QX2iXk"],
+  21: ["rjPBMXGkhnA", "jcjDrE1ye-E", "xAYBNaq8VcQ", "naPlwoCkzeA"],
+  22: ["xckLCrv7wUQ", "TXMf5NpOx6A", "ZhJVeIRI3nQ", "bAtppoE9MaY"],
+  23: ["k2kiyWu_XNc", "aSQiLm54gUs", "PCr65iD8Id4", "fTDlGSIYvZs"],
+  24: ["AbafKuxcHpQ", "_3M003131RQ", "XkW7-KpOQLA", "ycAnNy5cbKo"],
+  25: ["GN9AHGOyQ1g", "c7ox2DYLdgo", "OvU_Vj3UmCQ", "c7ox2DYLdgo"],
+  26: ["28FzV5OHqMU", "C20t4OJDpVA", "gcTg9mt4eAk", "qc25_G2ezSo"],
+  27: ["DpV4k3Edr-I", "OTp8W251aiQ", "T7HGSvczDA4", "7dtyjfUUBws"],
+  28: ["RjqWFcwnq08", "icFMTB0Pi0g", "V8vejjVgIHg", "pkhE14Rou-E"],
 };
-
