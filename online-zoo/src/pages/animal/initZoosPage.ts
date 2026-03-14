@@ -7,6 +7,7 @@ import type {
   PetInfo,
 } from "../../types/pets";
 import { getPetIconById, getPetImageById } from "../../utils/imageStorage";
+import { animalVideosId } from "../../data/petImages";
 
 export function initSidebarSlider(root: HTMLElement | null): void {
   if (!root) return;
@@ -130,6 +131,7 @@ export async function generateSidebar() {
   }
 
   generateSection("1");
+  generateVideo(1);
 }
 
 function renderSidebarCards(data: CameraCard[]) {
@@ -234,18 +236,66 @@ function renderSection(animalData: PetInfo) {
 }
 
 export function renderSelectedPet(event: Event) {
-  const activeCard = document.querySelector<HTMLElement>(".side-bar-slide.active");
+  const activeCard = document.querySelector<HTMLElement>(
+    ".side-bar-slide.active",
+  );
   const element = (event.target as HTMLElement).closest(".side-bar-slide");
-  
+
   if (!(element instanceof HTMLElement)) return;
 
   const petId = element.dataset.petId;
   if (!petId) return;
 
   generateSection(petId);
+  generateVideo(+petId);
 
   if (!activeCard) return;
   activeCard.classList.remove("active");
   element.classList.add("active");
+}
 
+export function generateVideo(petId: number): void {
+  const iframe = document.querySelector<HTMLIFrameElement>(".main-video");
+  const slides = document.querySelectorAll<HTMLElement>(".zoos .slider__slide");
+
+  if (!iframe || !slides.length) return;
+  slides.forEach((slide, index) => {
+    const videoId = animalVideosId[petId]?.[index];
+    if (!videoId) return;
+
+    const previewImage = slide.querySelector<HTMLImageElement>(".video-preview");
+    if (!previewImage) return;
+
+      if (index === 0) {
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        slides[index]?.classList.add("active");
+    } 
+    
+    previewImage.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+    slide.dataset.videoId = videoId;
+
+  });
+}
+
+export function initVideoSlider(): void {
+  const track = document.querySelector<HTMLElement>(".zoos .slider__track");
+  const iframe = document.querySelector<HTMLIFrameElement>(".main-video");
+
+  if (!track || !iframe) return;
+
+  track.addEventListener("click", (event) => {
+    const slide = (event.target as HTMLElement).closest<HTMLElement>(".slider__slide");
+    if (!slide) return;
+
+    const videoId = slide.dataset.videoId;
+    if (!videoId) return;
+
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+
+    track
+      .querySelectorAll<HTMLElement>(".slider__slide")
+      .forEach((el) => el.classList.remove("active"));
+
+    slide.classList.add("active");
+  });
 }

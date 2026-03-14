@@ -94,6 +94,9 @@
     transition: .3s;
     border: 2px solid #ffffff00
 }
+    .zoos .slider__slide.active {
+        border: 2px solid var(--orange-color);
+    }
 
 .zoos>img {
     width: 100%;
@@ -269,9 +272,8 @@
 
 .block-description>img {
     max-width: 440px;
-    width: 100%;
+    aspect-ratio: 1 / 1;
     border-radius: 5px;
-    height: auto;
     object-fit: cover;
     object-position: center;
 }
@@ -282,6 +284,13 @@
     font-size: 18px;
 }
 
+/* ___video */
+.main-video{
+        max-width: 100%;
+    aspect-ratio: 4 / 2;
+    border:none;
+    border-radius: 5px;
+}
 /* ---bar--- */
 .out-slider {
     width: 220px;

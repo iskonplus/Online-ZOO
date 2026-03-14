@@ -59,3 +59,27 @@ export const petIcons: Record<number, string> = {
   27: "/assets/icons/656-200.png",
   28: "/assets/icons/cheetah-icon-5768468-512.png"
 };
+
+export const animalVideosId: Record<number, string[]> = {
+  1: [ // Giant Panda
+    "C3MMFjlMJUw",
+    "DeznJthKCFY",
+    "I-ovzUNno7g",
+    "OevbuYwXDw4"
+  ],
+
+  2: [ // Lemur
+    "t-LTWFnGmeg",
+    "Jp3rN8vW1jA",
+    "9XbN3bV7Fv0",
+    "Q6K8yX5p2qA"
+  ],
+
+  3: [ // Gorilla
+    "5a3cB2j9s4Q",
+    "7cN1H9s9TqU",
+    "L7Wm8G1k2aM",
+    "E2jZ2WkQ8fA"
+  ]
+};
+
