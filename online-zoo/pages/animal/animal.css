@@ -243,7 +243,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    align-items: end;
+    align-items: center;
     margin-bottom: 29px;
     gap: 20px;
     position: relative;
@@ -264,8 +264,6 @@
 }
 
 .wrap-description .glass-btn {
-    position: absolute;
-    bottom: -27px;
     right: 33%;
 }
 

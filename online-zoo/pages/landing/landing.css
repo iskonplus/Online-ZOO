@@ -1623,7 +1623,7 @@ input[type="checkbox"] {
 
 .viewMap.active {
     display: block;
-        position: relative;
+    position: relative;
 }
 
 .map-modal {
@@ -2498,6 +2498,14 @@ input[type="checkbox"] {
 
                 .wrapper-block-amount p {
                     display: block;
+                }
+
+                .wrapper-content-pop-up.error.active {
+                    padding: 100px 10px 20px;
+                }
+
+                .wrapper-content-pop-up.error p {
+                    padding: 30px 10px;
                 }
 
                 @media (max-width: 515px) {
