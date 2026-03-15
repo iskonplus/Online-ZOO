@@ -590,11 +590,11 @@ footer ul li a {
 .slider__slide .glass-btn {
     background-color: inherit;
     color: var(--orange-color);
-    display: block;
+    display: flex;
     width: fit-content;
     margin: 0 auto;
+    align-items: center;
 }
-
 
 .glass-dark-btn {
     background-color: inherit;
@@ -1171,7 +1171,7 @@ html.no-scroll {
     gap: 40px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .green-btn {
@@ -1270,7 +1270,7 @@ html.no-scroll {
 .wrapper-special {
     display: flex;
     gap: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 input,
@@ -2109,7 +2109,7 @@ input[type="checkbox"] {
         }
 
         .wrapper-pop-up h2 {
-            padding: 0px 100px;
+            padding: 0px 60px;
         }
 
         .wrapper-pop-up p {
@@ -2124,13 +2124,19 @@ input[type="checkbox"] {
             width: calc(100% + 154px);
             margin-left: -77px;
             margin-right: -77px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
+            padding: 20px 10px;
         }
 
         .wrapper-other-amount,
         .wrapper-special {
             flex-wrap: wrap;
             gap: 20px;
+        }
+
+        .donate-info::after {
+
+            margin-bottom: 20px
         }
 
 
@@ -2142,6 +2148,14 @@ input[type="checkbox"] {
             position: absolute;
             right: 160px;
             flex-direction: row-reverse
+        }
+
+        .first .block-amount {
+            gap: 15px;
+        }
+
+        .first .wrapper-accept {
+            margin-bottom: 30px;
         }
 
 
@@ -2507,6 +2521,12 @@ input[type="checkbox"] {
                 .wrapper-content-pop-up.error p {
                     padding: 30px 10px;
                 }
+
+                .first .wrapper-block-amount .green-btn.disabled,
+                .first .green-btn {
+                    padding: 10px 20px;
+                }
+
 
                 @media (max-width: 515px) {
                     .block-amount {
@@ -2921,6 +2941,63 @@ input[type="checkbox"] {
                             margin-left: 0px;
                         }
 
+                        .first .header-pop-up {
+                            padding: 15px 10px;
+                        }
+
+                        .wrapper-pop-up p {
+                            padding: 0px 10px;
+                            margin-bottom: 10px;
+                            font-size: 16px;
+                        }
+
+                        .donate-info::after {
+                            margin-bottom: 10px;
+                        }
+
+                        .first p,
+                        .checkbox-label {
+                            font-size: 12px;
+                        }
+
+                        .first .wrapper-block-amount .green-btn.disabled,
+                        .first .green-btn {
+                            font-size: 14px;
+                        }
+
+                        .first .block-amount,
+                        .wrapper-other-amount,
+                        .wrapper-special {
+                            gap: 10px;
+                            margin-bottom: 20px;
+                        }
+
+                        .wrapper-pop-up .header-pop-up h2 {
+                            text-align: start;
+                        }
+
+                        .first .wrapper-accept {
+                            margin-bottom: 15px;
+                        }
+
+                        .first p,
+                        .checkbox-label {
+                            gap: 10px
+                        }
+
+                        .first .pop-up-dots {
+                            margin-top: 10px;
+                        }
+
+                        .first .wrapper-block-amount .green-btn.disabled, .first .green-btn,
+                        .first input {
+                            width: 100%;
+                        }
+                        .first input,
+                        .first select {
+                            padding: 15px 10px;
+                            font-size: 12px;
+                        }
 
 
                     }
