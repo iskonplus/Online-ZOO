@@ -2990,7 +2990,7 @@ input[type="checkbox"] {
                         }
 
                         .first .wrapper-block-amount .green-btn.disabled, .first .green-btn,
-                        .first input {
+                        .first .wrapper-other-amount input {
                             width: 100%;
                         }
                         .first input,
