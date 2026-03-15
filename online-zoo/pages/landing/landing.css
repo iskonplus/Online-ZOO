@@ -2995,8 +2995,21 @@ input[type="checkbox"] {
                         }
                         .first input,
                         .first select {
-                            padding: 15px 10px;
+                            padding: 10px;
                             font-size: 12px;
+                        }
+                        .first .checkbox-label {
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            justify-content: center;
+                            gap: 10px;
+                        }
+                        .first .checkbox-label input {
+                            max-width: 25px;
+                        }
+                        .first .checkbox-label label {
+                            display: inline-block;
+                            max-width: 100%;
                         }
 
 
