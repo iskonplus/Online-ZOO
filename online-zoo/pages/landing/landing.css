@@ -2989,10 +2989,15 @@ input[type="checkbox"] {
                             margin-top: 10px;
                         }
 
+                        .first .header-pop-up h2{
+                            max-width: 90%;
+                        }
+
                         .first .wrapper-block-amount .green-btn.disabled, .first .green-btn,
                         .first .wrapper-other-amount input {
                             width: 100%;
                         }
+
                         .first input,
                         .first select {
                             padding: 10px;
