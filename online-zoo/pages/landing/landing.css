@@ -3007,10 +3007,6 @@ input[type="checkbox"] {
                         .first .checkbox-label input {
                             max-width: 25px;
                         }
-                        .first .checkbox-label label {
-                            display: inline-block;
-                            max-width: 100%;
-                        }
 
 
                     }
