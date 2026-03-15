@@ -1273,6 +1273,23 @@ html.no-scroll {
     margin-bottom: 30px;
 }
 
+.wrapper-special {
+    align-items: center;
+}
+select {
+  max-height: 150px;
+  overflow-y: auto;
+}
+select option {
+  height: 30px;
+}
+
+.wrapper-special label {
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
 input,
 select {
     padding: 16px 20px;
@@ -1659,6 +1676,17 @@ input[type="checkbox"] {
     height: 3px;
     background-color: var(--green-color);
     border-radius: 4px;
+}
+
+.thanks #thanks-for-donation {
+    color: var(--dark-green-color);
+    font-size: 18px;
+    text-align: center;
+}
+
+.block-amount .green-btn.is-active {
+    outline: 2px solid orange;
+    background-color: var(--dark-green-color);
 }
 
 @media (max-width: 1200px) {
@@ -3022,9 +3050,17 @@ input[type="checkbox"] {
                         }
 
                         .wrapper-other-amount input,
-                        .wrapper-other-amount button{
+                        .wrapper-other-amount button {
                             flex: 1 1 0;
                             min-width: 0;
+                        }
+
+                        .thanks .header-pop-up {
+                            padding: 30px 10px;
+                        }
+
+                        .wrapper-special label {
+                            font-size: 12px;
                         }
 
 
