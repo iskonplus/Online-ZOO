@@ -68,12 +68,10 @@ export function initDonationFirst(): void {
 
     clearActiveAmountButtons();
 
-    otherAmountInput.value = "";
-    petSelect.selectedIndex = 0;
-
-    if (recurringCheckbox) {
-      recurringCheckbox.checked = false;
-    }
+    if (otherAmountInput) otherAmountInput.value = "";
+    if (petSelect) petSelect.selectedIndex = 0;
+    if (recurringCheckbox) recurringCheckbox.checked = false;
+    
 
     updateNextButtonState();
   }
@@ -96,7 +94,7 @@ export function initDonationFirst(): void {
         "donations",
         donationData,
       );
-        
+
       await handlerPopUp("thanks");
       renderDonationMsg(response);
     } catch (error) {
@@ -106,7 +104,9 @@ export function initDonationFirst(): void {
         data: { message: errorMsg },
       });
       updateNextButtonState();
-    }finally{resetForm()}
+    } finally {
+      resetForm();
+    }
   }
 
   function renderDonationMsg(response: DonationResponseDTO) {

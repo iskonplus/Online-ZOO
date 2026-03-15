@@ -4,6 +4,7 @@ export interface DonationRequestDTO {
   amount: number;
   petId: number;
 }
+
 export interface DonationResponseDTO {
   data: {
       message: string;
