@@ -33,3 +33,11 @@ export interface PetInfo{
 export interface PetInfoResponseDTO{
   data: PetInfo;
 }
+
+
+export interface AnimalMapData {
+  id: number;
+  commonName: string;
+  latitude: string;
+  longitude: string;
+}

@@ -161,7 +161,7 @@
 }
 
 .zoos .wrapper-slider-arrows {
-    width: 102.5%;
+    width: 100%;
     position: absolute;
     top: 62.2%;
     left: 50%;
@@ -179,7 +179,7 @@
 
 }
 
-.zoos .wrapper-error{
+.zoos .wrapper-error {
     display: block;
     margin: auto;
 }
@@ -539,6 +539,8 @@
     hyphens: auto;
     overflow-wrap: break-word;
 }
+
+
 
 
 @media(max-width: 1280px) {
@@ -1066,6 +1068,15 @@
                     overflow-wrap: break-word;
                 }
 
+                .map-modal {
+
+                    padding: 30px 10px;
+                }
+
+                .map-modal-frame {
+                    aspect-ratio: 4 / 3;
+                    margin-bottom: 15px;
+                }
 
 
 

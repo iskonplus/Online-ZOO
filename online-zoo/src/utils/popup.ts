@@ -51,6 +51,10 @@ export async function handlerPopUp(selector: string): Promise<void> {
     popUpBtnClose = document.querySelector<HTMLElement>(".modal__close");
     logOutBtn = document.querySelector<HTMLElement>(".logOutBtn");
 
+    document.addEventListener("keydown", (event: KeyboardEvent) => {
+      if (event.key === "Escape") closePopup();
+    });
+
     if (popUpBtnClose) {
       popUpBtnClose.addEventListener("click", closePopup);
     }

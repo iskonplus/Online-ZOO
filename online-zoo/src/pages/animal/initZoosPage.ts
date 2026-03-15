@@ -8,6 +8,7 @@ import type {
 } from "../../types/pets";
 import { getPetIconById, getPetImageById } from "../../utils/imageStorage";
 import { animalVideosId } from "../../data/petImages";
+import { getAnimalMapData, saveAnimalMapData } from "../../utils/petMapStorage";
 
 export function initSidebarSlider(root: HTMLElement | null): void {
   if (!root) return;
@@ -176,8 +177,12 @@ export async function generateSection(id: string): Promise<void> {
   try {
     const animalData = await getById<PetInfoResponseDTO>("pets", `${id}`);
     titleAnimal.textContent = `live ${animalData.data.commonName} cams`;
+
+    saveAnimalMapData(animalData.data);
     renderSection(animalData.data);
+
   } catch (error) {
+    titleAnimal.textContent = "live cams";
     if (error instanceof Error) {
       const section = document.querySelector<HTMLElement>(
         ".wrapper-did-you-now",
@@ -225,7 +230,8 @@ function renderSection(animalData: PetInfo) {
                         </div>
                         <div class="wrap-description">
 
-                            <h3>Range:</h3><small>${animalData.range}</small> <button class="glass-btn">VIEW map
+                            <h3>Range:</h3><small>${animalData.range}</small>
+                            <button class="glass-btn viewMapBtn">VIEW map
                                 <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
                             </button>
                         </div>
@@ -239,6 +245,8 @@ function renderSection(animalData: PetInfo) {
                 <p class="animal-article">${animalData.detailedDescription}</p>
             </div>
   `;
+
+    handlerViewMapBtn();
 }
 
 export function renderSelectedPet(event: Event) {
@@ -307,4 +315,46 @@ export function initVideoSlider(): void {
 
     slide.classList.add("active");
   });
+}
+
+export  function handlerViewMapBtn() {
+  const viewMapBtn = document.querySelector(".viewMapBtn");
+  if (!viewMapBtn) return;
+
+  viewMapBtn.addEventListener("click", async () => {
+    await handlerPopUp("viewMap");
+    renderAnimalMap();
+
+  });
+}
+
+function renderAnimalMap() {
+  const iframe = document.querySelector<HTMLIFrameElement>(".map-modal-frame");
+  const mapData = getAnimalMapData();
+  
+  if (!iframe || !mapData) return;
+
+  const lat = parseCoordinate(mapData.latitude);
+  const lng = parseCoordinate(mapData.longitude);
+
+  if (lat === null || lng === null) return;
+
+  iframe.src = `https://www.google.com/maps?q=${lat},${lng}&z=6&output=embed`;
+}
+
+function parseCoordinate(value: string): number | null {
+  const match = value.match(/([\d.]+)°\s*([NSEW])/i);
+  if (!match) return null;
+
+  const [, coordinateStr, direction] = match;
+
+  if (!coordinateStr || !direction) return null;
+
+  let coordinate = Number(coordinateStr);
+
+  if (direction.toUpperCase() === "S" || direction.toUpperCase() === "W") {
+    coordinate = -coordinate;
+  }
+
+  return coordinate;
 }
