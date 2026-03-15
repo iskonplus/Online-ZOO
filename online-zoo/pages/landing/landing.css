@@ -1258,8 +1258,14 @@ html.no-scroll {
 }
 
 .wrapper-special .green-btn.disabled,
-.wrapper-block-amount .green-btn.disabled {
+.wrapper-block-amount .green-btn[disabled] {
     background-color: #00a09384;
+}
+.wrapper-special .green-btn[disabled],
+.wrapper-block-amount .green-btn[disabled],
+.nextStep[disabled] {
+    background-color: #00a09384;
+    pointer-events: none;
 }
 
 .wrapper-block-amount .block-amount {

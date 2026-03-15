@@ -8,7 +8,7 @@ let isLoaded = false;
 let popUp: HTMLElement | null = null;
 let popUpBtnClose: HTMLElement | null = null;
 let logOutBtn: HTMLElement | null = null;
-let nextBtn: HTMLElement | null = null;
+// let nextBtn: HTMLElement | null = null;
 
 let htmlPopup = "";
 
@@ -54,7 +54,7 @@ export async function handlerPopUp(selector: string): Promise<void> {
     popUp = document.querySelector<HTMLElement>(".pop-up-container");
     popUpBtnClose = document.querySelector<HTMLElement>(".modal__close");
     logOutBtn = document.querySelector<HTMLElement>(".logOutBtn");
-    nextBtn = document.querySelector<HTMLElement>(".nextStep");
+    // nextBtn = document.querySelector<HTMLElement>(".nextStep");
 
     document.addEventListener("keydown", (event: KeyboardEvent) => {
       if (event.key === "Escape") closePopup();
@@ -62,8 +62,7 @@ export async function handlerPopUp(selector: string): Promise<void> {
 
     if (popUpBtnClose) popUpBtnClose.addEventListener("click", closePopup);
     if (logOutBtn) logOutBtn.addEventListener("click", logOut);
-    console.log(nextBtn);
-    if (nextBtn) nextBtn.addEventListener("click", donationStepFirst);
+    // if (nextBtn) nextBtn.addEventListener("click", donationStepFirst);
     
     isLoaded = true;
   }
@@ -81,7 +80,6 @@ export async function handlerPopUp(selector: string): Promise<void> {
   popUpContent.classList.add("active");
 }
 
-function donationStepFirst() {
-  console.log("thanks");
-  handlerPopUp("thanks")
-}
+// function donationStepFirst() {
+//   handlerPopUp("thanks")
+// }
