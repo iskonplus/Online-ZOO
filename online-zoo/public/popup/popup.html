@@ -1,0 +1,185 @@
+<div class="pop-up-container">
+    <div class="wrapper-pop-up">
+        <button class="modal__close"></button>
+
+        <div class="wrapper-content-pop-up viewMap">
+            <div class="wrapper-user-headline">
+                <h2>Pet location</h2>
+            </div>
+
+            <div class="map-modal">
+                <div class="map-modal-content">
+                    <iframe class="map-modal-frame" src="" loading="lazy" allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper-content-pop-up user-profile">
+            <div class="wrapper-user-headline">
+                <h2>User Profile</h2>
+            </div>
+            <div class="block-user">
+                <div class="wrapper-user-content">
+                    <small>Name:</small>
+                    <p class="user-content-name">User name</p>
+                </div>
+                <div class="wrapper-user-content">
+                    <small>Email:</small>
+                    <p class="user-content-email">User Email</p>
+                </div>
+
+            </div>
+
+
+            <button class="green-btn logOutBtn">Log out</button>
+
+        </div>
+
+        <div class="wrapper-content-pop-up error">
+            <p class="error-message">
+                Something went wrong. Please,
+                <a href="" id="refresh-page-link">refresh</a>
+                the page.
+            </p>
+        </div>
+
+        <div class="wrapper-content-pop-up auth">
+            <img src="/assets/images/pop-img.png" alt="hi">
+            <ul class="auth-menu">
+                <li><a href="/pages/auth/signIn.html">Sign in</a></li>
+                <li><a href="/pages/auth/registration.html">Registration</a></li>
+            </ul>
+        </div>
+
+
+        <div class="wrapper-content-pop-up donate">
+            <img src="/assets/images/pop-img.png" alt="hi">
+            <h2>together we care, save and protect!</h2>
+            <p>Your most generous gift not only cares for countless animals, but it also offers hope and a vital
+                lifeline to the world’s most endangered wildlife relying on us to survive.</p>
+
+            <div class="block-amount">
+                <button class="green-btn">$20</button>
+                <button class="green-btn">$30</button>
+                <button class="green-btn">$50</button>
+                <button class="green-btn">$80</button>
+                <button class="green-btn">$100</button>
+                <button class="green-btn">
+                    <span class="text-full">Other Amount</span>
+                    <span class="text-short">Other</span>
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper-content-pop-up first ">
+            <div class="header-pop-up">
+                <h2>make your donation</h2>
+            </div>
+            <div class="donate-info">
+                <p>Donation Information:</p>
+            </div>
+
+            <div class="wrapper-block-amount">
+                <p><span>*</span>Choose your donation amount:</p>
+                <div class="block-amount">
+                    <button class="green-btn disabled">$10</button>
+                    <button class="green-btn  disabled">$20</button>
+                    <button class="green-btn  disabled">$30</button>
+                    <button class="green-btn disabled">$50</button>
+                    <button class="green-btn disabled">$80</button>
+                    <button class="green-btn disabled">$100</button>
+                </div>
+
+            </div>
+
+            <div class="wrapper-other-amount">
+                <button class="green-btn disabled" disabled>
+                    <span class="text-full">Other Amount</span>
+                    <span class="text-short">Other</span>
+                </button>
+                <input type="number">
+            </div>
+
+            <div class="wrapper-special">
+                <label for="animals">for special pet</label>
+
+                <select id="animals" name="animals">
+                    <option value="0" disabled selected hidden>Choose your favourite</option>
+                    <option value="1">Lukas the Panda</option>
+                    <option value="2">Andy the Lemur</option>
+                    <option value="3">Glen the Gorilla</option>
+                    <option value="4">Mike the Alligator</option>
+                    <option value="5">Sam & Lora the eagles family</option>
+                    <option value="6">Liz the Koala</option>
+                    <option value="7">Shake the Lion</option>
+                    <option value="8">Senja the Tiger</option>
+                    <option value="9">Bella the Red Panda</option>
+                    <option value="10">Rocky the Gorilla</option>
+                    <option value="11">Zara the Elephant</option>
+                    <option value="12">Neptune the Sea Otter</option>
+                    <option value="13">Amber the Bengal Tiger</option>
+                    <option value="14">Duke the Gray Wolf</option>
+                    <option value="15">Sunny the Fennec Fox</option>
+                    <option value="16">Koda the Grizzly Bear</option>
+                    <option value="17">Marina the Dolphin</option>
+                    <option value="18">Oscar the Leopard</option>
+                    <option value="19">Pearl the Polar Bear</option>
+                    <option value="20">Jasper the Jaguar</option>
+                    <option value="21">Willow the Lemur</option>
+                    <option value="22">Thunder the White Rhinoceros</option>
+                    <option value="23">Luna the Arctic Fox</option>
+                    <option value="24">Atlas the Saltwater Crocodile</option>
+                    <option value="25">Ruby the Scarlet Macaw</option>
+                    <option value="26">Titan the Komodo Dragon</option>
+                    <option value="27">Olive the Sloth</option>
+                    <option value="28">Blaze the Cheetah</option>
+                </select>
+
+            </div>
+
+            <div class="wrapper-accept">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="gift" value="yes">
+                    Make this a monthly recurring gift
+                </label>
+            </div>
+
+            <div class="wrapper-pop-up-footer">
+
+                <div class="pop-up-dots">
+                    <ol>
+                        <li class="dot is-active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                    </ol>
+                </div>
+
+                <button class="green-btn back first">Back</button>
+
+                <button class="green-btn nextStep" disabled>next
+                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
+                </button>
+
+            </div>
+        </div>
+
+        <div class="wrapper-content-pop-up first thanks">
+            <div class="header-pop-up">
+                <h2>donation</h2>
+            </div>
+            <div class="donate-info">
+                <p>Donation Information:</p>
+            </div>
+
+            <h3 id="thanks-for-donation">Thank you for your donation!!! 🎉</h3>
+
+
+        </div>
+
+
+    </div>
+
+</div>

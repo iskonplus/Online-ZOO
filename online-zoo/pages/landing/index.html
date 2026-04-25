@@ -56,8 +56,17 @@
                         <img src="/assets/icons/facebook.png" alt="facebook-logo">
                     </a>
                 </figure>
-
             </div>
+
+            <div class="wrapper-auth">
+                <button class="loginIcon">
+                    <span class="social-link">
+                        <img src="/assets/icons/userLog.png" alt="auth icon">
+                    </span>
+                </button>
+                <small class="user-auth-name"></small>
+            </div>
+
 
             <button class="burger" type="button" aria-label="Open menu">
                 <span class="burger__line"></span>
@@ -123,7 +132,7 @@
 
                 <div class="block-welcome-footer">
                     <h4>Quick Donate</h4>
-                    <button>$ Donation Amount
+                    <button id="donate-btn">$ Donation Amount
                         <span>
                             <img src="/assets/icons/arrow-right.png" alt="arrow icon" class="arrow">
                         </span>
@@ -152,117 +161,7 @@
             <div class="wrapper-slider">
                 <div class="slider__viewport">
                     <ul class="slider__track">
-                        <li class="slider__slide">
-                            <a href="/pages/animal/animal.html" class="slider-link">
-                                <figure>
-                                    <img src="/assets/images/Rectangle-39.png" alt="photo animal">
-                                    <h3>Lucas</h3>
-                                </figure>
-                                <h3>Giant Panda</h3>
-                                <p>Native to central China, giant pandas have come to symbolize vulnerable species.</p>
-                                <span class="glass-btn">VIEW LIVE cam
-                                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
-                                </span>
-                            </a>
-                        </li>
-                        <li class="slider__slide">
-                            <a href="/pages/animal/animal.html" class="slider-link">
-                                <figure>
-                                    <img src="/assets/images/Rectangle-43.png" alt="photo animal">
-                                    <h3>Sam & Lora</h3>
-                                </figure>
-                                <h3>West End Bald Eagles</h3>
-                                <p>Pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt
-                                    and
-                                    fly.</p>
-                                <span class="glass-btn">VIEW LIVE cam
-                                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
-                                </span>
-                            </a>
-                        </li>
-                        <li class="slider__slide">
-                            <a href="/pages/animal/animal.html" class="slider-link">
-                                <figure>
-                                    <img src="/assets/images/Rectangle-40.png" alt="photo animal">
-                                    <h3>Andy</h3>
-                                </figure>
-                                <h3>Madagascarian Lemur </h3>
-                                <p>Lemurs are considered the world’s most endangered group of mammals.</p>
-                                <span class="glass-btn">VIEW LIVE cam
-                                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
-                                </span>
-                            </a>
-                        </li>
-                        <li class="slider__slide">
-                            <a href="/pages/animal/animal.html" class="slider-link">
-                                <figure>
-                                    <img src="/assets/images/Rectangle-44.png" alt="photo animal">
-                                    <h3> Liz</h3>
-                                </figure>
-                                <h3>Australian Koala</h3>
-                                <p>The elevated walkways bring you to eye level with the koalas as they perch in their
-                                    forest.</p>
-                                <span class="glass-btn">VIEW LIVE cam
-                                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
-                                </span>
-                            </a>
-                        </li>
-                        <li class="slider__slide">
-                            <a href="/pages/animal/animal.html" class="slider-link">
-                                <figure>
-                                    <img src="/assets/images/Rectangle-41.png" alt="photo animal">
-                                    <h3>Glen</h3>
-                                </figure>
-                                <h3>Gorilla in Congo</h3>
-                                <p>Variety of snacks very important for the healthy life of gorillas and his plenty of
-                                    babies.</p>
-                                <span class="glass-btn">VIEW LIVE cam
-                                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
-                                </span>
-                            </a>
-                        </li>
-                        <li class="slider__slide">
-                            <a href="/pages/animal/animal.html" class="slider-link">
-                                <figure>
-                                    <img src="/assets/images/Rectangle-45.png" alt="photo animal">
-                                    <h3>Shake</h3>
-                                </figure>
-                                <h3>African Lion</h3>
-                                <p>Lions roam the savannas and grasslands of Africa, hunting and raising cubs in the
-                                    pride.
-                                </p>
-                                <span class="glass-btn">VIEW LIVE cam
-                                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
-                                </span>
-                            </a>
-                        </li>
-                        <li class="slider__slide">
-                            <a href="/pages/animal/animal.html" class="slider-link">
-                                <figure>
-                                    <img src="/assets/images/Rectangle-42.png" alt="photo animal">
-                                    <h3>Mike</h3>
-                                </figure>
-                                <h3>Chinese Alligator</h3>
-                                <p>From nose to tail, belly to back, hard scales protect this petite alligator. </p>
-                                <span class="glass-btn">VIEW LIVE cam
-                                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
-                                </span>
-                            </a>
-                        </li>
-                        <li class="slider__slide">
-                            <a href="/pages/animal/animal.html" class="slider-link">
-                                <figure>
-                                    <img src="/assets/images/Rectangle-46.png" alt="photo animal">
-                                    <h3>Senja</h3>
-                                </figure>
-                                <h3>Sumatran Tiger</h3>
-                                <p>Sumatran Tigers are the smallest of the five sub-species, and are found in Indonesia.
-                                </p>
-                                <span class="glass-btn">VIEW LIVE cam
-                                    <img src="/assets/icons/arrow-orange.png" alt="arrow icon" class="arrow">
-                                </span>
-                            </a>
-                        </li>
+                        <span class="loader meet"></span>
                     </ul>
                 </div>
             </div>
@@ -333,8 +232,8 @@
                             </p>
 
 
-                            <button class="orange-btn">donate now<img src="/assets/icons/arrow-right.png"
-                                    alt="arrow icon" class="arrow">
+                            <button class="orange-btn" id="donate-btn">donate now<img
+                                    src="/assets/icons/arrow-right.png" alt="arrow icon" class="arrow">
                             </button>
 
                         </div>
@@ -359,39 +258,8 @@
 
 
                 <div class="block-our-users-slider slider__viewport">
-                    <div class="slider-inner slider__track ">
-                        <div class="our-users-card">
-                            <p class="note">&ldquo;</p>
-                            <h3>New Jersey, June 2020</h3>
-                            <p>I am writing to thank you for your mission is to bring people closer to nature! Like
-                                myself, children were very impressed by the opportunity to explore the life of
-                                incredible animals in real-time. </p>
-                            <p class="author">Karen Maithlan</p>
-                        </div>
-                        <div class="our-users-card">
-                            <p class="note">&ldquo;</p>
-                            <h3>London, February 2020</h3>
-                            <p>A fantastic experience for kids and adults alike! If anyone is looking for an attraction
-                                that educates people on wild animals – it's for you! I highly recommend seeing for
-                                yourself the variety of animals on your screen.</p>
-                            <p class="author">C. Stockman</p>
-                        </div>
-                        <div class="our-users-card">
-                            <p class="note">&ldquo;</p>
-                            <h3>Toronto, November 2020</h3>
-                            <p>We so enjoy the ever-evolving selection of animals from around the globe. THANK YOU for
-                                sharing these fascinating animal friends with us so that we may learn and increase our
-                                understanding of the animal kingdom.</p>
-                            <p class="author">Carol Larsen</p>
-                        </div>
-                        <div class="our-users-card">
-                            <p class="note">&ldquo;</p>
-                            <h3>Amsterdam, June 2020</h3>
-                            <p>I want to thank you for the amazing sites you find to put your cameras to let each of us
-                                see things that we would probably never see on our own. There are so many positives on
-                                Zoo Online and I'm grateful for it. Thank you so much!</p>
-                            <p class="author">Tomas Ray</p>
-                        </div>
+                    <div class="slider-inner slider__track">
+                        <span class="loader our-users"></span>
                     </div>
 
                     <div class="wrapper-slider-arrows">
@@ -579,7 +447,9 @@
 
     </footer>
 
-    <script type="module" src="/pages/landing/landing.js"></script>
+    <!-- <script type="module" src="/pages/landing/landing.js"></script> -->
+    <script type="module" src="../../src/pages/landing/landing.ts"></script>
+
 </body>
 
 </html>

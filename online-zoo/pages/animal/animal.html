@@ -24,17 +24,17 @@
         <div class="wrapper header">
 
             <figure class="wrapper-zoo-logo">
-                <a href="../landing/index.html#favorite" class="zoo-logo">
+                <a href="#" class="zoo-logo">
                     <img src="/assets/images/Logo.png" alt="zoo-logo">
                 </a>
             </figure>
 
             <nav>
                 <ul>
-                    <li><a href="../landing/index.html#favorite">about</a></li>
-                    <li><a href="../map/map.html">map</a></li>
-                    <li><a class="active" href="animal.html">zoos</a></li>
-                    <li><a href="../contact/contact.html">contact us</a></li>
+                    <li><a href="/pages/landing/index.html">about</a></li>
+                    <li><a href="/pages/map/map.html">map</a></li>
+                    <li><a class="active" href="/pages/animal/animal.html">zoos</a></li>
+                    <li><a href="/pages/contact/contact.html">contact us</a></li>
                     <li><a href="https://www.figma.com/design/fVU1MLRYsTITqFphUZNGh8/Online-ZOO-Project--Copy-?node-id=44-9749&t=0XzLqjTAbUnRUz7Q-0"
                             target="_blank">design</a></li>
                 </ul>
@@ -58,7 +58,15 @@
                         <img src="/assets/icons/facebook.png" alt="facebook-logo">
                     </a>
                 </figure>
+            </div>
 
+            <div class="wrapper-auth">
+                <button class="loginIcon">
+                    <span class="social-link">
+                        <img src="/assets/icons/userLog.png" alt="auth icon">
+                    </span>
+                </button>
+                <small class="user-auth-name"></small>
             </div>
 
             <button class="burger" type="button" aria-label="Open menu">
@@ -70,88 +78,110 @@
 
     <main>
 
-        <section id="zoos">
-            <div class="container zoos">
-                <div class="wrapper-video">
-                    <h2 class="title-animal">live panda cams</h2>
-                    <img src="/assets/images/Youtube-player.png" alt="animal video">
+        <div class="wrapper-zoos-section">
+            <div class="out-slider"></div>
+            <section id="zoos">
+                <div class="container zoos">
+                    <div class="wrapper-video">
+                        <h2 class="title-animal">live cams</h2>
+                        <!-- <img src="/assets/images/Youtube-player.png" alt="animal video"> -->
+                        <iframe class="main-video" width="100%" height="auto"
+                            src="" allowfullscreen>
+                        </iframe>
 
-                    <button class="orange-btn">donate now<img src="/assets/icons/arrow-right.png" alt="arrow icon"
-                            class="arrow">
-                    </button>
-                </div>
+                        <button class="orange-btn" id="donate-btn">donate now<img src="/assets/icons/arrow-right.png"
+                                alt="arrow icon" class="arrow">
+                        </button>
+                    </div>
 
-                <div class="wrapper-slider">
-                    <h3 class="title-slider">more live views </h3>
-                    <div class="slider__viewport">
+                    <div class="wrapper-slider">
+                        <h3 class="title-slider">more live views </h3>
+                        <div class="slider__viewport">
 
-                        <div class="wrapper-slider-arrows">
-                            <button class="slider-btn left"><img src="/assets/icons/arrow-slider.png"
-                                    alt="arrow icon"></button>
-                            <button class="slider-btn right"><img src="/assets/icons/arrow-slider.png"
-                                    alt="arrow icon"></button>
+                            <div class="wrapper-slider-arrows">
+                                <button class="slider-btn left"><img src="/assets/icons/arrow-slider.png"
+                                        alt="arrow icon"></button>
+                                <button class="slider-btn right"><img src="/assets/icons/arrow-slider.png"
+                                        alt="arrow icon"></button>
+                            </div>
+
+                            <ul class="slider__track">
+
+                                <li class="slider__slide active">
+                                    <figure>
+                                        <div class="wrapper-cam">
+                                            <h4>cam1</h4>
+                                            <img src="/assets/icons/cam.png" alt="icon cam">
+                                        </div>
+                                        <img src="" class="video-preview" alt="photo animal">
+                                        <img src="/assets/icons/play-button.png" alt="logo you-tube"
+                                            class="yt-play-btn">
+                                    </figure>
+
+                                </li>
+
+                                <li class="slider__slide">
+                                    <figure>
+
+                                        <div class="wrapper-cam">
+                                            <h4>cam2</h4>
+                                            <img src="/assets/icons/cam.png" alt="icon cam">
+                                        </div>
+                                        <img src="" class="video-preview" alt="photo animal">
+                                        <img src="/assets/icons/play-button.png" alt="logo you-tube"
+                                            class="yt-play-btn">
+                                    </figure>
+
+                                </li>
+
+                                <li class="slider__slide">
+                                    <figure>
+                                        <div class="wrapper-cam">
+                                            <h4>cam3</h4>
+                                            <img src="/assets/icons/cam.png" alt="icon cam">
+                                        </div>
+                                        <img src="" class="video-preview" alt="photo animal">
+                                        <img src="/assets/icons/play-button.png" alt="logo you-tube"
+                                            class="yt-play-btn">
+                                    </figure>
+
+                                </li>
+                                <li class="slider__slide">
+                                    <figure>
+                                        <div class="wrapper-cam">
+                                            <h4>cam4</h4>
+                                            <img src="/assets/icons/cam.png" alt="icon cam">
+                                        </div>
+                                        <img src="" class="video-preview" alt="photo animal">
+                                        <img src="/assets/icons/play-button.png" alt="logo you-tube"
+                                            class="yt-play-btn">
+                                    </figure>
+
+                                </li>
+
+
+
+                            </ul>
                         </div>
-
-                        <ul class="slider__track">
-
-                            <li class="slider__slide">
-                                <figure>
-                                    <div class="wrapper-cam">
-                                        <h4>cam1</h4>
-                                        <img src="/assets/icons/cam.png" alt="icon cam">
-                                    </div>
-                                    <img src="/assets/images/Rectangle-129.png" alt="photo animal">
-                                    <img src="/assets/icons/play-button.png" alt="logo you-tube" class="yt-play-btn">
-                                </figure>
-
-                            </li>
-
-                            <li class="slider__slide">
-                                <figure>
-
-                                    <div class="wrapper-cam">
-                                        <h4>cam2</h4>
-                                        <img src="/assets/icons/cam.png" alt="icon cam">
-                                    </div>
-                                    <img src="/assets/images/Rectangle-12-9.png" alt="photo animal">
-                                    <img src="/assets/icons/play-button.png" alt="logo you-tube" class="yt-play-btn">
-                                </figure>
-
-                            </li>
-
-                            <li class="slider__slide">
-                                <figure>
-                                    <div class="wrapper-cam">
-                                        <h4>cam3</h4>
-                                        <img src="/assets/icons/cam.png" alt="icon cam">
-                                    </div>
-                                    <img src="/assets/images/image-161.png" alt="photo animal">
-                                    <img src="/assets/icons/play-button.png" alt="logo you-tube" class="yt-play-btn">
-                                </figure>
-
-                            </li>
-
-
-
-                        </ul>
                     </div>
                 </div>
-            </div>
-
+            </section>
             <div class="welcome-footer">
                 <div class="container welcome-footer">
 
                     <div class="block-welcome-footer">
                         <h3>make the Bamboo Donation!</h3>
-                        <p>Our process for bamboo donations first starts with a site evaluation. It is important that
-                            our team sees where the bamboo is growing, then determining if the bamboo is a species that
+                        <p>Our process for bamboo donations first starts with a site evaluation. It is important
+                            that
+                            our team sees where the bamboo is growing, then determining if the bamboo is a species
+                            that
                             our animals are currently eating. Thank you for your interest in donating bamboo for our
                             pandas.</p>
                     </div>
 
                     <div class="block-welcome-footer">
                         <h4>Quick Donate</h4>
-                        <button>$ Donation Amount
+                        <button id="donate-btn">$ Donation Amount
                             <span>
                                 <img src="/assets/icons/arrow-right.png" alt="arrow icon" class="arrow">
                             </span>
@@ -160,7 +190,6 @@
                     </div>
                 </div>
             </div>
-        </section>
 
         <section id="did-you-now">
             <div class="container did-you-now">
@@ -217,10 +246,13 @@
 
 
 
+        <section id="did-you-now">
+            <div class="wrapper-loader">
+                <span class="loader did-you-now"></span>
             </div>
+            <div class="wrapper-did-you-now"></div>
+
         </section>
-
-
 
     </main>
 
@@ -305,9 +337,7 @@
 
     </footer>
 
-
-    <script type="module" src="/pages/landing/landing.js"></script>
-    <script type="module" src="/pages/animal/animal.js"></script>
+    <script type="module" src="../../src/pages/animal/animal.ts"></script>
 </body>
 
 </html>
