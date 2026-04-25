@@ -1,0 +1,223 @@
+.container.map {
+    padding: 40px 20px 154px;
+    overflow: hidden;
+}
+
+.map h2 {
+    width: 40%;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--black-color);
+    margin: auto;
+    margin-bottom: 70px;
+}
+
+.background-map {
+    width: 100%;
+    background: url("/assets/images/Map.png") center/contain no-repeat;
+    padding-top: calc(100% / (1406 / 912));
+    position: relative;
+}
+
+.wrapper-location {
+    position: absolute;
+    inset: 0;
+}
+
+.zone {
+    position: absolute;
+    width: 6%;
+    height: auto;
+}
+
+.drop-svg {
+    width: 125%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0px 10px var(--orange-color));
+    cursor: pointer;
+    z-index: 6;
+}
+
+.zone-animals {
+    width: 55%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    z-index: 2;
+    top: 23%;
+    left: 32%;
+}
+
+.usa-s {
+    top: 43%;
+    left: 11.2%;
+}
+
+.usa-n {
+    top: 44.5%;
+    left: 20%;
+}
+
+.afr-s {
+    top: 49.7%;
+    left: 40.4%;
+}
+
+.afr-c {
+    top: 52.3%;
+    left: 48.7%;
+}
+
+.afr-n {
+    top: 65.5%;
+    left: 56%;
+}
+
+.afr-n .zone-animals {
+    width: 39%;
+    top: 20%;
+    left: 42%;
+}
+
+.cin-s {
+    top: 38.3%;
+    left: 67.25%;
+}
+
+.phi-s {
+    top: 55.6%;
+    left: 71.7%;
+}
+
+.avs-c {
+    top: 68.2%;
+    left: 81.1%;
+}
+
+.drop-fill {
+    fill: var(--orange-color);
+    transform: scale(0.85);
+    transform-origin: center;
+    transition: .3s;
+}
+
+.drop-border {
+    fill: none;
+    stroke: var(--white-color);
+    stroke-width: 6;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    transform-box: fill-box;
+    transform: translateY(2px);
+}
+
+
+
+.zone:hover .drop-border {
+    opacity: 1;
+}
+
+.zone:hover .drop-fill {
+    fill: var(--white-color);
+}
+
+
+@media(max-width: 1200px) {
+    .map h2 {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+
+    .container.map {
+        padding: 30px 0px 99px;
+    }
+
+    @media(max-width: 1100px) {
+        .map h2 {
+            width: 60%;
+        }
+
+        @media(max-width: 760px) {
+
+            .map h2 {
+                width: 100%;
+                margin-bottom: 50px;
+                font-weight: 500;
+                font-size: 42px;
+                line-height: 51px;
+                padding: 0px 10px;
+            }
+
+            @media(max-width: 460px) {
+                .container.map {
+                    padding: 20px 0px 53px;
+                }
+
+                .background-map {
+                    width: calc(100% + 40px);
+                    background: url(/assets/images/Map.png) center / contain no-repeat;
+                    padding-top: calc(115% / (1406 / 920));
+                    position: relative;
+                    margin-left: -20px;
+                    margin-right: -20px;
+                }
+
+                .map h2 {
+                    text-transform: lowercase;
+                    padding: 0px 10px;
+                    font-size: 26px;
+                    line-height: 130%;
+                    margin-bottom: 30px;
+                }
+
+                .drop-svg {
+                    width: 175%;
+                }
+
+                .zone-animals {
+                    width: 85%;
+                    top: 23%;
+                    left: 42%;
+                }
+
+                .afr-n .zone-animals {
+                    width: 60%;
+                    left: 60%;
+                }
+
+                .usa-s {
+                    top: 39%;
+                    left: 9.2%;
+                }
+
+                .usa-n {
+                    top: 42%;
+                    left: 21%;
+                }
+
+                .afr-s {
+                    top: 43%;
+                    left: 40.4%;
+                }
+
+                .cin-s {
+                    top: 35.3%;
+                    left: 66.5%;
+                }
+
+                .phi-s {
+                    top: 53.3%;
+                    left: 71.9%;
+                }
+
+            }
+        }
+
+    }
+
+}

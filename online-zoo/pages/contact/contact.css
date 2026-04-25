@@ -1,0 +1,236 @@
+.container.contact {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0px 0px 150px 0px;
+}
+
+.contact>img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 150px;
+}
+
+.wrapper-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+}
+
+.block-in-touch,
+.block-form {
+    width: 50%;
+    height: auto;
+}
+
+.block-in-touch h2 {
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: var(--green-color);
+    margin-bottom: 50px;
+}
+
+.block-in-touch p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--black-color);
+    padding-right: 100px;
+}
+
+#contact-form{
+    scroll-margin-top: 110px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 29px;
+    position: relative;
+}
+
+.form-group label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--black-color);
+    margin-bottom: 10px;
+}
+
+.form-group span {
+    color: var(--green-color);
+    margin-right: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    border: 1px solid var(--black-color);
+    transition: .3s;
+}
+
+.form-group textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 18px 20px;
+    resize: none;
+}
+
+.block-form button {
+    background-color: var(--green-color);
+    padding: 26px 84px;
+    margin-top: 68px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    box-shadow: 0px 4px 30px color-mix(in srgb, var(--green-color) 30%, transparent);
+    border: 1px solid var(--green-color);
+    border-radius: 5px;
+}
+
+.error {
+    display: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #F58021;
+    position: absolute;
+    bottom: -30px
+}
+
+.form-group input.touched:invalid~.error,
+.form-group textarea.touched:invalid~.error {
+    display: block;
+}
+
+.form-group input.touched:invalid,
+.form-group textarea.touched:invalid {
+    background: rgba(245, 128, 33, 0.2);
+    border: 1px solid #F58021;
+}
+
+
+@media(max-width: 1200px) {
+
+    .contact>img {
+        margin-bottom: 50px;
+    }
+
+    .wrapper-contact {
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .block-in-touch,
+    .block-form {
+        width: 100%;
+    }
+
+    .block-in-touch {
+        text-align: center;
+    }
+
+
+    .block-in-touch h2 {
+        margin-bottom: 30px;
+    }
+
+    .block-in-touch p {
+        padding: 0px 180px;
+    }
+
+    form {
+        padding: 0px 180px;
+    }
+
+    .block-form button {
+        margin-top: 50px;
+    }
+
+    @media(max-width: 1100px) {
+        .block-in-touch p {
+            padding: 0px 100px;
+        }
+
+        form {
+            padding: 0px 100px;
+        }
+
+
+        @media(max-width: 760px) {
+            .container.contact {
+                padding-bottom: 100px;
+            }
+
+            .block-in-touch p {
+                padding: 0px 20px;
+            }
+
+            form {
+                padding: 0px 20px;
+            }
+
+            .block-form button {
+                margin: 50px auto 0px;
+            }
+
+
+            @media(max-width: 460px) {
+                .container.contact {
+                    padding-bottom: 80px;
+                }
+
+                .contact>img {
+                    margin-bottom: 30px;
+                }
+
+                .wrapper-contact {
+                    gap: 50px;
+                }
+
+                .block-in-touch h2 {
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 32px;
+                    margin-bottom: 30px;
+                }
+
+                .block-in-touch p {
+                    font-size: 18px;
+                    line-height: 150%;
+                    padding: 0px 10px;
+                }
+
+                .block-form button {
+                    padding: 14px 58px;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+                form {
+                    padding: 0px 10px;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media (hover: hover) {
+    .block-form button:hover {
+        background-color: var(--dark-green-color);
+    }
+}
