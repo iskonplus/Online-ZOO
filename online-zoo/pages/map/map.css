@@ -160,7 +160,7 @@
 
                 .background-map {
                     width: calc(100% + 40px);
-                    background: url(/assets/images/Map.png) center / contain no-repeat;
+                    background: url("/assets/images/Map.png") center / contain no-repeat;
                     padding-top: calc(115% / (1406 / 920));
                     position: relative;
                     margin-left: -20px;
