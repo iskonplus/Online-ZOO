@@ -27,6 +27,7 @@ html {
 body {
     padding-top: 110px;
     position: relative;
+    
 }
 
 .tittle-hidden {
@@ -37,7 +38,7 @@ body {
 /* --- header --- */
 
 header {
-    width: 100vw;
+    width: 100%;
     background-color: var(--orange-color);
     position: fixed;
     top: 0;
